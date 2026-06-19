@@ -115,3 +115,45 @@ pfctl -vvsr
 
 -----------------------------------------------------------------------------------------------------------------------------
 
+block in log proto tcp to any port 1:52
+block in log proto udp to any port 1:52
+
+block in log proto tcp to any port 54:66
+block in log proto udp to any port 54:66
+
+block in log proto tcp to any port 69:442
+block in log proto udp to any port 69:442
+
+block in log proto tcp to any port 444:65535
+block in log proto udp to any port 444:65535
+
+block out log proto tcp from any port 1:52
+block out log proto udp from any port 1:52
+
+block out log proto tcp from any port 54:66
+block out log proto udp from any port 54:66
+
+block out log proto tcp from any port 69:442
+block out log proto udp from any port 69:442
+
+block out log proto tcp from any port 444:65535
+block out log proto udp from any port 444:65535
+
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+
+sudo ifconfig pflog0 create
+
+sudo ifconfig pflog0 destroy
+
+sudo ifconfig pflog0 up
+
+sudo ifconfig pflog0 down
+
+
+sudo tcpdump -n -e -ttt -i pflog0
+
+
+
+
