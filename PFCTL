@@ -1,3 +1,14 @@
+https://www.openbsdhandbook.com/pf/policies/
+
+https://manjusri.ucsc.edu/2015/03/10/PF-on-Mac-OS-X/
+
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+
 #default deny all in, allow all out and keep state
 block in all
 pass out all keep state
