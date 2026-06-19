@@ -380,7 +380,7 @@ netstat -nr | grep default
 
 ipconfig getpacket en0
 
-networksetup -setairportnetwork en0 "ATTC6WC9qs" 'password'
+networksetup -setairportnetwork en0 "routerid" 'password'
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 
