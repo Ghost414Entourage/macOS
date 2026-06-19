@@ -139,6 +139,10 @@ block out log proto udp from any port 69:442
 block out log proto tcp from any port 444:65535
 block out log proto udp from any port 444:65535
 
+block in log proto igmp
+
+block out log proto igmp
+
 
 -----------------------------------------------------------------------------------------------------------------------------
 
