@@ -4,6 +4,7 @@ https://manjusri.ucsc.edu/2015/03/10/PF-on-Mac-OS-X/
 
 https://murusfirewall.com/Documentation/OS%20X%20PF%20Manual.pdf
 
+https://github.com/usnistgov/macos_security/blob/main/includes/enablePF-mscp.sh
 
 
 
@@ -88,7 +89,9 @@ block log proto tcp to any port 540
 
 
 
-https://github.com/usnistgov/macos_security/blob/main/includes/enablePF-mscp.sh
+
+
+-----------------------------------------------------------------------------------------------------------------------------
 
 pfctl -e
 
