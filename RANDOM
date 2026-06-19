@@ -1,0 +1,751 @@
+https://myaccount.google.com/device-activity/
+
+https://www.discoverisc.com/west/en-us.html
+
+https://github.com/akib1162100/mac/blob/master/The%20TCP-IP%20Guide%20-%20A%20Comprehensive%20Illustrated%20Internet%20Protocols%20Reference.pdf
+
+https://www.loobins.io/binaries/system_profiler/
+
+https://macos-defaults.com/keyboard/applekeyboardfnstate.html
+
+https://mynixos.com/options/system.defaults.NSGlobalDomain
+
+https://www.roundfleet.com/en/tutorial
+
+https://www.x-cmd.com/mod/wifi
+
+https://hacktricks.wiki/en/macos-hardening/macos-security-and-privilege-escalation/mac-os-architecture/macos-iokit.html
+
+https://pages.nist.gov/macos_security/
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+DHCP:
+
+ipconfig getifaddr en0
+
+ipconfig getpacket en0
+
+ipconfig getoption en0 server_identifier
+
+scutil --dns
+
+
+netstat -rn | grep default
+
+
+
+Force DHCP Renew:
+sudo ipconfig set en0 DHCP
+ipconfig getpacket en0
+
+
+--------------------------------------------------------------------------
+
+networksetup -setairportpower en0 off
+networksetup -setairportpower en0 on
+
+
+sudo killall -HUP configd
+
+
+route -n get default
+
+networksetup -listallhardwareports
+
+networksetup -listallnetworkservices
+
+networksetup -listnetworkserviceorder
+
+networksetup -getinfo Wi-Fi
+
+ifconfig en0
+
+scselect
+
+sudo plutil -p /Library/Preferences/SystemConfiguration/preferences.plist
+sudo plutil -convert xml1 -o - /Library/Preferences/SystemConfiguration/preferences.plist
+
+scutil --nwi
+
+scutil
+show State:/Network/Global/IPv4
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+
+sudo nano dhcp_to_static.sh
+
+
+chmod +x dhcp_to_static.sh
+
+
+./dhcp_to_static.sh
+
+
+
+
+
+#!/bin/bash
+
+SERVICE="Wi-Fi"
+IFACE="en0"
+
+# Extract values from DHCP lease
+IP=$(ipconfig getpacket $IFACE | awk '/yiaddr/ {print $3}')
+ROUTER=$(ipconfig getpacket $IFACE | awk '/router/ {print $3}' | tr -d '{}')
+MASK_HEX=$(ifconfig $IFACE | awk '/inet / {print $4}')
+
+# Convert hex netmask to dotted decimal
+MASK=$(printf "%d.%d.%d.%d\n" 0x${MASK_HEX:2:2} 0x${MASK_HEX:4:2} 0x${MASK_HEX:6:2} 0x${MASK_HEX:8:2})
+
+echo "IP: $IP"
+echo "Mask: $MASK"
+echo "Router: $ROUTER"
+
+# Apply manual configuration
+sudo networksetup -setmanual "$SERVICE" "$IP" "$MASK" "$ROUTER"
+
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+sudo networksetup -setmanual "Wi-Fi" \
+$(ipconfig getifaddr en0) \
+$(ifconfig en0 | awk '/inet / {print $4}' | sed 's/0x//; s/../0x& /g' | xargs printf "%d.%d.%d.%d\n") \
+$(route -n get default | awk '/gateway/ {print $2}')
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+REVERT:
+
+sudo networksetup -setdhcp "Wi-Fi"
+
+sudo ipconfig set en0 DHCP
+
+networksetup -getinfo "Wi-Fi"
+
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -s
+/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I
+
+sudo wdutil info
+sudo wdutil diagnose
+
+system_profiler SPAirPortDataType
+
+
+networkQuality -sv
+
+
+nettop
+
+networksetup -setairportnetwork en0 "Ultra" "WisconsinBadgersMedved414"
+
+networksetup -removepreferredwirelessnetwork en0 Ultra
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+#!/bin/bash
+
+SERVICE="Wi-Fi"
+IFACE="en0"
+
+# Extract IP
+IP=$(ipconfig getpacket $IFACE | awk '/yiaddr/ {print $3}')
+
+# Extract Router
+ROUTER=$(ipconfig getpacket $IFACE | awk '/router/ {print $3}' | tr -d '{}')
+
+# Extract DNS servers (handles multiple)
+DNS=$(ipconfig getpacket $IFACE | awk '/domain_name_server/ {print $3}' | tr -d '{}')
+
+# Extract netmask (hex)
+MASK_HEX=$(ifconfig $IFACE | awk '/inet / {print $4}')
+
+# Convert hex netmask → dotted decimal
+MASK=$(printf "%d.%d.%d.%d\n" \
+0x${MASK_HEX:2:2} \
+0x${MASK_HEX:4:2} \
+0x${MASK_HEX:6:2} \
+0x${MASK_HEX:8:2})
+
+echo "IP: $IP"
+echo "Mask: $MASK"
+echo "Router: $ROUTER"
+echo "DNS: $DNS"
+
+# Apply static IP
+sudo networksetup -setmanual "$SERVICE" "$IP" "$MASK" "$ROUTER"
+
+# Apply static DNS
+sudo networksetup -setdnsservers "$SERVICE" $DNS
+
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+sudo nano update_pf.sh
+
+
+
+#!/bin/sh
+
+TABLE="blocked_ips"
+COUNTRIES="ru cn"   # change ISO country codes as needed
+BASE_URL="https://www.ipdeny.com/ipblocks/data/countries"
+
+TMPFILE="$(mktemp)"
+
+echo "Downloading GeoIP data..."
+
+for C in $COUNTRIES; do
+    curl -fsSL "$BASE_URL/${C}.zone" >> "$TMPFILE" || {
+        echo "Failed to download ${C}.zone"
+        rm -f "$TMPFILE"
+        exit 1
+    }
+done
+
+# Ensure file is not empty
+if [ ! -s "$TMPFILE" ]; then
+    echo "Download produced empty file. Aborting."
+    rm -f "$TMPFILE"
+    exit 1
+fi
+
+echo "Loading into PF table '$TABLE'..."
+
+if pfctl -t "$TABLE" -T replace -f "$TMPFILE"; then
+    echo "PF table updated successfully."
+else
+    echo "PF update failed."
+    rm -f "$TMPFILE"
+    exit 1
+fi
+
+rm -f "$TMPFILE"
+exit 0
+
+
+
+
+
+
+chmod +x update_pf.sh
+
+
+./update_pf.sh
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+
+
+sudo pfctl -vvsr
+
+sudo pfctl -t blocked_ips -vTshow
+
+sudo pfctl -t blocked_ips -vTshow | awk '/^[0-9]/ {ip=$0} /Packets:/ && $2 > 0 {print ip "  Packets: " $2}'
+
+sudo pfctl -t blocked_ips -vTshow | awk '/^[0-9]/ {ip=$0} /Packets:/ && $2 > 0 {print ip}'
+
+sudo pfctl -t blocked_ips -T zero
+
+sudo pfctl -t blocked_ips -T show
+
+sudo pfctl -t blocked_ips -T flush
+
+sudo pfctl -t blocked_ips -T show
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+sysctl -a
+
+sysctl -a | grep tcp
+sysctl -a | grep net
+sysctl -a | grep kern
+
+
+sysctl -a | grep security
+
+sysctl security
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+softwareupdate --fetch-full-installer --full-installer-version 26.3 --force
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+defaults read /Library/Preferences/SystemConfiguration/com.apple.smb.server
+
+smbutil statshares -a
+
+scutil --prefs list | grep -i netbios
+
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "MacBookAir"
+
+
+sudo scutil --set ComputerName "caspers-MacBook-Air"
+sudo scutil --set LocalHostName "caspers-MacBook-Air"
+sudo scutil --set HostName "caspers-MacBook-Air"
+
+sudo scutil --get ComputerName
+sudo scutil --get LocalHostName
+sudo scutil --get HostName
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+Sudo nano /etc/pf.conf
+
+
+
+cat >> pf.conf << 'EOF'
+block in proto tcp from any to any port 1:52
+block in proto udp from any to any port 1:52
+block in proto tcp from any to any port 54:66
+block in proto udp from any to any port 54:66
+block in proto tcp from any to any port 69:79
+block in proto udp from any to any port 69:79
+block in proto tcp from any to any port 81:442
+block in proto udp from any to any port 81:442
+block in proto tcp from any to any port 444:1023
+block in proto udp from any to any port 444:1023
+block out proto tcp from any to any port 1:52
+block out proto udp from any to any port 1:52
+block out proto tcp from any to any port 54:66
+block out proto udp from any to any port 54:66
+block out proto tcp from any to any port 69:79
+block out proto udp from any to any port 69:79
+block out proto tcp from any to any port 81:442
+block out proto udp from any to any port 81:442
+block out proto tcp from any to any port 444:1023
+block out proto udp from any to any port 444:1023
+
+block drop in proto tcp from any to any port 1:52
+block drop in proto udp from any to any port 1:52
+block drop in proto tcp from any to any port 54:66
+block drop in proto udp from any to any port 54:66
+block drop in proto tcp from any to any port 69:79
+block drop in proto udp from any to any port 69:79
+block drop in proto tcp from any to any port 81:442
+block drop in proto udp from any to any port 81:442
+block drop in proto tcp from any to any port 444:1023
+block drop in proto udp from any to any port 444:1023
+block drop out proto tcp from any to any port 1:52
+block drop out proto udp from any to any port 1:52
+block drop out proto tcp from any to any port 54:66
+block drop out proto udp from any to any port 54:66
+block drop out proto tcp from any to any port 69:79
+block drop out proto udp from any to any port 69:79
+block drop out proto tcp from any to any port 81:442
+block drop out proto udp from any to any port 81:442
+block drop out proto tcp from any to any port 444:1023
+block drop out proto udp from any to any port 444:1023
+EOF
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+route -n get default
+
+netstat -nr | grep default
+
+ipconfig getpacket en0
+
+networksetup -setairportnetwork en0 "ATTC6WC9qs" 'password'
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+Show Firewall Rules:
+
+# pfctl -sr
+
+Show NAT rules:
+
+# pfctl -sn
+
+Show all:
+
+# pfctl -sa
+
+For more verbose output including rule counters, ID numbers, and so on, use:
+
+# pfctl -vvsr
+
+pfctl -a '*' -Fa
+
+sudo pfctl -f /etc/pf.conf
+
+sudo pfctl -E
+
+sudo pfctl -d
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+
+block in all
+pass out all keep state
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+
+sudo ifconfig pflog0 create
+
+sudo tcpdump -n -e -ttt -i pflog0
+
+sudo ifconfig pflog0 destroy
+
+cat /var/log/appfirewall.log
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --getglobalstate
+
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on
+
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setstealthmode on
+
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --listapps
+
+Block:
+
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --blockapp "/Applications/Google Chrome.app"
+
+Allow:
+
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --add "/usr/sbin/sshd"
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+
+cat /etc/pf.anchors/com.apple
+
+sudo pfctl -a com.apple -s rules
+
+sudo pfctl -s info
+
+sudo pfctl -a com.apple/250.ApplicationFirewall -s rules
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+tcp_services = "{ https, bootps, bootpc, domain }"
+udp_services = "{ https, bootps, bootpc, domain }"
+
+block all
+pass out proto tcp to any port $tcp_services
+pass proto udp to any port $udp_services
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+set block-policy drop
+set skip on lo0
+set ruleset-optimization basic
+
+tcp_services = "{ https, bootps, bootpc, domain }"
+udp_services = "{ https, bootps, bootpc, domain }"
+
+scrub in all
+antispoof for { lo0, gif0, stf0, anpi0, anpi1, en3, en4, en1, en2, bridge0, ap1, en0, utun0, awdl0, llw0, utun1, utun2, utun3 }
+
+block all
+pass out proto tcp to any port $tcp_services
+pass out proto udp to any port $udp_services
+
+block in  from 17.0.0.0/8 to any
+block out from any to 17.0.0.0/8
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+sudo networksetup -setv6off "Wi-Fi"
+
+sudo ifconfig bridge0 down
+sudo ifconfig bridge0 destroy
+
+sudo ifconfig en0 inet6 fe80::1458:4d65:2b6f:c271%en0 delete
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+#!/bin/bash
+
+set -u
+
+# Interfaces to skip
+SKIP_REGEX='^(lo0|en0)$'
+
+current_iface=""
+
+ifconfig | while IFS= read -r line; do
+    # Match interface header lines like: en1: flags=...
+    if [[ "$line" =~ ^([a-zA-Z0-9]+):[[:space:]]flags= ]]; then
+        current_iface="${BASH_REMATCH[1]}"
+
+        if [[ "$current_iface" =~ $SKIP_REGEX ]]; then
+            echo "Skipping $current_iface"
+            current_iface=""
+            continue
+        fi
+
+        echo
+        echo "Processing interface: $current_iface"
+        continue
+    fi
+
+    # If we're not currently processing an interface, skip
+    [[ -z "$current_iface" ]] && continue
+
+    # Match IPv6 address lines like:
+    # inet6 fe80::b291:9b54:98f0:a23c%utun0 prefixlen 64 scopeid 0xd
+    if [[ "$line" =~ ^[[:space:]]*inet6[[:space:]]+([^[:space:]]+) ]]; then
+        ipv6="${BASH_REMATCH[1]}"
+        echo "  Removing IPv6 $ipv6 from $current_iface"
+        sudo ifconfig "$current_iface" inet6 "$ipv6" delete 2>/dev/null \
+            || echo "  Failed to delete IPv6 $ipv6 on $current_iface"
+    fi
+
+    # Detect the end of an interface block by looking ahead implicitly:
+    # when we hit a blank line, bring interface down
+    if [[ -z "$line" ]]; then
+        echo "  Bringing $current_iface down"
+        sudo ifconfig "$current_iface" down 2>/dev/null \
+            || echo "  Failed to bring $current_iface down"
+        current_iface=""
+    fi
+done
+
+# Second pass: make sure every non-skipped interface gets a down attempt,
+# even if its block had no blank-line separator.
+for iface in $(ifconfig -l); do
+    if [[ "$iface" =~ $SKIP_REGEX ]]; then
+        continue
+    fi
+    echo "Final down attempt on $iface"
+    sudo ifconfig "$iface" down 2>/dev/null \
+        || echo "Failed to bring $iface down"
+done
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+kill -9 -1
+
+pkill -9 -u "$USER"
+
+pkill -u "$USER"
+
+sudo pkill -f .
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+defaults write com.apple.finder AppleShowAllFiles -bool true; killall Finder
+
+
+for iface in $(ifconfig -l); do
+    ifconfig $iface inet6 | awk '/inet6 / {print $2}' | xargs -I {} sudo ifconfig $iface inet6 delete {};
+done
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ many of the most useful system-level plists reside in the /Library/Preferences directory (and per-user plists under ~/Library/Preferences
+
+Operating system artifacts:
+
+/System/Library/CoreServices/SystemVersion.plist
+/Library/Preferences/SystemConfiguration/preferences.plist
+/Library/Preferences/.GlobalPreferences.plist
+/Library/Preferences/SystemConfiguration/com.apple.storage.plist
+
+
+
+User accounts and activity:
+
+/Library/Preferences/com.apple.preferences.accounts.plist
+/Library/Preferences/com.apple.loginwindow.plist
+~/Library/Preferences/com.apple.recentitems.plist
+~/Library/Preferences/com.apple.loginitems.plist
+~/Library/Preferences/com.apple.sidebarlists.plist
+
+
+
+Software application data:
+
+/System/Library/LaunchDaemons/<app>.plist
+~/Library/Containers/<app>/Data/Library/Preferences/*.plist
+~/Library/Preferences/<app>.plist
+
+
+
+Wireless network and Bluetooth connections:
+
+/Library/Preferences/SystemConfiguration/NetworkInterfaces.plist
+/Library/Preferences/SystemConfiguration/com.apple.airport.preferences.plist
+/Library/Preferences/com.apple.Bluetooth.plist
+/Library/Preferences/com.apple.MobileBluetooth.devices.plist
+
+
+
+Previously attached or mounted devices:
+
+~/Library/Preferences/com.apple.iPod.plist
+~/Library/Preferences/com.apple.finder.plist
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+
+/System/Library/CoreServices/SystemVersion.plist
+/Library/Preferences/.GlobalPreferences.plist
+/Library/Preferences/SystemConfiguration/preferences.plist
+
+
+defaults read /System/Library/CoreServices/SystemVersion.plist
+
+defaults read /Library/Preferences/.GlobalPreferences.plist
+
+sudo defaults read /Library/Preferences/SystemConfiguration/preferences.plist
+
+plutil -p /System/Library/CoreServices/SystemVersion.plist
+
+plutil -p /Library/Preferences/.GlobalPreferences.plist
+
+sudo plutil -p /Library/Preferences/SystemConfiguration/preferences.plist
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Photos: ~/Pictures/Photos Library.photoslibrary/database/Photos.sqlite
+Notes: ~/Library/Group Containers/group.com.apple.notes/NoteStore.sqlite
+Contacts: ~/Library/ApplicationSupport/AddressBook/Sources/<GUID>/AddressBookv-v*.abcddb
+Messages: ~/Library/Messages/chat.db
+Call History: ~/Library/Application Support/CallHistory.storedata
+
+
+
+.quit
+
+sqlite3 ~/Pictures/Photos\ Library.photoslibrary/database/Photos.sqlite
+
+sqlite3 ~/Library/Group\ Containers/group.com.apple.notes/NoteStore.sqlite
+
+sqlite3 ~/Library/Application\ Support/AddressBook/Sources/<GUID>/AddressBook-v22.abcddb
+
+sqlite3 ~/Library/Messages/chat.db
+
+sqlite3 ~/Library/Application\ Support/CallHistoryDB/CallHistory.storedata
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+/Library/Preferences/com.apple.TimeMachine.plist
+
+~/Library/Application Support/MobileSync/Backup
+
+/Library/Keychains/System.keychain
+
+/private/var/db/SystemKey
+
+~/Library/Keychains/login.keychain-db
+
+~/Library/Application Support/Knowledge/knowledge.db
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+User home directories /Users/
+System configuration files /Library/Preferences/
+User preference files /Users/<User>/Library/Preferences/
+User account database /var/db/dslocal/nodes/Default/users/
+
+
+Unified logs /private/var/db/diagnostics/ *Modern macOS systems use a centralized unified logging system *These logs often require specialized tooling or parsing to interpret effectively
+Launch Services artifacts /Users/<User>/Library/Preferences/com.apple.LaunchServices/
+Quarantine database (SQLite) /Users/<User>/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV2
+Application installation locations /Applications/ /Users/<User>/Applications/
+
+
+File timestamps APFS commonly records Created/Modified/Accessed/Metadata modified timestamps. These timestamps are usually examined through forensic tools capable of parsing APFS volumes or through timelining techniques.
+Spotlight index /System/Volumes/Data/.Spotlight-V100/
+Spotlight metadata database Stored within .Spotlight-V100/ and parsed through forensic tools
+
+
+Shared file lists / Recent Items /Users/<User>/Library/Application Support/com.apple.sharedfilelist/
+Finder preferences /Users/<User>/Library/Preferences/com.apple.finder.plist
+Document revision storage /Users/<User>/.DocumentRevisions-V100/
+
+User Trash /Users/<User>/.Trash/ Note: External volumes may also contain .Trashes directories.
+APFS snapshots APFS supports snapshots that may preserve prior states of files and folders. These are typically examined using forensic tools capable of parsing APFS snapshots.
+
+
+Safari history /Users/<User>/Library/Safari/History.db
+Safari downloads /Users/<User>/Library/Safari/Downloads.plist
+Safari cookies /Users/<User>/Library/Cookies/Cookies.binarycookies
+Chromium-based browser locations /Users/<User>/Library/Application Support/<Browser>/
+
+
+System logs /private/var/log/
+Traditional system log /private/var/log/system.log
+System configuration /Library/Preferences/SystemConfiguration/
+Mounted volumes /Volumes/
+Finder preferences /Users/<User>/Library/Preferences/com.apple.finder.plist
+
+
+Unified logging system /private/var/db/diagnostics/
+Traditional logs /private/var/log/
+system.log
+install.log
+
+
+
+Network configuration /Library/Preferences/SystemConfiguration/ com.apple.airport.preferences.plist
+NetworkInterfaces.plist preferences.plist
+Wi-Fi network history /Library/Preferences/SystemConfiguration/com.apple.airport.preferences.plist
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+diskutil info -plist disk1s1
+
+system_profiler -listDataTypes
+system_profiler SPPowerDataType
+system_profiler SPAirPortDataType "Card Type"
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------
