@@ -87,6 +87,11 @@ block log proto { tcp udp } to any port 69
 #uucp --port 540-- pf firewall rule
 block log proto tcp to any port 540
 
+block in  log from 17.0.0.0/8 to any
+block out log from any to 17.0.0.0/8
+
+block in  log from 17.0.0.0/8
+block out log to 17.0.0.0/8
 
 
 
