@@ -12,6 +12,10 @@ https://github.com/usnistgov/macos_security/blob/main/src/mscp/data/includes/ena
 
 -----------------------------------------------------------------------------------------------------------------------------
 
+scrub in on en0 all fragment reassemble
+
+scrub in all fragment reassemble
+
 
 #default deny all in, allow all out and keep state
 block in all
@@ -164,6 +168,7 @@ sudo ifconfig pflog0 down
 
 sudo tcpdump -n -e -ttt -i pflog0
 
+sudo tcpdump -e -n -i pflog0
 
 
 
