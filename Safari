@@ -1,0 +1,18 @@
+~/Library/Safari/
+
+
+------------------------------------------------------------------------------------------------------------------------------
+
+History.db – complete browsing history (SQLite) 
+
+LastSession.plist – previously open tabs
+
+Downloads.plist – downloaded file metadata 
+
+WebpageIcons.db – icons for visited pages 
+
+TopSites.plist – frequently visited sites 
+
+Per-site preferences – tracking
+
+------------------------------------------------------------------------------------------------------------------------------
