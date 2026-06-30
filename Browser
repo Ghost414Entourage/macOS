@@ -35,3 +35,5 @@ SELECT * FROM history_items;
 ~/Library/Application Support/Google/Chrome/ 
 
 ~/Library/Application Support/BraveSoftware/Brave-Browser/
+
+sudo sfltool dumpbtm
