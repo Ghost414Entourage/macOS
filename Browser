@@ -16,6 +16,20 @@ TopSites.plist – frequently visited sites
 
 Per-site preferences – tracking
 
+
+------------------------------------------------------------------------------------------------------------------------------
+
+sqlite3 History.db
+
+.help
+
+.tables
+
+SELECT * FROM history_items;
+
+.exit
+
+
 ------------------------------------------------------------------------------------------------------------------------------
 
 ~/Library/Application Support/Google/Chrome/ 
