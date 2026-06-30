@@ -115,7 +115,9 @@ pfctl -s all
 
 pfctl -vvsr
 
+pfctl -s info
 
+pfctl -sr
 
 -----------------------------------------------------------------------------------------------------------------------------
 
@@ -170,5 +172,5 @@ sudo tcpdump -n -e -ttt -i pflog0
 
 sudo tcpdump -e -n -i pflog0
 
-
+/var/log/pf.log
 
