@@ -1,0 +1,45 @@
+/Library/Preferences/SystemConfiguration/
+
+
+------------------------------------------------------------------------------------------------------------------------------
+
+
+preferences.plist – all network services
+NetworkInterfaces.plist – interface mapping 
+com.apple.airport.preferences.plist – Wi-Fi details
+com.apple.network.eapolclient.plist – authentication configs
+
+------------------------------------------------------------------------------------------------------------------------------
+
+scutil --dns
+
+scutil --proxy
+
+------------------------------------------------------------------------------------------------------------------------------
+
+plutil -p <file>
+
+plutil -convert xml1 <file>
+
+plutil -convert binary1 <file>
+
+------------------------------------------------------------------------------------------------------------------------------
+
+
+/usr/libexec/PlistBuddy -c "Set :NetworkServices:5B3A5772-21BA-410C-83C3-AE4860BA8F25:Proxies:FTPPassive 0" preferences.plist
+/usr/libexec/PlistBuddy -c "Set :NetworkServices:B4A43A18-A98E-4BF9-BB24-A30968FBD7BC:Proxies:FTPPassive 0" preferences.plist
+/usr/libexec/PlistBuddy -c "Set :NetworkServices:CDF5C487-B2DD-44F6-BB49-F3D547692486:Proxies:FTPPassive 0" preferences.plist
+/usr/libexec/PlistBuddy -c "Set :NetworkServices:F03C5DC8-B32D-49DE-970C-670F413A5E19:Proxies:FTPPassive 0" preferences.plist
+/usr/libexec/PlistBuddy -c "Set :NetworkServices:FC3BD2D9-CF31-4BF5-B91D-BC096916F8A1:Proxies:FTPPassive 0" preferences.plist
+
+
+grep -A 1 "FTPPassive" preferences.plist
+
+plutil -convert binary1 preferences.plist
+
+killall configd
+
+
+------------------------------------------------------------------------------------------------------------------------------
+
+
