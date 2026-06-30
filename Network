@@ -45,3 +45,7 @@ killall configd
 ------------------------------------------------------------------------------------------------------------------------------
 
 log show --predicate 'subsystem == "com.apple.network"' --last 24h
+
+sudo killall -INFO mDNSResponder
+
+
