@@ -1,0 +1,82 @@
+macOS has two major “Library”
+
+/Library/ – system-wide
+~/Library/ – user-specific
+
+
+ls /var/db/diagnostics/
+
+
+log show log show --info --debug --last 1h 
+log show --predicate 'process == "ssh"' --last 24h
+
+
+Persistence and startup items live here: 
+
+/Library/LaunchDaemons/ 
+/Library/LaunchAgents/
+~/Library/LaunchAgents/
+
+
+
+
+Application and system configuration lives here too:
+
+/Library/Preferences/ 
+/Library/Logs/ 
+/Library/Extensions/ (kernel extensions, now heavily restricted) 
+/Library/Application Support/
+
+
+
+The metadata database lives in: 
+
+/. Spotlight-V100/ 
+/VolumeName/.Spotlight-V100/
+
+
+
+Tools like mdls and mdfind let you query the index: 
+
+mdls /Users/user/Documents/report.pdf 
+mdfind "kMDItemFSName == 'payload.sh'"
+
+
+
+
+FSEvents is a real-time file activity tracker. It logs changes to folders and files at the directory level, including: 
+●     file creation 
+●     file deletion 
+●     renames 
+●     moves 
+●     permission changes 
+These logs live at: 
+/. fseventsd/ 
+/VolumeName/.fseventsd/
+
+
+
+stat -x <file> 
+This gives a detailed breakdown of every timestamp macOS tracks. It’s incredibly helpful when building a timeline or spotting manipulation attempts.
+
+
+
+
+Apple stores configurations, preferences, application states, and system behaviors inside .plist files located in: 
+●     /Library/Preferences/ 
+●     /Library/LaunchDaemons/ 
+●     /Library/LaunchAgents/ 
+●     ~/Library/Preferences/ 
+●     ~/Library/LaunchAgents/
+
+
+To view binary plists: 
+plutil -p <file> 
+Or convert them: 
+plutil -convert xml1 <file>
+
+
+
+
+
+
