@@ -1,0 +1,134 @@
+Recent Items / Application Usage 
+
+~/Library/Preferences/com.apple.recentitems.plist
+
+
+Shows recently opened documents, servers, apps. 
+
+~/Library/Preferences/com.apple.finder.plist
+
+
+Contains recently used login items and session behavior.
+
+~/Library/Preferences/com.apple.loginwindow.plist
+
+
+Dock & App Launch History 
+
+~/Library/Preferences/com.apple.dock.plist
+
+
+Spotlight Behavior 
+
+~/Library/Preferences/com.apple.spotlight.plist
+
+
+System Network Configurations 
+
+/Library/Preferences/SystemConfiguration/preferences.plist
+
+
+Network locations, WiFi settings, interface info. 
+
+/Library/Preferences/SystemConfiguration/NetworkInterfaces.plist
+
+
+VPN, Proxies, or Network Extensions 
+
+/Library/Preferences/SystemConfiguration/com.apple.networkextension.plist
+
+
+SSH and Remote Login (Indirect Artifacts)
+
+/System/Library/LaunchDaemons/ssh.plist
+
+
+Safari 
+
+~/Library/Safari/History.db (not a PLIST, but critical)
+
+~/Library/Preferences/com.apple.Safari.plist
+
+~/Library/Safari/Downloads.plist
+
+
+
+Chrome Chrome primarily uses JSON/SQLite, but macOS still creates: 
+
+~/Library/Preferences/com.google.Chrome.plist
+
+
+Mail 
+
+~/Library/Preferences/com.apple.mail.plist
+
+
+System Updates 
+
+/Library/Preferences/com.apple.SoftwareUpdate.plist
+
+
+Timezone & Locale 
+
+/Library/Preferences/.GlobalPreferences.plist
+
+
+Startup Services
+
+/Library/LaunchAgents/*.plist 
+
+/Library/LaunchDaemons/*.plist 
+
+~/Library/LaunchAgents/*.plist
+
+
+Gatekeeper and Quarantine Events
+
+~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV2
+
+
+XProtect
+
+/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/XProtect.meta.plist
+
+
+TCC (Transparency, Consent & Control)
+
+/Library/Application Support/com.apple.TCC/TCC.db
+
+
+iCloud Accounts 
+
+~/Library/Preferences/MobileMeAccounts.plist
+
+
+iCloud Document Sync 
+
+~/Library/Preferences/com.apple.cloudd.plist
+
+
+CloudKit Activity 
+
+~/Library/Preferences/com.apple.CloudKit.plist
+
+
+
+
+
+Binary PLISTs require proper parsing: 
+
+plutil -p <file.plist> 
+
+defaults read <plist>
+
+
+
+
+
+Cross-platform parsing tools:
+●     plistutil 
+●     mac_apt 
+●     OSXCollector 
+●     Plaso (log2timeline)
+
+
