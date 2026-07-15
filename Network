@@ -45,6 +45,11 @@ plutil -convert binary1 preferences.plist
 killall configd
 
 
+PLIST_FILE="preferences.plist"; for uuid in $(/usr/libexec/PlistBuddy -c "Print :NetworkServices" "$PLIST_FILE" 2>/dev/null | grep -E -o '[0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12}'); do if /usr/libexec/PlistBuddy -c "Print :NetworkServices:$uuid:Proxies:FTPPassive" "$PLIST_FILE" &>/dev/null; then /usr/libexec/PlistBuddy -c "Set :NetworkServices:$uuid:Proxies:FTPPassive 0" "$PLIST_FILE" && echo "Updated $uuid -> FTPPassive: 0"; fi; done
+
+
+
+
 ------------------------------------------------------------------------------------------------------------------------------
 
 log show --predicate 'subsystem == "com.apple.network"' --last 24h
