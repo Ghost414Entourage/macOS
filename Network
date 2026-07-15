@@ -2,6 +2,8 @@
 
 launchctl kickstart -k system/com.apple.locate
 
+sudo /usr/libexec/PlistBuddy -c "print"
+
 ------------------------------------------------------------------------------------------------------------------------------
 
 
