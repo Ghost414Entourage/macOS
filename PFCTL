@@ -265,6 +265,64 @@ block in log proto udp to any port 4500
 block out log proto tcp from any port 4500
 block out log proto udp from any port 4500
 
+block in log proto tcp to any port 5000
+block in log proto udp to any port 5000
+block out log proto tcp from any port 5000
+block out log proto udp from any port 5000
+
+block in log proto tcp to any port 5100
+block in log proto udp to any port 5100
+block out log proto tcp from any port 5100
+block out log proto udp from any port 5100
+
+
+block in log proto tcp to any port 5223
+block in log proto udp to any port 5223
+block out log proto tcp from any port 5223
+block out log proto udp from any port 5223
+
+block in log proto tcp to any port 5228
+block in log proto udp to any port 5228
+block out log proto tcp from any port 5228
+block out log proto udp from any port 5228
+
+
+block in log proto tcp to any port 5297
+block in log proto udp to any port 5297
+block out log proto tcp from any port 5297
+block out log proto udp from any port 5297
+
+
+block in log proto tcp to any port 5350
+block in log proto udp to any port 5350
+block out log proto tcp from any port 5350
+block out log proto udp from any port 5350
+
+
+
+block in log proto tcp to any port 5351
+block in log proto udp to any port 5351
+block out log proto tcp from any port 5351
+block out log proto udp from any port 5351
+
+
+block in log proto tcp to any port 5353
+block in log proto udp to any port 5353
+block out log proto tcp from any port 5353
+block out log proto udp from any port 5353
+
+
+block in log proto tcp to any port 5900
+block in log proto udp to any port 5900
+block out log proto tcp from any port 5900
+block out log proto udp from any port 5900
+
+
+block in log proto tcp to any port 5901:5902
+block in log proto udp to any port 5901:5902
+block out log proto tcp from any port 5901:5902
+block out log proto udp from any port 5901:5902
+
 
 
 
