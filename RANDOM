@@ -153,7 +153,7 @@ networkQuality -sv
 
 nettop
 
-networksetup -setairportnetwork en0 "Ultra" "WisconsinBadgersMedved414"
+networksetup -setairportnetwork en0 "Ultra" "password"
 
 networksetup -removepreferredwirelessnetwork en0 Ultra
 
@@ -308,9 +308,9 @@ scutil --prefs list | grep -i netbios
 sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "MacBookAir"
 
 
-sudo scutil --set ComputerName "caspers-MacBook-Air"
-sudo scutil --set LocalHostName "caspers-MacBook-Air"
-sudo scutil --set HostName "caspers-MacBook-Air"
+sudo scutil --set ComputerName "computer"
+sudo scutil --set LocalHostName "computer"
+sudo scutil --set HostName "computer"
 
 sudo scutil --get ComputerName
 sudo scutil --get LocalHostName
