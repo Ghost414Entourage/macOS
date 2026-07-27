@@ -323,6 +323,13 @@ block in log proto udp to any port 5901:5902
 block out log proto tcp from any port 5901:5902
 block out log proto udp from any port 5901:5902
 
+block in log proto tcp to any port 6000
+block in log proto udp to any port 6000
+block out log proto tcp from any port 6000
+block out log proto udp from any port 6000
 
-
+block in log proto tcp to any port 7000
+block in log proto udp to any port 7000
+block out log proto tcp from any port 7000
+block out log proto udp from any port 7000
 
