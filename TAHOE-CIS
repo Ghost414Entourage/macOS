@@ -1,0 +1,115 @@
+sudo touch /Library/Preferences/SystemConfiguration/com.apple.nat.plist
+
+sudo plutil -create xml1 /Library/Preferences/SystemConfiguration/com.apple.nat.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :NAT dict" /Library/Preferences/SystemConfiguration/com.apple.nat.plist
+
+sudo /usr/libexec/PlistBuddy -c "Add :NAT:Enabled integer 0" /Library/Preferences/SystemConfiguration/com.apple.nat.plist
+
+sudo /usr/libexec/PlistBuddy -c "Set :NAT:Enabled 0" /Library/Preferences/SystemConfiguration/com.apple.nat.plist
+
+sudo /usr/libexec/PlistBuddy -c "Print :NAT" /Library/Preferences/SystemConfiguration/com.apple.nat.plist
+
+sudo /usr/libexec/PlistBuddy -c "Print" /Library/Preferences/SystemConfiguration/com.apple.nat.plist
+
+sudo plutil -p /Library/Preferences/SystemConfiguration/com.apple.nat.plist
+
+sudo defaults read /Library/Preferences/SystemConfiguration/com.apple.nat
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+/usr/bin/sudo -u computer /usr/bin/defaults -currentHost read com.apple.Bluetooth PrefKeyServicesEnabled
+
+/usr/bin/sudo -u computer /usr/bin/defaults -currentHost read com.apple.Bluetooth PrefKeyServicesEnabled
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+/usr/bin/sudo /usr/bin/AssetCacheManagerUtil deactivate
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+ /usr/bin/sudo /usr/sbin/systemsetup -setremoteappleevents off 
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+/usr/bin/sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -deactivate -stop
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+/usr/bin/sudo /usr/sbin/systemsetup -setremotelogin off
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+/usr/bin/sudo /usr/sbin/cupsctl --no-share-printers
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+/usr/bin/sudo /bin/launchctl disable system/com.apple.smbd
+
+/usr/bin/sudo /bin/launchctl bootout system/com.apple.smbd
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+/usr/bin/sudo /bin/launchctl disable system/com.apple.screensharing
+
+/usr/bin/sudo /bin/launchctl bootout system/com.apple.screensharing
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+/usr/bin/sudo /usr/bin/defaults write /Library/Preferences/com.apple.mDNSResponder.plist NoMulticastAdvertisements -bool true
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+/usr/bin/sudo /bin/launchctl disable system/com.apple.nfsd
+
+/usr/bin/sudo /bin/rm -rf /etc/exports 
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+/usr/bin/sudo /usr/sbin/nvram boot-args=""
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+IFS=$'\n'
+  for sysPermissions in $( /usr/bin/sudo /usr/bin/find /System/Volumes/Data/System -type d -perm -2 2>/dev/null | /usr/bin/grep -vE "downloadDir|locks" ); do
+    /bin/chmod -R o-w "$sysPermissions"
+  done
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+/usr/bin/sudo IFS=$'\n'
+for libPermissions in $(/usr/bin/find /Library -type d -perm -002 ! -perm -1000 ! -xattrname com.apple.rootless 2>/dev/null); do
+  /bin/chmod -R o-w "$libPermissions"
+done
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+/usr/bin/sudo /bin/chmod -R og-rwx /Users/computer
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+/usr/bin/sudo /usr/bin/defaults write /Library/Preferences/com.apple.loginwindow GuestEnabled -bool false
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+/usr/bin/sudo /usr/sbin/sysadminctl -smbGuestAccess off
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+/usr/bin/sudo /usr/bin/defaults delete /Library/Preferences/com.apple.loginwindow autoLoginUser
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+/usr/bin/sudo -u computer /usr/bin/defaults read com.apple.amp.mediasharingd home-sharing-enabled
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+/usr/bin/sudo /usr/bin/AssetCacheManagerUtil deactivate
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -deactivate 
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+
