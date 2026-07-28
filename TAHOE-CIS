@@ -105,4 +105,8 @@ sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resourc
 
 -----------------------------------------------------------------------------------------------------------------------------
 
+/System/Library/PrivateFrameworks/VoiceShortcuts.framework/Versions/A/Support/siriactionsd
 
+/System/Applications/Utilities/Terminal.app
+
+-----------------------------------------------------------------------------------------------------------------------------
