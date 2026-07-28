@@ -18,9 +18,9 @@ sudo defaults read /Library/Preferences/SystemConfiguration/com.apple.nat
 
 -----------------------------------------------------------------------------------------------------------------------------
 
-/usr/bin/sudo -u computer /usr/bin/defaults -currentHost read com.apple.Bluetooth PrefKeyServicesEnabled
+/usr/bin/sudo -u computer /usr/bin/defaults -currentHost write com.apple.Bluetooth PrefKeyServicesEnabled -bool false
 
-/usr/bin/sudo -u computer /usr/bin/defaults -currentHost read com.apple.Bluetooth PrefKeyServicesEnabled
+/usr/bin/sudo -u computer /usr/bin/defaults -currentHost write com.apple.Bluetooth PrefKeyServicesEnabled -bool false
 
 -----------------------------------------------------------------------------------------------------------------------------
 
