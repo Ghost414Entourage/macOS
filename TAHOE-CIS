@@ -117,5 +117,7 @@ defaults write com.apple.finder FXPreferredViewStyle -string "Clmv"
 
 defaults read com.apple.finder 
 
+ls ~/Library/Preferences/ | grep '^com.apple.'
+
 -----------------------------------------------------------------------------------------------------------------------------
 
