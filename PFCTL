@@ -339,3 +339,16 @@ block in log proto udp to any port 8000:8999
 block out log proto tcp from any port 8000:8999
 block out log proto udp from any port 8000:8999
 
+
+
+block in log proto tcp to any port 16384:16387
+block in log proto udp to any port 16384:16387
+block out log proto tcp from any port 16384:16387
+block out log proto udp from any port 16384:16387
+
+
+block in log proto tcp to any port 16393:16402
+block in log proto udp to any port 16393:16402
+block out log proto tcp from any port 16393:16402
+block out log proto udp from any port 16393:16402
+
