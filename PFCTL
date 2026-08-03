@@ -352,3 +352,14 @@ block in log proto udp to any port 16393:16402
 block out log proto tcp from any port 16393:16402
 block out log proto udp from any port 16393:16402
 
+block in log proto tcp to any port 16403:16472
+block in log proto udp to any port 16403:16472
+block out log proto tcp from any port 16403:16472
+block out log proto udp from any port 16403:16472
+
+block in log proto tcp to any port 42000:42999
+block in log proto udp to any port 42000:42999
+block out log proto tcp from any port 42000:42999
+block out log proto udp from any port 42000:42999
+
+
