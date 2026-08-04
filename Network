@@ -56,4 +56,7 @@ log show --predicate 'subsystem == "com.apple.network"' --last 24h
 
 sudo killall -INFO mDNSResponder
 
+sudo fs_usage -w | grep -E "System Settings|plist"
+
+/usr/bin/fs_usage
 
