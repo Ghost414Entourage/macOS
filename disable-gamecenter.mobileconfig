@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.ptd">
+<plist version="1.0">
+<dict>
+    <!-- Profile Metadata -->
+    <key>PayloadDisplayName</key>
+    <string>Disable Game Center</string>
+    <key>PayloadDescription</key>
+    <string>Disables Game Center functionality across macOS/iOS devices.</string>
+    <key>PayloadIdentifier</key>
+    <string>com.company.profile.disablegamecenter</string>
+    <key>PayloadOrganization</key>
+    <string>IT Management</string>
+    <key>PayloadType</key>
+    <string>Configuration</string>
+    <key>PayloadUUID</key>
+    <string>A5B12C43-89D1-4E12-88F9-1A2B3C4D5E6F</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+    <key>PayloadScope</key>
+    <string>System</string>
+
+    <!-- Configuration Payloads -->
+    <key>PayloadContent</key>
+    <array>
+        <dict>
+            <key>PayloadType</key>
+            <string>com.apple.applicationaccess</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>PayloadIdentifier</key>
+            <string>com.company.profile.disablegamecenter.restrictions</string>
+            <key>PayloadUUID</key>
+            <string>B6C23D54-90E2-5F23-99A0-2B3C4D5E6F7A</string>
+            <key>PayloadEnabled</key>
+            <true/>
+
+            <!-- Restrictions -->
+            <key>allowGameCenter</key>
+            <false/>
+        </dict>
+    </array>
+</dict>
+</plist>
