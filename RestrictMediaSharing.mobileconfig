@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>PayloadContent</key>
+    <array>
+        <dict>
+            <key>PayloadDisplayName</key>
+            <string>Restrictions - Media Sharing</string>
+            <key>PayloadIdentifier</key>
+            <string>com.company.applicationaccess.mediasharing</string>
+            <key>PayloadType</key>
+            <string>com.apple.applicationaccess</string>
+            <key>PayloadUUID</key>
+            <string>5F7E80A1-3C89-4F5A-B47E-83B109E2B5A0</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <!-- Remediation Keys -->
+            <key>allowMediaSharing</key>
+            <false/>
+            <key>allowMediaSharingModification</key>
+            <false/>
+        </dict>
+    </array>
+    <key>PayloadDisplayName</key>
+    <string>Remediation - Restrict Media Sharing</string>
+    <key>PayloadIdentifier</key>
+    <string>com.company.profile.mediasharingrestriction</string>
+    <key>PayloadOrganization</key>
+    <string>Organization Name</string>
+    <key>PayloadType</key>
+    <string>Configuration</string>
+    <key>PayloadUUID</key>
+    <string>2B1B4A65-8E92-4C78-9F3B-11E7D0A23C91</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+</dict>
+</plist>
