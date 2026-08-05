@@ -15,9 +15,7 @@
             <string>9F0B12C4-6F23-5E89-C71A-14E422F5F6D3</string>
             <key>PayloadVersion</key>
             <integer>1</integer>
-            <!-- Remediation Keys -->
-            <key>allowScreenShot</key>
-            <true/>
+            <!-- Remediation Key -->
             <key>allowRemoteScreenObservation</key>
             <false/>
         </dict>
