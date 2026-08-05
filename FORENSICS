@@ -1,0 +1,51 @@
+~/Library/Containers/
+
+~/Library/Group Containers/
+
+/private/var/db/diagnostics/ 
+
+/private/var/db/uuidtext/ 
+
+/private/var/db/DiagnosticMessages/
+
+The log command can query or collect logs on a running Mac. Common operations include: 
+
+log show 
+
+log stream 
+
+log collect
+
+The mdls command displays metadata for a particular live file
+
+The mdfind command searches the current Spotlight index
+
+~/Library/Safari/History.db
+
+~/Library/Application Support/Google/Chrome/
+
+~/Library/Application Support/Firefox/Profiles/
+
+ps -axo user,pid,ppid,start,time,command
+
+lsof -nP 
+
+netstat -anv 
+
+launchctl print system 
+
+systemextensionsctl list
+
+launchctl print gui/<uid>
+
+
+/System/Library/LaunchDaemons Apple system daemons
+
+/System/Library/LaunchAgents Apple system-provided agents
+
+/Library/LaunchDaemons Third-party system daemons
+
+/Library/LaunchAgents Third-party agents available to users
+
+~/Library/LaunchAgents Per-user launch agents
+
