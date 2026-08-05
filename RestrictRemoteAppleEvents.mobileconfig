@@ -26,6 +26,8 @@
     <string>com.company.profile.remoteappleeventsrestriction</string>
     <key>PayloadOrganization</key>
     <string>Organization Name</string>
+    <key>PayloadScope</key>
+    <string>System</string>
     <key>PayloadType</key>
     <string>Configuration</string>
     <key>PayloadUUID</key>
