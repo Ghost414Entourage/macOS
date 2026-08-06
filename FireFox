@@ -1,1 +1,7 @@
+sudo mkdir -p /Applications/Firefox.app/Contents/Resources/distribution
+
+sudo nano /Applications/Firefox.app/Contents/Resources/distribution/policies.json
+
+
+
 
