@@ -9,4 +9,4 @@ https://developer.apple.com/documentation/devicemanagement/restrictions
 https://csrc.nist.gov
 
 
-pluginkit -e ignore -i com.apple.share.AirDrop.send
+
