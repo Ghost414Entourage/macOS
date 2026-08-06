@@ -206,6 +206,51 @@ block in log proto udp to any port 192
 block out log proto tcp from any port 192
 block out log proto udp from any port 192
 
+block in log proto tcp to any port 389
+block in log proto udp to any port 389
+block out log proto tcp from any port 389
+block out log proto udp from any port 389
+
+block in log proto tcp to any port 445
+block in log proto udp to any port 445
+block out log proto tcp from any port 445
+block out log proto udp from any port 445
+
+block in log proto tcp to any port 465
+block in log proto udp to any port 465
+block out log proto tcp from any port 465
+block out log proto udp from any port 465
+
+block in log proto tcp to any port 500
+block in log proto udp to any port 500
+block out log proto tcp from any port 500
+block out log proto udp from any port 500
+
+block in log proto tcp to any port 515
+block in log proto udp to any port 515
+block out log proto tcp from any port 515
+block out log proto udp from any port 515
+
+block in log proto tcp to any port 548
+block in log proto udp to any port 548
+block out log proto tcp from any port 548
+block out log proto udp from any port 548
+
+block in log proto tcp to any port 554
+block in log proto udp to any port 554
+block out log proto tcp from any port 554
+block out log proto udp from any port 554
+
+block in log proto tcp to any port 587
+block in log proto udp to any port 587
+block out log proto tcp from any port 587
+block out log proto udp from any port 587
+
+
+
+
+
+
 
 block in log proto tcp to any port 1900
 block in log proto udp to any port 1900
@@ -361,5 +406,12 @@ block in log proto tcp to any port 42000:42999
 block in log proto udp to any port 42000:42999
 block out log proto tcp from any port 42000:42999
 block out log proto udp from any port 42000:42999
+
+block in log proto tcp to any port 62078
+block in log proto udp to any port 62078
+block out log proto tcp from any port 62078
+block out log proto udp from any port 62078
+
+
 
 
