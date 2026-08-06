@@ -4,6 +4,8 @@ launchctl kickstart -k system/com.apple.locate
 
 sudo /usr/libexec/PlistBuddy -c "print"
 
+pluginkit -e ignore -i com.apple.share.AirDrop.send
+
 ------------------------------------------------------------------------------------------------------------------------------
 
 
