@@ -2,6 +2,6 @@ sudo mkdir -p /Applications/Firefox.app/Contents/Resources/distribution
 
 sudo nano /Applications/Firefox.app/Contents/Resources/distribution/policies.json
 
-
+echo '{"policies": {"NewTabPageLocation": "about:blank"}}' | sudo tee /Applications/Firefox.app/Contents/Resources/distribution/policies.json
 
 
