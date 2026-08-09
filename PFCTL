@@ -141,8 +141,8 @@ block in log proto udp to any port 54:66
 block in log proto tcp to any port 69:442
 block in log proto udp to any port 69:442
 
-block in log proto tcp to any port 444:65535
-block in log proto udp to any port 444:65535
+block in log proto tcp to any port 444:49152
+block in log proto udp to any port 444:49152
 
 block out log proto tcp from any port 1:52
 block out log proto udp from any port 1:52
@@ -153,13 +153,14 @@ block out log proto udp from any port 54:66
 block out log proto tcp from any port 69:442
 block out log proto udp from any port 69:442
 
-block out log proto tcp from any port 444:65535
-block out log proto udp from any port 444:65535
+block out log proto tcp from any port 444:49152
+block out log proto udp from any port 444:49152
 
 block in log proto igmp
 
 block out log proto igmp
 
+block in log proto icmp
 
 -----------------------------------------------------------------------------------------------------------------------------
 
