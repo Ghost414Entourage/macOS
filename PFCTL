@@ -26,12 +26,14 @@ scrub in all fragment reassemble
 block in all
 pass out all keep state
 
-#pass in all packets from localhost
-pass in from 127.0.0.1
+block in in from 127.0.0.1
 
 ## Allow DHCP
 pass in inet proto udp from port 67 to port 68
 pass in inet6 proto udp from port 547 to port 546
+
+
+block in in proto tcp to any port 22
 
 #apple file service --port 548-- pf firewall rule
 block in log proto tcp to any port { 548 }
@@ -81,6 +83,8 @@ block in log proto tcp to any port 3031
 #screen_sharing --port 5900-- pf firewall rule
 block in log proto tcp to any port 5900
 
+block in on lo0 proto tcp from any to any port 5900
+
 #smb --ports 139 445 137 138-- pf firewall rule
 block in log proto tcp to any port { 139 445 }
 block in log proto udp to any port { 137 138 }
@@ -96,6 +100,7 @@ block log proto { tcp udp } to any port 69
 
 #uucp --port 540-- pf firewall rule
 block log proto tcp to any port 540
+
 
 block in  log from 17.0.0.0/8 to any
 block out log from any to 17.0.0.0/8
