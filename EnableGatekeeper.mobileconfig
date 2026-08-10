@@ -2,7 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <!-- Top-Level Profile Metadata -->
     <key>PayloadIdentifier</key>
     <string>com.custom.enablegatekeeper</string>
     <key>PayloadUUID</key>
@@ -12,21 +11,16 @@
     <key>PayloadVersion</key>
     <integer>1</integer>
     <key>PayloadDisplayName</key>
-    <string>Enable Gatekeeper and App Store/Identified Developers</string>
+    <string>Enable Gatekeeper</string>
     <key>PayloadDescription</key>
-    <string>Enforces Gatekeeper assessment and allows software from the App Store and identified developers.</string>
+    <string>Enforces Gatekeeper assessment and allows App Store and identified developers.</string>
     <key>PayloadOrganization</key>
     <string>Custom IT</string>
-    
-    <!-- Profile Scope -->
     <key>PayloadScope</key>
     <string>System</string>
-    
-    <!-- Payload Array -->
     <key>PayloadContent</key>
     <array>
         <dict>
-            <!-- System Policy Control Payload Domain -->
             <key>PayloadType</key>
             <string>com.apple.systempolicy.control</string>
             <key>PayloadIdentifier</key>
@@ -37,8 +31,6 @@
             <integer>1</integer>
             <key>PayloadDisplayName</key>
             <string>System Policy Control Settings</string>
-            
-            <!-- Target Key Settings -->
             <key>AllowIdentifiedDevelopers</key>
             <true/>
             <key>EnableAssessment</key>
@@ -46,3 +38,4 @@
         </dict>
     </array>
 </dict>
+</plist>
