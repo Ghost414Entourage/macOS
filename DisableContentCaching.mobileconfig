@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- Top-Level Profile Metadata -->
+    <key>PayloadIdentifier</key>
+    <string>com.custom.disablecontentcaching</string>
+    <key>PayloadUUID</key>
+    <string>D1E2F3A4-B5C6-7890-1234-567890ABCDEF</string>
+    <key>PayloadType</key>
+    <string>Configuration</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+    <key>PayloadDisplayName</key>
+    <string>Disable Content Caching</string>
+    <key>PayloadDescription</key>
+    <string>Disables Content Caching service on macOS devices.</string>
+    <key>PayloadOrganization</key>
+    <string>Custom IT</string>
+    
+    <!-- Profile Scope -->
+    <key>PayloadScope</key>
+    <string>System</string>
+    
+    <!-- Payload Array -->
+    <key>PayloadContent</key>
+    <array>
+        <dict>
+            <!-- Application Access Payload Domain -->
+            <key>PayloadType</key>
+            <string>com.apple.applicationaccess</string>
+            <key>PayloadIdentifier</key>
+            <string>com.custom.disablecontentcaching.restrictions</string>
+            <key>PayloadUUID</key>
+            <string>23456789-ABCD-EF01-2345-6789ABCDEF01</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>PayloadDisplayName</key>
+            <string>Restrictions Payload</string>
+            
+            <!-- Target Key Setting -->
+            <key>allowContentCaching</key>
+            <false/>
+        </dict>
+    </array>
+</dict>
+</plist>
