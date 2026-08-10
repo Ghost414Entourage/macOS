@@ -50,8 +50,6 @@
 			<false/>
 			<key>allowCloudMail</key>
 			<false/>
-			<key>allowCloudNotes</key>
-			<false/>
 			<key>allowCloudPhotoLibrary</key>
 			<false/>
 			<key>allowCloudPrivateRelay</key>
