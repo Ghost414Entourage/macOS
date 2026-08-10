@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- Top-Level Profile Metadata -->
+    <key>PayloadIdentifier</key>
+    <string>com.custom.siridatasharingoptout</string>
+    <key>PayloadUUID</key>
+    <string>E5F6A7B8-9012-3456-7890-ABCDEF123456</string>
+    <key>PayloadType</key>
+    <string>Configuration</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+    <key>PayloadDisplayName</key>
+    <string>Disable Siri Data Sharing</string>
+    <key>PayloadDescription</key>
+    <string>Configures Siri Data Sharing Opt-In Status to opted out (Value 2).</string>
+    <key>PayloadOrganization</key>
+    <string>Custom IT</string>
+    
+    <!-- Profile Scope -->
+    <key>PayloadScope</key>
+    <string>System</string>
+    
+    <!-- Payload Array -->
+    <key>PayloadContent</key>
+    <array>
+        <dict>
+            <!-- Assistant Support Payload Domain -->
+            <key>PayloadType</key>
+            <string>com.apple.assistant.support</string>
+            <key>PayloadIdentifier</key>
+            <string>com.custom.siridatasharingoptout.assistant</string>
+            <key>PayloadUUID</key>
+            <string>6789ABCD-EF01-2345-6789-ABCDEF012345</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>PayloadDisplayName</key>
+            <string>Siri Data Sharing Settings</string>
+            
+            <!-- Target Key Setting -->
+            <key>Siri Data Sharing Opt-In Status</key>
+            <integer>2</integer>
+        </dict>
+    </array>
+</dict>
+</plist>
