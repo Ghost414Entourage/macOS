@@ -31,10 +31,12 @@
             <integer>1</integer>
             <key>PayloadDisplayName</key>
             <string>System Policy Control Settings</string>
-            <key>AllowIdentifiedDevelopers</key>
-            <true/>
+            
             <key>EnableAssessment</key>
-            <true/>
+            <string>Enable</string>
+            
+            <key>AllowIdentifiedDevelopers</key>
+            <string>Enable</string>
         </dict>
     </array>
 </dict>
