@@ -26,17 +26,17 @@
     <key>PayloadContent</key>
     <array>
         <dict>
-            <!-- MCX Payload Domain -->
+            <!-- Application Access Payload Domain -->
             <key>PayloadType</key>
-            <string>com.apple.MCX</string>
+            <string>com.apple.applicationaccess</string>
             <key>PayloadIdentifier</key>
-            <string>com.custom.forceinternetsharingoff.mcx</string>
+            <string>com.custom.forceinternetsharingoff.restrictions</string>
             <key>PayloadUUID</key>
             <string>89ABCDEF-0123-4567-89AB-CDEF01234567</string>
             <key>PayloadVersion</key>
             <integer>1</integer>
             <key>PayloadDisplayName</key>
-            <string>MCX Settings Payload</string>
+            <string>Restrictions Payload</string>
             
             <!-- Target Key Setting -->
             <key>forceInternetSharingOff</key>
