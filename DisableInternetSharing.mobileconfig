@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- Top-Level Profile Metadata -->
+    <key>PayloadIdentifier</key>
+    <string>com.custom.forceinternetsharingoff</string>
+    <key>PayloadUUID</key>
+    <string>7890ABCD-EF12-3456-7890-ABCDEF123456</string>
+    <key>PayloadType</key>
+    <string>Configuration</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+    <key>PayloadDisplayName</key>
+    <string>Disable Internet Sharing</string>
+    <key>PayloadDescription</key>
+    <string>Forces Internet Sharing to be turned off and prevents users from enabling it.</string>
+    <key>PayloadOrganization</key>
+    <string>Custom IT</string>
+    
+    <!-- Profile Scope -->
+    <key>PayloadScope</key>
+    <string>System</string>
+    
+    <!-- Payload Array -->
+    <key>PayloadContent</key>
+    <array>
+        <dict>
+            <!-- MCX Payload Domain -->
+            <key>PayloadType</key>
+            <string>com.apple.MCX</string>
+            <key>PayloadIdentifier</key>
+            <string>com.custom.forceinternetsharingoff.mcx</string>
+            <key>PayloadUUID</key>
+            <string>89ABCDEF-0123-4567-89AB-CDEF01234567</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>PayloadDisplayName</key>
+            <string>MCX Settings Payload</string>
+            
+            <!-- Target Key Setting -->
+            <key>forceInternetSharingOff</key>
+            <true/>
+        </dict>
+    </array>
+</dict>
+</plist>
