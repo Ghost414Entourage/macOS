@@ -26,14 +26,14 @@ scrub in all fragment reassemble
 block in all
 pass out all keep state
 
-block in in from 127.0.0.1
+block in from 127.0.0.1
 
 ## Allow DHCP
 pass in inet proto udp from port 67 to port 68
 pass in inet6 proto udp from port 547 to port 546
 
 
-block in in proto tcp to any port 22
+block in proto tcp to any port 22
 
 #apple file service --port 548-- pf firewall rule
 block in log proto tcp to any port { 548 }
