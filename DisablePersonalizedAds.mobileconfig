@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- Top-Level Profile Metadata -->
+    <key>PayloadIdentifier</key>
+    <string>com.custom.disablepersonalizedads</string>
+    <key>PayloadUUID</key>
+    <string>1A2B3C4D-5E6F-7890-ABCD-EF1234567890</string>
+    <key>PayloadType</key>
+    <string>Configuration</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+    <key>PayloadDisplayName</key>
+    <string>Disable Apple Personalized Advertising</string>
+    <key>PayloadDescription</key>
+    <string>Disables Apple personalized advertising across supported devices.</string>
+    <key>PayloadOrganization</key>
+    <string>Custom IT</string>
+    
+    <!-- Profile Scope -->
+    <key>PayloadScope</key>
+    <string>System</string>
+    
+    <!-- Payload Array -->
+    <key>PayloadContent</key>
+    <array>
+        <dict>
+            <!-- Application Access Payload Domain -->
+            <key>PayloadType</key>
+            <string>com.apple.applicationaccess</string>
+            <key>PayloadIdentifier</key>
+            <string>com.custom.disablepersonalizedads.restrictions</string>
+            <key>PayloadUUID</key>
+            <string>09876543-FEDC-BA98-7654-3210FEDCBA98</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>PayloadDisplayName</key>
+            <string>Restrictions Payload</string>
+            
+            <!-- Target Key Setting -->
+            <key>allowApplePersonalizedAdvertising</key>
+            <false/>
+        </dict>
+    </array>
+</dict>
+</plist>
