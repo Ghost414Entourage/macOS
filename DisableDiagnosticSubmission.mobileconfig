@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- Top-Level Profile Metadata -->
+    <key>PayloadIdentifier</key>
+    <string>com.custom.disablediagnosticsubmission</string>
+    <key>PayloadUUID</key>
+    <string>8F9E0D1A-2B3C-4D5E-6F7A-8B9C0D1E2F3A</string>
+    <key>PayloadType</key>
+    <string>Configuration</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+    <key>PayloadDisplayName</key>
+    <string>Disable Diagnostic Submission</string>
+    <key>PayloadDescription</key>
+    <string>Disables submitting diagnostic and usage data to Apple.</string>
+    <key>PayloadOrganization</key>
+    <string>Custom IT</string>
+    
+    <!-- Profile Scope -->
+    <key>PayloadScope</key>
+    <string>System</string>
+    
+    <!-- Payload Array -->
+    <key>PayloadContent</key>
+    <array>
+        <dict>
+            <!-- Application Access Payload Domain -->
+            <key>PayloadType</key>
+            <string>com.apple.applicationaccess</string>
+            <key>PayloadIdentifier</key>
+            <string>com.custom.disablediagnosticsubmission.restrictions</string>
+            <key>PayloadUUID</key>
+            <string>3A4B5C6D-7E8F-9A0B-1C2D-3E4F5A6B7C8D</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>PayloadDisplayName</key>
+            <string>Restrictions Payload</string>
+            
+            <!-- Target Key Setting -->
+            <key>allowDiagnosticSubmission</key>
+            <false/>
+        </dict>
+    </array>
+</dict>
+</plist>
