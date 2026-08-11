@@ -4,17 +4,17 @@
 <dict>
     <!-- Top-Level Profile Metadata -->
     <key>PayloadIdentifier</key>
-    <string>com.custom.disableappleintelligence</string>
+    <string>com.custom.disableappleintelligencereport</string>
     <key>PayloadUUID</key>
-    <string>D3E4F5A6-1234-4567-8901-ABCDEF234567</string>
+    <string>F9E8D7C6-5432-1098-7654-3210FEDCBA98</string>
     <key>PayloadType</key>
     <string>Configuration</string>
     <key>PayloadVersion</key>
     <integer>1</integer>
     <key>PayloadDisplayName</key>
-    <string>Disable Apple Intelligence</string>
+    <string>Disable Apple Intelligence Report</string>
     <key>PayloadDescription</key>
-    <string>Disables Apple Intelligence features and Writing Tools.</string>
+    <string>Disables Apple Intelligence reporting and activity export.</string>
     <key>PayloadOrganization</key>
     <string>Custom IT</string>
     
@@ -30,25 +30,17 @@
             <key>PayloadType</key>
             <string>com.apple.applicationaccess</string>
             <key>PayloadIdentifier</key>
-            <string>com.custom.disableappleintelligence.restrictions</string>
+            <string>com.custom.disableappleintelligencereport.restrictions</string>
             <key>PayloadUUID</key>
-            <string>A1B2C3D4-E5F6-7890-1234-567890ABCDEF</string>
+            <string>B2C3D4E5-F6A7-8901-2345-67890ABCDEF1</string>
             <key>PayloadVersion</key>
             <integer>1</integer>
             <key>PayloadDisplayName</key>
             <string>Restrictions</string>
             
-            <!-- Target Key Settings -->
-            <!-- Disables Apple Intelligence system-wide -->
-            <key>allowAppleIntelligence</key>
-            <false/>
-            
-            <!-- Optional: Disables Writing Tools specifically -->
-            <key>allowIntelligenceWritingTools</key>
-            <false/>
-            
-            <!-- Optional: Disables Image Playground / Genmoji -->
-            <key>allowImageGeneration</key>
+            <!-- Target Key Setting -->
+            <!-- Disables generating or exporting Apple Intelligence Reports -->
+            <key>allowAppleIntelligenceReport</key>
             <false/>
         </dict>
     </array>
