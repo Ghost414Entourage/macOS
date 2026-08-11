@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>PayloadContent</key>
+    <array>
+        <dict>
+            <!-- Enables Gatekeeper -->
+            <key>EnableAssessment</key>
+            <true/>
+            <!-- Allows App Store and Identified Developer apps -->
+            <key>AllowIdentifiedDevelopers</key>
+            <true/>
+            <!-- Allows prompts to report blocked malware to Apple (macOS 15+) -->
+            <key>EnableXProtectMalwareUpload</key>
+            <true/>
+            
+            <key>PayloadIdentifier</key>
+            <string>com.example.mysystempolicycontrolpayload</string>
+            <key>PayloadType</key>
+            <string>com.apple.systempolicy.control</string>
+            <key>PayloadUUID</key>
+            <string>8A1054C5-3A4B-4E38-B5CD-63B8B8F20123</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+        </dict>
+    </array>
+    <key>PayloadDisplayName</key>
+    <string>System Policy Control Profile</string>
+    <key>PayloadIdentifier</key>
+    <string>com.example.myprofile</string>
+    <key>PayloadType</key>
+    <string>Configuration</string>
+    <key>PayloadUUID</key>
+    <string>E730D88E-323A-4F90-951E-D0B9C899F812</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+</dict>
+</plist>
