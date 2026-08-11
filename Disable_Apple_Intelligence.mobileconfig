@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- Top-Level Profile Metadata -->
+    <key>PayloadIdentifier</key>
+    <string>com.custom.disableappleintelligence</string>
+    <key>PayloadUUID</key>
+    <string>D3E4F5A6-1234-4567-8901-ABCDEF234567</string>
+    <key>PayloadType</key>
+    <string>Configuration</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+    <key>PayloadDisplayName</key>
+    <string>Disable Apple Intelligence</string>
+    <key>PayloadDescription</key>
+    <string>Disables Apple Intelligence features and Writing Tools.</string>
+    <key>PayloadOrganization</key>
+    <string>Custom IT</string>
+    
+    <!-- Profile Scope -->
+    <key>PayloadScope</key>
+    <string>System</string>
+    
+    <!-- Payload Array -->
+    <key>PayloadContent</key>
+    <array>
+        <dict>
+            <!-- Restrictions Payload Domain -->
+            <key>PayloadType</key>
+            <string>com.apple.applicationaccess</string>
+            <key>PayloadIdentifier</key>
+            <string>com.custom.disableappleintelligence.restrictions</string>
+            <key>PayloadUUID</key>
+            <string>A1B2C3D4-E5F6-7890-1234-567890ABCDEF</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>PayloadDisplayName</key>
+            <string>Restrictions</string>
+            
+            <!-- Target Key Settings -->
+            <!-- Disables Apple Intelligence system-wide -->
+            <key>allowAppleIntelligence</key>
+            <false/>
+            
+            <!-- Optional: Disables Writing Tools specifically -->
+            <key>allowIntelligenceWritingTools</key>
+            <false/>
+            
+            <!-- Optional: Disables Image Playground / Genmoji -->
+            <key>allowImageGeneration</key>
+            <false/>
+        </dict>
+    </array>
+</dict>
+</plist>
