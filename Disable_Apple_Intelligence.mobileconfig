@@ -4,17 +4,17 @@
 <dict>
     <!-- Top-Level Profile Metadata -->
     <key>PayloadIdentifier</key>
-    <string>com.custom.disableappleintelligencereport</string>
+    <string>com.custom.intelligence.settings</string>
     <key>PayloadUUID</key>
-    <string>F9E8D7C6-5432-1098-7654-3210FEDCBA98</string>
+    <string>C9A8B7C6-D5E4-3F21-0987-654321FEDCBA</string>
     <key>PayloadType</key>
     <string>Configuration</string>
     <key>PayloadVersion</key>
     <integer>1</integer>
     <key>PayloadDisplayName</key>
-    <string>Disable Apple Intelligence Report</string>
+    <string>Disable Apple Intelligence Features</string>
     <key>PayloadDescription</key>
-    <string>Disables Apple Intelligence reporting and activity export.</string>
+    <string>Disables Apple Intelligence reports, Genmoji, Image Playground, Writing Tools, and related AI capabilities.</string>
     <key>PayloadOrganization</key>
     <string>Custom IT</string>
     
@@ -26,21 +26,44 @@
     <key>PayloadContent</key>
     <array>
         <dict>
-            <!-- Restrictions Payload Domain -->
+            <!-- Intelligence Settings Payload Domain -->
             <key>PayloadType</key>
-            <string>com.apple.applicationaccess</string>
+            <string>com.apple.intelligence.settings</string>
             <key>PayloadIdentifier</key>
-            <string>com.custom.disableappleintelligencereport.restrictions</string>
+            <string>com.custom.intelligence.settings.payload</string>
             <key>PayloadUUID</key>
-            <string>B2C3D4E5-F6A7-8901-2345-67890ABCDEF1</string>
+            <string>12345678-ABCD-EF01-2345-67890ABCDEF0</string>
             <key>PayloadVersion</key>
             <integer>1</integer>
             <key>PayloadDisplayName</key>
-            <string>Restrictions</string>
+            <string>Intelligence Settings</string>
             
-            <!-- Target Key Setting -->
-            <!-- Disables generating or exporting Apple Intelligence Reports -->
-            <key>allowAppleIntelligenceReport</key>
+            <!-- Target Key Settings -->
+            <key>AllowAppleIntelligenceReport</key>
+            <false/>
+            
+            <key>AllowGenmoji</key>
+            <false/>
+            
+            <key>AllowImagePlayground</key>
+            <false/>
+            
+            <key>AllowImageWand</key>
+            <false/>
+            
+            <key>AllowPersonalizedHandwritingResults</key>
+            <false/>
+            
+            <key>AllowVisualIntelligenceSummary</key>
+            <false/>
+            
+            <key>AllowWritingTools</key>
+            <false/>
+            
+            <key>ForceOnDeviceOnlyDictation</key>
+            <false/>
+            
+            <key>ForceOnDeviceOnlyTranslation</key>
             <false/>
         </dict>
     </array>
