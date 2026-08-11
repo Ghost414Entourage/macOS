@@ -29,6 +29,9 @@
     <string>System Policy Control Profile</string>
     <key>PayloadIdentifier</key>
     <string>com.example.myprofile</string>
+    <!-- Explicitly set scope to System/Device level -->
+    <key>PayloadScope</key>
+    <string>System</string>
     <key>PayloadType</key>
     <string>Configuration</string>
     <key>PayloadUUID</key>
