@@ -252,6 +252,20 @@ block in log proto udp to any port 587
 block out log proto tcp from any port 587
 block out log proto udp from any port 587
 
+block in log proto tcp to any port 631
+block in log proto udp to any port 631
+block out log proto tcp from any port 631
+block out log proto udp from any port 631
+
+block in log proto tcp to any port 636
+block in log proto udp to any port 636
+block out log proto tcp from any port 636
+block out log proto udp from any port 636
+
+block in log proto tcp to any port 749
+block in log proto udp to any port 749
+block out log proto tcp from any port 749
+block out log proto udp from any port 749
 
 
 
