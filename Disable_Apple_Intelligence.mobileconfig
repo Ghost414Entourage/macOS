@@ -61,7 +61,7 @@
             <false/>
             
             <key>ForceOnDeviceOnlyDictation</key>
-            <false/>
+            <true/>
             
             <key>ForceOnDeviceOnlyTranslation</key>
             <true/>
