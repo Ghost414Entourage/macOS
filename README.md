@@ -10,3 +10,4 @@ https://csrc.nist.gov
 
 https://github.com/apple/device-management/blob/release/declarative/declarations/configurations/diskmanagement.settings.yaml
 
+https://github.com/apple/device-management/blob/release/mdm/profiles/com.apple.applicationaccess.yaml
