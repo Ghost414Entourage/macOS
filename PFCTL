@@ -267,6 +267,16 @@ block in log proto udp to any port 749
 block out log proto tcp from any port 749
 block out log proto udp from any port 749
 
+block in log proto tcp to any port 993
+block in log proto udp to any port 993
+block out log proto tcp from any port 993
+block out log proto udp from any port 993
+
+block in log proto tcp to any port 995
+block in log proto udp to any port 995
+block out log proto tcp from any port 995
+block out log proto udp from any port 995
+
 
 
 
