@@ -38,9 +38,18 @@
             <key>PayloadDisplayName</key>
             <string>AirPrint Restrictions</string>
             
-            <!-- Target Key Settings -->
+            <!-- AirPrint Settings Container -->
             <key>allowAirPrintiBeaconDiscovery</key>
             <false/>
+            
+            <!-- Explicit AirPrint Payload Mapping -->
+            <key>AirPrint</key>
+            <array>
+                <dict>
+                    <key>ForceAirPrintiBeaconDiscovery</key>
+                    <false/>
+                </dict>
+            </array>
         </dict>
     </array>
 </dict>
