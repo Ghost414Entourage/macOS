@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- Top-Level Profile Metadata -->
+    <key>PayloadIdentifier</key>
+    <string>com.custom.firewall.settings</string>
+    <key>PayloadUUID</key>
+    <string>A1B2C3D4-E5F6-7890-ABCD-EF1234567890</string>
+    <key>PayloadType</key>
+    <string>Configuration</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+    <key>PayloadDisplayName</key>
+    <string>macOS Application Firewall Settings</string>
+    <key>PayloadDescription</key>
+    <string>Enables Application Firewall, stealth mode, blocks all incoming connections, and sets app rules.</string>
+    <key>PayloadOrganization</key>
+    <string>Custom IT</string>
+    
+    <!-- Profile Scope -->
+    <key>PayloadScope</key>
+    <string>System</string>
+    
+    <!-- Payload Array -->
+    <key>PayloadContent</key>
+    <array>
+        <dict>
+            <!-- Firewall Settings Payload Domain -->
+            <key>PayloadType</key>
+            <string>com.apple.security.firewall</string>
+            <key>PayloadIdentifier</key>
+            <string>com.custom.firewall.settings.payload</string>
+            <key>PayloadUUID</key>
+            <string>12345678-ABCD-EF01-2345-67890ABCDEF0</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>PayloadDisplayName</key>
+            <string>Firewall Settings</string>
+            
+            <!-- Target Key Settings -->
+            <key>EnableFirewall</key>
+            <true/>
+            
+            <key>BlockAllIncoming</key>
+            <true/>
+            
+            <key>EnableStealthMode</key>
+            <true/>
+            
+            <key>AllowSigned</key>
+            <false/>
+            
+            <key>AllowSignedApp</key>
+            <false/>
+            
+            <!-- Application Rules -->
+            <key>Applications</key>
+            <array>
+                <dict>
+                    <key>BundleID</key>
+                    <string>com.apple.remotepairingdeviced</string>
+                    <key>Allowed</key>
+                    <false/>
+                </dict>
+                <dict>
+                    <key>BundleID</key>
+                    <string>com.apple.remoted</string>
+                    <key>Allowed</key>
+                    <false/>
+                </dict>
+                <dict>
+                    <key>BundleID</key>
+                    <string>com.apple.python3</string>
+                    <key>Allowed</key>
+                    <false/>
+                </dict>
+                <dict>
+                    <key>BundleID</key>
+                    <string>com.apple.ruby</string>
+                    <key>Allowed</key>
+                    <false/>
+                </dict>
+                <dict>
+                    <key>BundleID</key>
+                    <string>org.cups.cupsd</string>
+                    <key>Allowed</key>
+                    <false/>
+                </dict>
+                <dict>
+                    <key>BundleID</key>
+                    <string>com.apple.sharingd</string>
+                    <key>Allowed</key>
+                    <false/>
+                </dict>
+                <dict>
+                    <key>BundleID</key>
+                    <string>com.apple.sshd-keygen-wrapper</string>
+                    <key>Allowed</key>
+                    <false/>
+                </dict>
+                <dict>
+                    <key>BundleID</key>
+                    <string>com.apple.smbd</string>
+                    <key>Allowed</key>
+                    <false/>
+                </dict>
+            </array>
+        </dict>
+    </array>
+</dict>
+</plist>
