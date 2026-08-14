@@ -58,3 +58,10 @@ sudo /usr/libexec/ApplicationFirewall/socketfilterfw --blockapp /Applications/Yo
   --getallowsigned \
   --getstealthmode
 
+
+
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --listapps | grep -E '^[0-9]+ :' | sed -E 's/^[0-9]+ : //' | xargs -I {} sudo /usr/libexec/ApplicationFirewall/socketfilterfw --blockapp "{}"
+
+
+
+
