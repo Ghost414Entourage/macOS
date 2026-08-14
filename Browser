@@ -62,6 +62,8 @@ sudo /usr/libexec/ApplicationFirewall/socketfilterfw --blockapp /Applications/Yo
 
 sudo /usr/libexec/ApplicationFirewall/socketfilterfw --listapps | grep -E '^[0-9]+ :' | sed -E 's/^[0-9]+ : //' | xargs -I {} sudo /usr/libexec/ApplicationFirewall/socketfilterfw --blockapp "{}"
 
+for app in /usr/local/libexec/remotepairingdeviced /usr/libexec/remoted /usr/bin/python3 /usr/bin/ruby /usr/sbin/cupsd /usr/libexec/sharingd /usr/libexec/sshd-keygen-wrapper /usr/sbin/smbd; do sudo /usr/libexec/ApplicationFirewall/socketfilterfw --add "$app" && sudo /usr/libexec/ApplicationFirewall/socketfilterfw --blockapp "$app"; done
+
 
 
 
