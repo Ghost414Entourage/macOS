@@ -37,3 +37,18 @@ SELECT * FROM history_items;
 ~/Library/Application Support/BraveSoftware/Brave-Browser/
 
 sudo sfltool dumpbtm
+
+------------------------------------------------------------------------------------------------------------------------------
+
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --listapps
+
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --getappblocked /Applications/AppName.app
+
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --add /Applications/YourApp.app
+
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --unblockapp /Applications/YourApp.app
+
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --blockapp /Applications/YourApp.app
+
+
+
