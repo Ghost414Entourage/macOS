@@ -52,3 +52,9 @@ sudo /usr/libexec/ApplicationFirewall/socketfilterfw --blockapp /Applications/Yo
 
 
 
+/usr/libexec/ApplicationFirewall/socketfilterfw \
+  --getglobalstate \
+  --getblockall \
+  --getallowsigned \
+  --getstealthmode
+
