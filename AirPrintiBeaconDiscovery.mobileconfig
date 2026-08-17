@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>PayloadContent</key>
+    <array>
+        <dict>
+            <!-- AirPrint Restrictions Payload -->
+            <key>PayloadType</key>
+            <string>com.apple.applicationaccess</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>PayloadIdentifier</key>
+            <string>com.example.airprint.ibeacon</string>
+            <key>PayloadUUID</key>
+            <string>1E2D3C4B-5A6F-7E8D-9C0B-1A2B3C4D5E6F</string>
+            <key>PayloadDisplayName</key>
+            <string>AirPrint iBeacon Discovery Restriction</string>
+            <key>PayloadDescription</key>
+            <string>Disables AirPrint iBeacon discovery settings on macOS.</string>
+            
+            <!-- Key Configuration: Disabled -->
+            <key>allowAirPrintiBeaconDiscovery</key>
+            <false/>
+        </dict>
+    </array>
+    
+    <!-- Top-Level Profile Metadata -->
+    <key>PayloadScope</key>
+    <string>System</string>
+    
+    <key>PayloadDisplayName</key>
+    <string>AirPrint iBeacon Configuration</string>
+    <key>PayloadIdentifier</key>
+    <string>com.example.airprint.profile</string>
+    <key>PayloadUUID</key>
+    <string>8A7B6C5D-4E3F-2A1B-0C9D-8E7F6A5B4C3D</string>
+    <key>PayloadType</key>
+    <string>Configuration</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+    <key>PayloadOrganization</key>
+    <string>Your Organization</string>
+    <key>PayloadRemovalDisallowed</key>
+    <false/>
+</dict>
+</plist>
