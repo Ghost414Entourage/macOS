@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>PayloadContent</key>
+    <array>
+        <dict>
+            <!-- System Restrictions Payload -->
+            <key>PayloadType</key>
+            <string>com.apple.applicationaccess</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>PayloadIdentifier</key>
+            <string>com.example.privaterelay.payload</string>
+            <key>PayloadUUID</key>
+            <string>2A3B4C5D-6E7F-8A9B-0C1D-2E3F4A5B6C7D</string>
+            <key>PayloadDisplayName</key>
+            <string>Disable Private Relay Payload</string>
+            <key>PayloadDescription</key>
+            <string>Disables iCloud Private Relay on macOS and iOS.</string>
+            
+            <!-- Key Configuration -->
+            <key>allowCloudPrivateRelay</key>
+            <false/>
+        </dict>
+    </array>
+    
+    <!-- Top-Level Profile Metadata -->
+    <key>PayloadScope</key>
+    <string>System</string>
+    
+    <key>PayloadDisplayName</key>
+    <string>Disable iCloud Private Relay</string>
+    <key>PayloadIdentifier</key>
+    <string>com.example.privaterelay.profile</string>
+    <key>PayloadUUID</key>
+    <string>8F7E6D5C-4B3A-2F1E-0D9C-8B7A6C5D4E3F</string>
+    <key>PayloadType</key>
+    <string>Configuration</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+    <key>PayloadOrganization</key>
+    <string>Your Organization</string>
+    <key>PayloadRemovalDisallowed</key>
+    <false/>
+</dict>
+</plist>
