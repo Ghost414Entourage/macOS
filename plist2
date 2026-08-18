@@ -1,5 +1,9 @@
 https://github.com/ProfileManifests/ProfileManifests/tree/master/Manifests/ManagedPreferencesApple
 
+strings /System/Library/CoreServices/ManagedClient.app/Contents/MacOS/ManagedClient | grep -i "Bluetooth"
+
+strings /System/Library/PrivateFrameworks/ConfigurationProfiles.framework/ConfigurationProfiles | grep -i "Disable"
+
 ----------------------------------------------------------------------------------------------------------------
 
 cd /Users/computer/Library/Preferences/
