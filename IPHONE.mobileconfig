@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- Top-Level Profile Metadata -->
+    <key>PayloadDisplayName</key>
+    <string>Combined Security and Privacy Restrictions</string>
+    <key>PayloadDescription</key>
+    <string>Disables remote screen observation, Apple personalized advertising, and activity continuation (Handoff).</string>
+    <key>PayloadIdentifier</key>
+    <string>com.company.profile.securityrestrictions.v2</string>
+    <key>PayloadOrganization</key>
+    <string>Custom IT</string>
+    <key>PayloadScope</key>
+    <string>System</string>
+    <key>PayloadType</key>
+    <string>Configuration</string>
+    <key>PayloadUUID</key>
+    <string>2B3C4D5E-6F7A-8901-BCDE-F234567890AB</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+
+    <!-- Payload Array -->
+    <key>PayloadContent</key>
+    <array>
+        <dict>
+            <key>PayloadDisplayName</key>
+            <string>Screen Observation Restriction</string>
+            <key>PayloadIdentifier</key>
+            <string>com.company.applicationaccess.remotescreen</string>
+            <key>PayloadType</key>
+            <string>com.apple.applicationaccess</string>
+            <key>PayloadUUID</key>
+            <string>9F0B12C4-6F23-5E89-C71A-14E422F5F6D3</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>allowRemoteScreenObservation</key>
+            <false/>
+        </dict>
+        <dict>
+            <key>PayloadDisplayName</key>
+            <string>Personalized Ads Restriction</string>
+            <key>PayloadIdentifier</key>
+            <string>com.company.applicationaccess.personalizedads</string>
+            <key>PayloadType</key>
+            <string>com.apple.applicationaccess</string>
+            <key>PayloadUUID</key>
+            <string>09876543-FEDC-BA98-7654-3210FEDCBA98</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>allowApplePersonalizedAdvertising</key>
+            <false/>
+        </dict>
+        <dict>
+            <key>PayloadDisplayName</key>
+            <string>Handoff Restriction</string>
+            <key>PayloadIdentifier</key>
+            <string>com.company.applicationaccess.handoff</string>
+            <key>PayloadType</key>
+            <string>com.apple.applicationaccess</string>
+            <key>PayloadUUID</key>
+            <string>A1B2C3D4-E5F6-7890-ABCD-1234567890AB</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>allowActivityContinuation</key>
+            <false/>
+        </dict>
+    </array>
+</dict>
+</plist>
