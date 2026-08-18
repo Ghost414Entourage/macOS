@@ -6,9 +6,9 @@
     <key>PayloadDisplayName</key>
     <string>Combined Security and Privacy Restrictions</string>
     <key>PayloadDescription</key>
-    <string>Disables remote screen observation, Apple personalized advertising, activity continuation (Handoff), diagnostic submissions, forces AirDrop to be unmanaged, limits ad tracking, sets rating region to US, forces on-device only dictation, and disables Apple Intelligence Report.</string>
+    <string>Disables remote screen observation, Apple personalized advertising, activity continuation (Handoff), diagnostic submissions, Siri/Assistant, forces AirDrop to be unmanaged, limits ad tracking, sets rating region to US, forces on-device only dictation, and disables Apple Intelligence Report.</string>
     <key>PayloadIdentifier</key>
-    <string>com.company.profile.securityrestrictions.v8</string>
+    <string>com.company.profile.securityrestrictions.v9</string>
     <key>PayloadOrganization</key>
     <string>Custom IT</string>
     <key>PayloadScope</key>
@@ -147,6 +147,20 @@
             <key>PayloadVersion</key>
             <integer>1</integer>
             <key>allowAppleIntelligenceReport</key>
+            <false/>
+        </dict>
+        <dict>
+            <key>PayloadDisplayName</key>
+            <string>Siri / Assistant Restriction</string>
+            <key>PayloadIdentifier</key>
+            <string>com.company.applicationaccess.assistant</string>
+            <key>PayloadType</key>
+            <string>com.apple.applicationaccess</string>
+            <key>PayloadUUID</key>
+            <string>C9D01234-5678-9012-EF01-0123456789CD</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>allowAssistant</key>
             <false/>
         </dict>
     </array>
