@@ -2,39 +2,47 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+    <!-- Top-Level Profile Metadata -->
+    <key>PayloadDisplayName</key>
+    <string>Combined Security and Privacy Restrictions</string>
+    <key>PayloadDescription</key>
+    <string>Disables remote screen observation, Apple personalized advertising, and activity continuation (Handoff).</string>
+    <key>PayloadIdentifier</key>
+    <string>com.company.profile.securityrestrictions</string>
+    <key>PayloadOrganization</key>
+    <string>Custom IT</string>
+    <key>PayloadScope</key>
+    <string>System</string>
+    <key>PayloadType</key>
+    <string>Configuration</string>
+    <key>PayloadUUID</key>
+    <string>2B3C4D5E-6F7A-8901-BCDE-F234567890AB</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+
+    <!-- Payload Array -->
     <key>PayloadContent</key>
     <array>
         <dict>
-            <!-- Payload Identifier for Restrictions -->
-            <key>PayloadType</key>
-            <string>com.apple.applicationaccess</string>
-            <key>PayloadVersion</key>
-            <integer>1</integer>
-            <key>PayloadIdentifier</key>
-            <string>com.example.profile.restrictions</string>
-            <key>PayloadUUID</key>
-            <string>A1B2C3D4-E5F6-7890-ABCD-1234567890AB</string>
             <key>PayloadDisplayName</key>
             <string>Restrictions Payload</string>
-            
-            <!-- Key to disable Activity Continuation / Handoff -->
+            <key>PayloadIdentifier</key>
+            <string>com.company.applicationaccess.securityrestrictions</string>
+            <key>PayloadType</key>
+            <string>com.apple.applicationaccess</string>
+            <key>PayloadUUID</key>
+            <string>9F0B12C4-6F23-5E89-C71A-14E422F5F6D3</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+
+            <!-- Restriction Keys -->
+            <key>allowRemoteScreenObservation</key>
+            <false/>
+            <key>allowApplePersonalizedAdvertising</key>
+            <false/>
             <key>allowActivityContinuation</key>
             <false/>
         </dict>
     </array>
-    
-    <!-- Top-Level Profile Metadata -->
-    <key>PayloadDisplayName</key>
-    <string>Disable Handoff and Activity Continuation</string>
-    <key>PayloadIdentifier</key>
-    <string>com.example.profile.disablehandoff</string>
-    <key>PayloadUUID</key>
-    <string>B2C3D4E5-F6A7-8901-BCDE-2345678901BC</string>
-    <key>PayloadType</key>
-    <string>Configuration</string>
-    <key>PayloadVersion</key>
-    <integer>1</integer>
-    <key>PayloadScope</key>
-    <string>System</string>
 </dict>
 </plist>
