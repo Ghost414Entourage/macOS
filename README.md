@@ -13,3 +13,5 @@ https://github.com/apple/device-management/blob/release/declarative/declarations
 https://github.com/apple/device-management/blob/release/mdm/profiles/com.apple.applicationaccess.yaml
 
 https://ss64.com/mac/syntax-defaults.html
+
+https://appledevicepolicy.tools/policy-explorer/detail?type=com.apple.ManagedClient.preferences&branch=release
