@@ -6,9 +6,9 @@
     <key>PayloadDisplayName</key>
     <string>Combined Security and Privacy Restrictions</string>
     <key>PayloadDescription</key>
-    <string>Disables remote screen observation, Apple personalized advertising, activity continuation (Handoff), diagnostic submissions, and forces AirDrop to be treated as unmanaged.</string>
+    <string>Disables remote screen observation, Apple personalized advertising, activity continuation (Handoff), diagnostic submissions, forces AirDrop to be unmanaged, and limits ad tracking.</string>
     <key>PayloadIdentifier</key>
-    <string>com.company.profile.securityrestrictions.v4</string>
+    <string>com.company.profile.securityrestrictions.v5</string>
     <key>PayloadOrganization</key>
     <string>Custom IT</string>
     <key>PayloadScope</key>
@@ -91,6 +91,20 @@
             <key>PayloadVersion</key>
             <integer>1</integer>
             <key>forceAirDropUnmanaged</key>
+            <true/>
+        </dict>
+        <dict>
+            <key>PayloadDisplayName</key>
+            <string>Limit Ad Tracking Restriction</string>
+            <key>PayloadIdentifier</key>
+            <string>com.company.applicationaccess.limitadtracking</string>
+            <key>PayloadType</key>
+            <string>com.apple.applicationaccess</string>
+            <key>PayloadUUID</key>
+            <string>E5F6A7B8-9012-3456-CDEF-6789012345FA</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>forceLimitAdTracking</key>
             <true/>
         </dict>
     </array>
