@@ -1,0 +1,6 @@
+cd /Library/Managed\ Preferences/
+
+
+sudo defaults read /Library/Managed\ Preferences/com.apple.MCXBluetooth.plist DisableBluetooth
+
+
