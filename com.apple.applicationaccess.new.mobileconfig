@@ -19,7 +19,7 @@
 			<key>PayloadVersion</key>
 			<integer>1</integer>
 			<key>familyControlsEnabled</key>
-			<true/>
+			<false/>
 			<key>pathBlackList</key>
 			<array>
 				<string>/Applications/FaceTime.app</string>
