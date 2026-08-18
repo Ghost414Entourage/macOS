@@ -6,9 +6,9 @@
     <key>PayloadDisplayName</key>
     <string>Combined Security and Privacy Restrictions</string>
     <key>PayloadDescription</key>
-    <string>Disables remote screen observation, Apple personalized advertising, and activity continuation (Handoff).</string>
+    <string>Disables remote screen observation, Apple personalized advertising, activity continuation (Handoff), and App Clips.</string>
     <key>PayloadIdentifier</key>
-    <string>com.company.profile.securityrestrictions.v2</string>
+    <string>com.company.profile.securityrestrictions.v3</string>
     <key>PayloadOrganization</key>
     <string>Custom IT</string>
     <key>PayloadScope</key>
@@ -63,6 +63,20 @@
             <key>PayloadVersion</key>
             <integer>1</integer>
             <key>allowActivityContinuation</key>
+            <false/>
+        </dict>
+        <dict>
+            <key>PayloadDisplayName</key>
+            <string>App Clips Restriction</string>
+            <key>PayloadIdentifier</key>
+            <string>com.company.applicationaccess.appclips</string>
+            <key>PayloadType</key>
+            <string>com.apple.applicationaccess</string>
+            <key>PayloadUUID</key>
+            <string>C3D4E5F6-A7B8-9012-CDEF-3456789012CD</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>allowAppClips</key>
             <false/>
         </dict>
     </array>
