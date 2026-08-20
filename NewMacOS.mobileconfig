@@ -248,7 +248,7 @@
             <key>PayloadType</key>
             <string>com.apple.intelligence.settings</string>
             <key>PayloadUUID</key>
-            <string>12345678-ABCD-EF01-2345-67890ABCDEF0</string>
+            <string>E7A6B5C4-D3E2-4109-8765-43210FEDCBA9</string>
             <key>PayloadVersion</key>
             <integer>1</integer>
             <key>AllowAppleIntelligenceReport</key>
