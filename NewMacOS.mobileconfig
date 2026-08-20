@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- Top-Level Profile Metadata -->
+    <key>PayloadDisplayName</key>
+    <string>Combined Security and Privacy Restrictions</string>
+    <key>PayloadDescription</key>
+    <string>Disables remote screen observation, Apple personalized advertising, activity continuation (Handoff), diagnostic submissions, Siri/Assistant, forces AirDrop to be unmanaged, limits ad tracking, sets rating region to US, forces on-device only dictation, disables Apple Intelligence Report, disables incoming AirPlay requests, disables Siri audio donations for Accessibility, disables content caching, disables media sharing, and disables Apple Intelligence features.</string>
+    <key>PayloadIdentifier</key>
+    <string>com.company.profile.securityrestrictions.v15</string>
+    <key>PayloadOrganization</key>
+    <string>Custom IT</string>
+    <key>PayloadScope</key>
+    <string>System</string>
+    <key>PayloadType</key>
+    <string>Configuration</string>
+    <key>PayloadUUID</key>
+    <string>2B3C4D5E-6F7A-8901-BCDE-F234567890AB</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+
+    <!-- Payload Array -->
+    <key>PayloadContent</key>
+    <array>
+        <dict>
+            <key>PayloadDisplayName</key>
+            <string>Screen Observation Restriction</string>
+            <key>PayloadIdentifier</key>
+            <string>com.company.applicationaccess.remotescreen</string>
+            <key>PayloadType</key>
+            <string>com.apple.applicationaccess</string>
+            <key>PayloadUUID</key>
+            <string>9F0B12C4-6F23-5E89-C71A-14E422F5F6D3</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>allowRemoteScreenObservation</key>
+            <false/>
+        </dict>
+        <dict>
+            <key>PayloadDisplayName</key>
+            <string>Personalized Ads Restriction</string>
+            <key>PayloadIdentifier</key>
+            <string>com.company.applicationaccess.personalizedads</string>
+            <key>PayloadType</key>
+            <string>com.apple.applicationaccess</string>
+            <key>PayloadUUID</key>
+            <string>09876543-FEDC-BA98-7654-3210FEDCBA98</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>allowApplePersonalizedAdvertising</key>
+            <false/>
+        </dict>
+        <dict>
+            <key>PayloadDisplayName</key>
+            <string>Handoff Restriction</string>
+            <key>PayloadIdentifier</key>
+            <string>com.company.applicationaccess.handoff</string>
+            <key>PayloadType</key>
+            <string>com.apple.applicationaccess</string>
+            <key>PayloadUUID</key>
+            <string>A1B2C3D4-E5F6-7890-ABCD-1234567890AB</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>allowActivityContinuation</key>
+            <false/>
+        </dict>
+        <dict>
+            <key>PayloadDisplayName</key>
+            <string>Diagnostics Restriction</string>
+            <key>PayloadIdentifier</key>
+            <string>com.company.applicationaccess.diagnostics</string>
+            <key>PayloadType</key>
+            <string>com.apple.applicationaccess</string>
+            <key>PayloadUUID</key>
+            <string>C3D4E5F6-A7B8-9012-CDEF-3456789012CD</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>allowDiagnosticSubmission</key>
+            <false/>
+        </dict>
+        <dict>
+            <key>PayloadDisplayName</key>
+            <string>AirDrop Unmanaged Restriction</string>
+            <key>PayloadIdentifier</key>
+            <string>com.company.applicationaccess.airdropunmanaged</string>
+            <key>PayloadType</key>
+            <string>com.apple.applicationaccess</string>
+            <key>PayloadUUID</key>
+            <string>D4E5F6A7-B890-1234-CDEF-5678901234EF</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>forceAirDropUnmanaged</key>
+            <true/>
+        </dict>
+        <dict>
+            <key>PayloadDisplayName</key>
+            <string>Limit Ad Tracking Restriction</string>
+            <key>PayloadIdentifier</key>
+            <string>com.company.applicationaccess.limitadtracking</string>
+            <key>PayloadType</key>
+            <string>com.apple.applicationaccess</string>
+            <key>PayloadUUID</key>
+            <string>E5F6A7B8-9012-3456-CDEF-6789012345FA</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>forceLimitAdTracking</key>
+            <true/>
+        </dict>
+        <dict>
+            <key>PayloadDisplayName</key>
+            <string>Rating Region Setting</string>
+            <key>PayloadIdentifier</key>
+            <string>com.company.applicationaccess.ratingregion</string>
+            <key>PayloadType</key>
+            <string>com.apple.applicationaccess</string>
+            <key>PayloadUUID</key>
+            <string>F6A7B890-1234-5678-CDEF-7890123456AB</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>ratingRegion</key>
+            <string>us</string>
+        </dict>
+        <dict>
+            <key>PayloadDisplayName</key>
+            <string>On-Device Dictation Restriction</string>
+            <key>PayloadIdentifier</key>
+            <string>com.company.applicationaccess.ondevicedictation</string>
+            <key>PayloadType</key>
+            <string>com.apple.applicationaccess</string>
+            <key>PayloadUUID</key>
+            <string>A7B89012-3456-7890-CDEF-8901234567AB</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>forceOnDeviceOnlyDictation</key>
+            <true/>
+        </dict>
+        <dict>
+            <key>PayloadDisplayName</key>
+            <string>Apple Intelligence Report Restriction</string>
+            <key>PayloadIdentifier</key>
+            <string>com.company.applicationaccess.appleintelligencereport</string>
+            <key>PayloadType</key>
+            <string>com.apple.applicationaccess</string>
+            <key>PayloadUUID</key>
+            <string>B8C90123-4567-8901-DEF0-9012345678BC</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>allowAppleIntelligenceReport</key>
+            <false/>
+        </dict>
+        <dict>
+            <key>PayloadDisplayName</key>
+            <string>Siri / Assistant Restriction</string>
+            <key>PayloadIdentifier</key>
+            <string>com.company.applicationaccess.assistant</string>
+            <key>PayloadType</key>
+            <string>com.apple.applicationaccess</string>
+            <key>PayloadUUID</key>
+            <string>C9D01234-5678-9012-EF01-0123456789CD</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>allowAssistant</key>
+            <false/>
+        </dict>
+        <dict>
+            <key>PayloadDisplayName</key>
+            <string>Disable Incoming AirPlay Restriction</string>
+            <key>PayloadIdentifier</key>
+            <string>com.company.applicationaccess.airplayincoming</string>
+            <key>PayloadType</key>
+            <string>com.apple.applicationaccess</string>
+            <key>PayloadUUID</key>
+            <string>12345678-ABCD-EF12-3456-7890ABCDEF12</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>allowAirPlayIncomingRequests</key>
+            <false/>
+        </dict>
+        <dict>
+            <key>PayloadDisplayName</key>
+            <string>Disable Siri Audio Donation for Accessibility</string>
+            <key>PayloadIdentifier</key>
+            <string>com.company.accessibility.audiodonationsiri</string>
+            <key>PayloadType</key>
+            <string>com.apple.Accessibility</string>
+            <key>PayloadUUID</key>
+            <string>12345678-90AB-CDEF-1234-567890ABCDEF</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>AXSAudioDonationSiriImprovementEnabled</key>
+            <false/>
+        </dict>
+        <dict>
+            <key>PayloadDisplayName</key>
+            <string>Disable Content Caching Restriction</string>
+            <key>PayloadIdentifier</key>
+            <string>com.company.applicationaccess.contentcaching</string>
+            <key>PayloadType</key>
+            <string>com.apple.applicationaccess</string>
+            <key>PayloadUUID</key>
+            <string>23456789-ABCD-EF01-2345-6789ABCDEF01</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>allowContentCaching</key>
+            <false/>
+        </dict>
+        <dict>
+            <key>PayloadDisplayName</key>
+            <string>Disable Diagnostic Submission Restriction</string>
+            <key>PayloadIdentifier</key>
+            <string>com.custom.disablediagnosticsubmission.restrictions</string>
+            <key>PayloadType</key>
+            <string>com.apple.applicationaccess</string>
+            <key>PayloadUUID</key>
+            <string>3A4B5C6D-7E8F-9A0B-1C2D-3E4F5A6B7C8D</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>allowDiagnosticSubmission</key>
+            <false/>
+        </dict>
+        <dict>
+            <key>PayloadDisplayName</key>
+            <string>Disable Media Sharing Restriction</string>
+            <key>PayloadIdentifier</key>
+            <string>com.custom.disablemediasharing.restrictions</string>
+            <key>PayloadType</key>
+            <string>com.apple.applicationaccess</string>
+            <key>PayloadUUID</key>
+            <string>456789AB-CDEF-0123-4567-89ABCDEF0123</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>allowMediaSharing</key>
+            <false/>
+            <key>allowMediaSharingModification</key>
+            <false/>
+        </dict>
+        <dict>
+            <key>PayloadDisplayName</key>
+            <string>Intelligence Settings</string>
+            <key>PayloadIdentifier</key>
+            <string>com.custom.intelligence.settings.payload</string>
+            <key>PayloadType</key>
+            <string>com.apple.intelligence.settings</string>
+            <key>PayloadUUID</key>
+            <string>12345678-ABCD-EF01-2345-67890ABCDEF0</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>AllowAppleIntelligenceReport</key>
+            <false/>
+            <key>AllowGenmoji</key>
+            <false/>
+            <key>AllowImagePlayground</key>
+            <false/>
+            <key>AllowImageWand</key>
+            <false/>
+            <key>AllowPersonalizedHandwritingResults</key>
+            <false/>
+            <key>AllowVisualIntelligenceSummary</key>
+            <false/>
+            <key>AllowWritingTools</key>
+            <false/>
+            <key>ForceOnDeviceOnlyDictation</key>
+            <true/>
+            <key>ForceOnDeviceOnlyTranslation</key>
+            <true/>
+        </dict>
+    </array>
+</dict>
+</plist>
