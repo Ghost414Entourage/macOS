@@ -43,6 +43,20 @@
             <false/>
         </dict>
         <dict>
+			<key>DiscoverableMode</key>
+			<string>Off</string>
+			<key>PayloadDisplayName</key>
+			<string>AirDrop</string>
+			<key>PayloadIdentifier</key>
+			<string>com.apple.sharingd.09CD958A-420F-4D0B-BA01-40F20010E8E9</string>
+			<key>PayloadType</key>
+			<string>com.apple.sharingd</string>
+			<key>PayloadUUID</key>
+			<string>09CD958A-420F-4D0B-BA01-40F20010E8E9</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+		</dict>
+        <dict>
             <key>PayloadDisplayName</key>
             <string>Personalized Ads Restriction</string>
             <key>PayloadIdentifier</key>
