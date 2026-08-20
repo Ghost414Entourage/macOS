@@ -114,20 +114,6 @@
         </dict>
         <dict>
             <key>PayloadDisplayName</key>
-            <string>On-Device Dictation Restriction</string>
-            <key>PayloadIdentifier</key>
-            <string>com.company.applicationaccess.ondevicedictation</string>
-            <key>PayloadType</key>
-            <string>com.apple.applicationaccess</string>
-            <key>PayloadUUID</key>
-            <string>A7B89012-3456-7890-CDEF-8901234567AB</string>
-            <key>PayloadVersion</key>
-            <integer>1</integer>
-            <key>forceOnDeviceOnlyDictation</key>
-            <true/>
-        </dict>
-        <dict>
-            <key>PayloadDisplayName</key>
             <string>Apple Intelligence Report Restriction</string>
             <key>PayloadIdentifier</key>
             <string>com.company.applicationaccess.appleintelligencereport</string>
