@@ -128,20 +128,6 @@
         </dict>
         <dict>
             <key>PayloadDisplayName</key>
-            <string>Disable Incoming AirPlay Restriction</string>
-            <key>PayloadIdentifier</key>
-            <string>com.company.applicationaccess.airplayincoming</string>
-            <key>PayloadType</key>
-            <string>com.apple.applicationaccess</string>
-            <key>PayloadUUID</key>
-            <string>12345678-ABCD-EF12-3456-7890ABCDEF12</string>
-            <key>PayloadVersion</key>
-            <integer>1</integer>
-            <key>allowAirPlayIncomingRequests</key>
-            <false/>
-        </dict>
-        <dict>
-            <key>PayloadDisplayName</key>
             <string>Disable Siri Audio Donation for Accessibility</string>
             <key>PayloadIdentifier</key>
             <string>com.company.accessibility.audiodonationsiri</string>
