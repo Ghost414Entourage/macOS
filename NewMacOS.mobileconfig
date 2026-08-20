@@ -56,6 +56,20 @@
 			<key>PayloadVersion</key>
 			<integer>1</integer>
 		</dict>
+		<dict>
+			<key>AllowLocalPrinters</key>
+			<false/>
+			<key>PayloadDisplayName</key>
+			<string>Printing</string>
+			<key>PayloadIdentifier</key>
+			<string>com.apple.mcxprinting.157D7730-B280-441A-AB83-FA2DC5BACB29</string>
+			<key>PayloadType</key>
+			<string>com.apple.mcxprinting</string>
+			<key>PayloadUUID</key>
+			<string>157D7730-B280-441A-AB83-FA2DC5BACB29</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+		</dict>
         <dict>
             <key>PayloadDisplayName</key>
             <string>Personalized Ads Restriction</string>
