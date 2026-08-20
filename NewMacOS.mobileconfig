@@ -6,9 +6,9 @@
     <key>PayloadDisplayName</key>
     <string>Combined Security and Privacy Restrictions</string>
     <key>PayloadDescription</key>
-    <string>Disables remote screen observation, Apple personalized advertising, activity continuation (Handoff), diagnostic submissions, Siri/Assistant, forces AirDrop to be unmanaged, limits ad tracking, sets rating region to US, forces on-device only dictation, disables Apple Intelligence Report, disables incoming AirPlay requests, disables Siri audio donations for Accessibility, disables content caching, disables media sharing, and disables Apple Intelligence features.</string>
+    <string>Disables remote screen observation, Apple personalized advertising, activity continuation (Handoff), diagnostic submissions, Siri/Assistant, forces AirDrop to be unmanaged, limits ad tracking, sets rating region to US, forces on-device only dictation, disables Apple Intelligence Report, disables incoming AirPlay requests, disables Siri audio donations for Accessibility, disables content caching, disables media sharing, disables Apple Intelligence features, and disables iTunes file sharing.</string>
     <key>PayloadIdentifier</key>
-    <string>com.company.profile.securityrestrictions.v15</string>
+    <string>com.company.profile.securityrestrictions.v16</string>
     <key>PayloadOrganization</key>
     <string>Custom IT</string>
     <key>PayloadScope</key>
@@ -264,6 +264,20 @@
             <true/>
             <key>ForceOnDeviceOnlyTranslation</key>
             <true/>
+        </dict>
+        <dict>
+            <key>PayloadDisplayName</key>
+            <string>Disable iTunes File Sharing Restriction</string>
+            <key>PayloadIdentifier</key>
+            <string>com.custom.disableitunesfilesharing.restrictions</string>
+            <key>PayloadType</key>
+            <string>com.apple.applicationaccess</string>
+            <key>PayloadUUID</key>
+            <string>98765432-FEDC-BA09-8765-43210FEDCBA9</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>allowiTunesFileSharing</key>
+            <false/>
         </dict>
     </array>
 </dict>
