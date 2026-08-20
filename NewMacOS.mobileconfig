@@ -3,14 +3,19 @@
 <plist version="1.0">
 <dict>
     <!-- Top-Level Profile Metadata -->
+    <key>ConsentText</key>
+    <dict>
+        <key>default</key>
+        <string>THE SOFTWARE IS PROVIDED 'AS IS' WITHOUT ANY WARRANTY OF ANY KIND, EITHER EXPRESSED, IMPLIED, OR STATUTORY, INCLUDING, BUT NOT LIMITED TO, ANY WARRANTY THAT THE SOFTWARE WILL CONFORM TO SPECIFICATIONS, ANY IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND FREEDOM FROM INFRINGEMENT, AND ANY WARRANTY THAT THE DOCUMENTATION WILL CONFORM TO THE SOFTWARE, OR ANY WARRANTY THAT THE SOFTWARE WILL BE ERROR FREE.  IN NO EVENT SHALL NIST BE LIABLE FOR ANY DAMAGES, INCLUDING, BUT NOT LIMITED TO, DIRECT, INDIRECT, SPECIAL OR CONSEQUENTIAL DAMAGES, ARISING OUT OF, RESULTING FROM, OR IN ANY WAY CONNECTED WITH THIS SOFTWARE, WHETHER OR NOT BASED UPON WARRANTY, CONTRACT, TORT, OR OTHERWISE, WHETHER OR NOT INJURY WAS SUSTAINED BY PERSONS OR PROPERTY OR OTHERWISE, AND WHETHER OR NOT LOSS WAS SUSTAINED FROM, OR AROSE OUT OF THE RESULTS OF, OR USE OF, THE SOFTWARE OR SERVICES PROVIDED HEREUNDER.</string>
+    </dict>
     <key>PayloadDisplayName</key>
-    <string>Combined Security and Privacy Restrictions</string>
+    <string>Combined Security, Privacy Restrictions, and Application Controls</string>
     <key>PayloadDescription</key>
-    <string>Disables remote screen observation, Apple personalized advertising, activity continuation (Handoff), diagnostic submissions, Siri/Assistant, forces AirDrop to be unmanaged, limits ad tracking, sets rating region to US, forces on-device only dictation, disables Apple Intelligence Report, disables incoming AirPlay requests, disables Siri audio donations for Accessibility, disables content caching, disables media sharing, disables Apple Intelligence features, and disables iTunes file sharing.</string>
+    <string>Disables remote screen observation, Apple personalized advertising, activity continuation (Handoff), diagnostic submissions, Siri/Assistant, forces AirDrop to be unmanaged, limits ad tracking, sets rating region to US, forces on-device only dictation, disables Apple Intelligence Report, disables incoming AirPlay requests, disables Siri audio donations for Accessibility, disables content caching, disables media sharing, disables Apple Intelligence features, disables iTunes file sharing, disables Live Voicemail, disables Apple Music Service, disables ARD remote management modifications, restricts media sharing modifications, restricts Remote Apple Events modifications, disables Universal Control, restricts iPhone Mirroring, opts out of Siri Data Sharing, configures System Policy Control settings, restricts AirDrop, disables external intelligence integrations, configures macOS Application Firewall settings, and enforces STIG application access rules.</string>
     <key>PayloadIdentifier</key>
-    <string>com.company.profile.securityrestrictions.v16</string>
+    <string>com.company.profile.securityrestrictions.v31</string>
     <key>PayloadOrganization</key>
-    <string>Custom IT</string>
+    <string>macOS Security Compliance Project / Custom IT</string>
     <key>PayloadScope</key>
     <string>System</string>
     <key>PayloadType</key>
@@ -271,13 +276,279 @@
             <key>PayloadIdentifier</key>
             <string>com.custom.disableitunesfilesharing.restrictions</string>
             <key>PayloadType</key>
-            <string>com.apple.applicationaccess</string>
+            <string>com.apple.applicationaccess.new.itunes</string>
             <key>PayloadUUID</key>
             <string>98765432-FEDC-BA09-8765-43210FEDCBA9</string>
             <key>PayloadVersion</key>
             <integer>1</integer>
             <key>allowiTunesFileSharing</key>
             <false/>
+        </dict>
+        <dict>
+            <key>PayloadDisplayName</key>
+            <string>Restrictions - Disable Live Voicemail</string>
+            <key>PayloadIdentifier</key>
+            <string>com.example.restrictions.livevoicemail</string>
+            <key>PayloadType</key>
+            <string>com.apple.applicationaccess</string>
+            <key>PayloadUUID</key>
+            <string>11111111-2222-3333-4444-555555555555</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>allowLiveVoicemail</key>
+            <false/>
+        </dict>
+        <dict>
+            <key>PayloadDisplayName</key>
+            <string>Music Service Restriction</string>
+            <key>PayloadDescription</key>
+            <string>Disables Apple Music Service on macOS.</string>
+            <key>PayloadIdentifier</key>
+            <string>com.example.musicservice.payload</string>
+            <key>PayloadType</key>
+            <string>com.apple.applicationaccess</string>
+            <key>PayloadUUID</key>
+            <string>1E2D3C4B-5A6F-7E8D-9C0B-1A2B3C4D5E6F</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>allowMusicService</key>
+            <false/>
+        </dict>
+        <dict>
+            <key>PayloadDisplayName</key>
+            <string>Restrictions - ARD Remote Management</string>
+            <key>PayloadIdentifier</key>
+            <string>com.company.applicationaccess.ardremotemanagement</string>
+            <key>PayloadType</key>
+            <string>com.apple.applicationaccess</string>
+            <key>PayloadUUID</key>
+            <string>8E9A01B3-5E12-4F78-B60F-03D311E4E5C2</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>allowARDRemoteManagementModification</key>
+            <false/>
+        </dict>
+        <dict>
+            <key>PayloadDisplayName</key>
+            <string>Restrictions - Media Sharing</string>
+            <key>PayloadIdentifier</key>
+            <string>com.company.applicationaccess.mediasharing</string>
+            <key>PayloadType</key>
+            <string>com.apple.applicationaccess</string>
+            <key>PayloadUUID</key>
+            <string>5F7E80A1-3C89-4F5A-B47E-83B109E2B5A0</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>allowMediaSharing</key>
+            <false/>
+            <key>allowMediaSharingModification</key>
+            <false/>
+        </dict>
+        <dict>
+            <key>PayloadDisplayName</key>
+            <string>Restrictions - Remote Apple Events</string>
+            <key>PayloadIdentifier</key>
+            <string>com.company.applicationaccess.remoteappleevents</string>
+            <key>PayloadType</key>
+            <string>com.apple.applicationaccess</string>
+            <key>PayloadUUID</key>
+            <string>7C8F91B2-4D01-4E67-A58F-92C210E3D4B1</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>allowRemoteAppleEventsModification</key>
+            <false/>
+        </dict>
+        <dict>
+            <key>PayloadDisplayName</key>
+            <string>Restrictions - Universal Control</string>
+            <key>PayloadIdentifier</key>
+            <string>com.company.applicationaccess.universalcontrol</string>
+            <key>PayloadType</key>
+            <string>com.apple.applicationaccess</string>
+            <key>PayloadUUID</key>
+            <string>B2C3D4E5-F6A7-8901-BCDE-2345678901BC</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>allowUniversalControl</key>
+            <false/>
+        </dict>
+        <dict>
+            <key>PayloadDisplayName</key>
+            <string>Restrictions - iPhone Mirroring</string>
+            <key>PayloadIdentifier</key>
+            <string>com.company.applicationaccess.iphonemirroring</string>
+            <key>PayloadType</key>
+            <string>com.apple.applicationaccess</string>
+            <key>PayloadUUID</key>
+            <string>D4E5F6A7-B8C9-0123-DEF0-4567890123DE</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>allowiPhoneMirroring</key>
+            <false/>
+        </dict>
+        <dict>
+            <key>PayloadType</key>
+            <string>com.apple.assistant.support</string>
+            <key>PayloadIdentifier</key>
+            <string>com.custom.siridatasharingoptout.assistant</string>
+            <key>PayloadUUID</key>
+            <string>6789ABCD-EF01-2345-6789-ABCDEF012345</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>PayloadDisplayName</key>
+            <string>Siri Data Sharing Settings</string>
+            <key>Siri Data Sharing Opt-In Status</key>
+            <integer>2</integer>
+        </dict>
+        <dict>
+            <key>PayloadType</key>
+            <string>com.apple.systempolicy.control</string>
+            <key>PayloadIdentifier</key>
+            <string>com.example.mysystempolicycontrolpayload</string>
+            <key>PayloadUUID</key>
+            <string>8A1054C5-3A4B-4E38-B5CD-63B8B8F20123</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>PayloadDisplayName</key>
+            <string>System Policy Settings</string>
+            <key>EnableAssessment</key>
+            <true/>
+            <key>AllowIdentifiedDevelopers</key>
+            <true/>
+            <key>EnableXProtectMalwareUpload</key>
+            <true/>
+        </dict>
+        <dict>
+            <key>PayloadDisplayName</key>
+            <string>Remediation - AirDrop, AirPlay, Media Sharing Restrictions</string>
+            <key>PayloadIdentifier</key>
+            <string>com.apple.applicationaccess.remediation.v3</string>
+            <key>PayloadType</key>
+            <string>com.apple.applicationaccess</string>
+            <key>PayloadUUID</key>
+            <string>B64C829B-4D4F-4E83-9121-6A22C51D8D2F</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>allowAirDrop</key>
+            <false/>
+            <key>allowAirPlayIncomingRequests</key>
+            <false/>
+            <key>allowMediaSharing</key>
+            <false/>
+            <key>allowMediaSharingModification</key>
+            <false/>
+        </dict>
+        <dict>
+            <key>PayloadType</key>
+            <string>com.apple.intelligence.settings</string>
+            <key>PayloadIdentifier</key>
+            <string>com.custom.intelligence.settings.externalintegrations</string>
+            <key>PayloadUUID</key>
+            <string>C9A8B7C6-D5E4-3F21-0987-654321FEDCBA</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>PayloadDisplayName</key>
+            <string>Disable External Intelligence Integrations</string>
+            <key>AllowExternalIntelligenceIntegrations</key>
+            <false/>
+        </dict>
+        <dict>
+            <key>PayloadType</key>
+            <string>com.apple.security.firewall</string>
+            <key>PayloadIdentifier</key>
+            <string>com.custom.firewall.settings.payload</string>
+            <key>PayloadUUID</key>
+            <string>12345678-ABCD-EF01-2345-67890ABCDEF0</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>PayloadDisplayName</key>
+            <string>Firewall Settings</string>
+            <key>EnableFirewall</key>
+            <true/>
+            <key>BlockAllIncoming</key>
+            <true/>
+            <key>EnableStealthMode</key>
+            <true/>
+            <key>AllowSigned</key>
+            <false/>
+            <key>AllowSignedApp</key>
+            <false/>
+            <key>Applications</key>
+            <array>
+                <dict>
+                    <key>BundleID</key>
+                    <string>com.apple.remotepairingdeviced</string>
+                    <key>Allowed</key>
+                    <false/>
+                </dict>
+                <dict>
+                    <key>BundleID</key>
+                    <string>com.apple.remoted</string>
+                    <key>Allowed</key>
+                    <false/>
+                </dict>
+                <dict>
+                    <key>BundleID</key>
+                    <string>com.apple.python3</string>
+                    <key>Allowed</key>
+                    <false/>
+                </dict>
+                <dict>
+                    <key>BundleID</key>
+                    <string>com.apple.ruby</string>
+                    <key>Allowed</key>
+                    <false/>
+                </dict>
+                <dict>
+                    <key>BundleID</key>
+                    <string>org.cups.cupsd</string>
+                    <key>Allowed</key>
+                    <false/>
+                </dict>
+                <dict>
+                    <key>BundleID</key>
+                    <string>com.apple.sharingd</string>
+                    <key>Allowed</key>
+                    <false/>
+                </dict>
+                <dict>
+                    <key>BundleID</key>
+                    <string>com.apple.sshd-keygen-wrapper</string>
+                    <key>Allowed</key>
+                    <false/>
+                </dict>
+                <dict>
+                    <key>BundleID</key>
+                    <string>com.apple.smbd</string>
+                    <key>Allowed</key>
+                    <false/>
+                </dict>
+                <dict>
+                    <key>BundleID</key>
+                    <string>com.apple.FaceTime</string>
+                    <key>Allowed</key>
+                    <false/>
+                </dict>
+            </array>
+        </dict>
+        <dict>
+            <key>PayloadDisplayName</key>
+            <string>[stig] com.apple.applicationaccess.new settings</string>
+            <key>PayloadIdentifier</key>
+            <string>mscp.com.apple.applicationaccess.new.f1a576e1-4104-4f6a-bd5f-95c349cc96e4</string>
+            <key>PayloadType</key>
+            <string>com.apple.applicationaccess.new</string>
+            <key>PayloadUUID</key>
+            <string>f1a576e1-4104-4f6a-bd5f-95c349cc96e4</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>familyControlsEnabled</key>
+            <true/>
+            <key>pathBlackList</key>
+            <array>
+                <string>/Applications/FaceTime.app</string>
+                <string>/Users/</string>
+            </array>
         </dict>
     </array>
 </dict>
