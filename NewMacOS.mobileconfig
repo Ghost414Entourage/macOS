@@ -114,20 +114,6 @@
         </dict>
         <dict>
             <key>PayloadDisplayName</key>
-            <string>Apple Intelligence Report Restriction</string>
-            <key>PayloadIdentifier</key>
-            <string>com.company.applicationaccess.appleintelligencereport</string>
-            <key>PayloadType</key>
-            <string>com.apple.applicationaccess</string>
-            <key>PayloadUUID</key>
-            <string>B8C90123-4567-8901-DEF0-9012345678BC</string>
-            <key>PayloadVersion</key>
-            <integer>1</integer>
-            <key>allowAppleIntelligenceReport</key>
-            <false/>
-        </dict>
-        <dict>
-            <key>PayloadDisplayName</key>
             <string>Siri / Assistant Restriction</string>
             <key>PayloadIdentifier</key>
             <string>com.company.applicationaccess.assistant</string>
