@@ -212,20 +212,6 @@
         </dict>
         <dict>
             <key>PayloadDisplayName</key>
-            <string>Disable Media Sharing Restriction</string>
-            <key>PayloadIdentifier</key>
-            <string>com.custom.disablemediasharing.restrictions</string>
-            <key>PayloadType</key>
-            <string>com.apple.applicationaccess</string>
-            <key>PayloadUUID</key>
-            <string>456789AB-CDEF-0123-4567-89ABCDEF0123</string>
-            <key>PayloadVersion</key>
-            <integer>1</integer>
-            <key>allowMediaSharingModification</key>
-            <false/>
-        </dict>
-        <dict>
-            <key>PayloadDisplayName</key>
             <string>Intelligence Settings</string>
             <key>PayloadIdentifier</key>
             <string>com.custom.intelligence.settings.payload</string>
@@ -310,22 +296,6 @@
             <key>PayloadVersion</key>
             <integer>1</integer>
             <key>allowARDRemoteManagementModification</key>
-            <false/>
-        </dict>
-        <dict>
-            <key>PayloadDisplayName</key>
-            <string>Restrictions - Media Sharing</string>
-            <key>PayloadIdentifier</key>
-            <string>com.company.applicationaccess.mediasharing</string>
-            <key>PayloadType</key>
-            <string>com.apple.applicationaccess</string>
-            <key>PayloadUUID</key>
-            <string>5F7E80A1-3C89-4F5A-B47E-83B109E2B5A0</string>
-            <key>PayloadVersion</key>
-            <integer>1</integer>
-            <key>allowMediaSharing</key>
-            <false/>
-            <key>allowMediaSharingModification</key>
             <false/>
         </dict>
         <dict>
