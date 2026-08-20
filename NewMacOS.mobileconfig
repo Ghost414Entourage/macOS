@@ -72,20 +72,6 @@
         </dict>
         <dict>
             <key>PayloadDisplayName</key>
-            <string>Diagnostics Restriction</string>
-            <key>PayloadIdentifier</key>
-            <string>com.company.applicationaccess.diagnostics</string>
-            <key>PayloadType</key>
-            <string>com.apple.applicationaccess</string>
-            <key>PayloadUUID</key>
-            <string>C3D4E5F6-A7B8-9012-CDEF-3456789012CD</string>
-            <key>PayloadVersion</key>
-            <integer>1</integer>
-            <key>allowDiagnosticSubmission</key>
-            <false/>
-        </dict>
-        <dict>
-            <key>PayloadDisplayName</key>
             <string>AirDrop Unmanaged Restriction</string>
             <key>PayloadIdentifier</key>
             <string>com.company.applicationaccess.airdropunmanaged</string>
