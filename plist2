@@ -47,4 +47,27 @@ sudo defaults read /Library/Managed\ Preferences/com.apple.MCXBluetooth.plist Di
 
 -------------------------------------------------------------------------------------------------------------------
 
+/Users/computer/Library/Preferences/com.apple.classroom.plist
+
+
+defaults write com.apple.classroom 'allowClassroomLockDevice-00000000-0000-0000-0000-000000000000:0' -bool false
+defaults write com.apple.classroom 'allowClassroomLockDevice-00000000-0000-0000-0000-000000000000:0-ask' -bool false
+defaults write com.apple.classroom 'allowClassroomOpenApp' -bool false
+defaults write com.apple.classroom 'allowClassroomOpenApp-00000000-0000-0000-0000-000000000000:0' -bool false
+defaults write com.apple.classroom 'allowClassroomOpenApp-00000000-0000-0000-0000-000000000000:0-ask' -bool false
+defaults write com.apple.classroom 'allowClassroomOpenApp-ask' -bool false
+defaults write com.apple.classroom 'allowClassroomOpenURL' -bool false
+defaults write com.apple.classroom 'allowClassroomOpenURL-00000000-0000-0000-0000-000000000000:0' -bool false
+defaults write com.apple.classroom 'allowClassroomOpenURL-00000000-0000-0000-0000-000000000000:0-ask' -bool false
+defaults write com.apple.classroom 'allowClassroomOpenURL-ask' -bool false
+defaults write com.apple.classroom 'allowClassroomScreenObservation-00000000-0000-0000-0000-000000000000:0' -bool false
+defaults write com.apple.classroom 'allowClassroomScreenObservation-00000000-0000-0000-0000-000000000000:0-ask' -bool false
+defaults write com.apple.classroom 'forceUnpromptedRemoteScreenObservation-00000000-0000-0000-0000-000000000000:0' -bool false
+defaults write com.apple.classroom 'forceUnpromptedRemoteScreenObservation-00000000-0000-0000-0000-000000000000:0-ask' -bool false
+
+
+/usr/libexec/PlistBuddy -c "Print" ~/Library/Preferences/com.apple.classroom.plist
+defaults read com.apple.classroom
+
+-------------------------------------------------------------------------------------------------------------------
 
