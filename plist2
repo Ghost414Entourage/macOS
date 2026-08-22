@@ -66,7 +66,7 @@ defaults write com.apple.classroom 'forceUnpromptedRemoteScreenObservation-00000
 defaults write com.apple.classroom 'forceUnpromptedRemoteScreenObservation-00000000-0000-0000-0000-000000000000:0-ask' -bool false
 
 
-/usr/libexec/PlistBuddy -c "Print" ~/Library/Preferences/com.apple.classroom.plist
+/usr/libexec/PlistBuddy -c "Print" /Users/computer/Library/Preferences/com.apple.classroom.plist
 defaults read com.apple.classroom
 
 -------------------------------------------------------------------------------------------------------------------
