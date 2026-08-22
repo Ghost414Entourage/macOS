@@ -38,4 +38,13 @@ sudo defaults read /Library/Managed\ Preferences/com.apple.MCXBluetooth.plist Di
 
 -------------------------------------------------------------------------------------------------------------------
 
+/Users/computer/Library/Preferences/com.apple.chronod.plist
+
+/usr/libexec/PlistBuddy -c "Set :effectiveRemoteWidgetsEnabled false" -c "Set :hasMigratedRemoteWidgetsEnabledState false" -c "Set :hasRemoteWidgets false" -c "Set :remoteWidgetsEnabled false" ~/Library/Preferences/com.apple.chronod.plist
+
+/usr/libexec/PlistBuddy -c "Print" ~/Library/Preferences/com.apple.chronod.plist
+
+
+-------------------------------------------------------------------------------------------------------------------
+
 
