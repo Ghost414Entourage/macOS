@@ -64,3 +64,6 @@ sudo fs_usage -w | grep -E "System Settings|plist"
 
 /usr/bin/fs_usage
 
+sudo /usr/libexec/PlistBuddy -c "Set :NetBIOSName computer" /Library/Preferences/SystemConfiguration/com.apple.smb.server.plist
+
+sudo /usr/libexec/PlistBuddy -c "Print :NetBIOSName" /Library/Preferences/SystemConfiguration/com.apple.smb.server.plist
