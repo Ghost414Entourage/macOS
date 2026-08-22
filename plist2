@@ -26,3 +26,8 @@ sudo defaults read /Library/Managed\ Preferences/com.apple.MCXBluetooth.plist Di
 
 /usr/libexec/PlistBuddy -c "Set :allowApplePersonalizedAdvertising false" -c "Set :allowIdentifierForAdvertising false" -c "Set :personalizedAdsMigrated false" ~/Library/Preferences/com.apple.AdLib.plist
 
+
+/usr/libexec/PlistBuddy -c "Print" ~/Library/Preferences/com.apple.AdLib.plist
+
+-------------------------------------------------------------------------------------------------------------------
+
