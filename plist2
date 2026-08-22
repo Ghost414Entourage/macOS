@@ -31,3 +31,11 @@ sudo defaults read /Library/Managed\ Preferences/com.apple.MCXBluetooth.plist Di
 
 -------------------------------------------------------------------------------------------------------------------
 
+/Users/computer/Library/Preferences/com.apple.AdPlatforms.plist
+
+/usr/libexec/PlistBuddy -c "Set :AdPlatformsPAAvailable false" -c "Set :personalizedAdsDefaulted false" -c "Set :raidRotated false" ~/Library/Preferences/com.apple.AdPlatforms.plist
+
+
+-------------------------------------------------------------------------------------------------------------------
+
+
