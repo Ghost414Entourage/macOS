@@ -71,3 +71,22 @@ defaults read com.apple.classroom
 
 -------------------------------------------------------------------------------------------------------------------
 
+/usr/libexec/PlistBuddy \
+  -c "Set :allowClassroomLockDevice-00000000-0000-0000-0000-000000000000\:0 false" \
+  -c "Set :allowClassroomScreenObservation-00000000-0000-0000-0000-000000000000\:0-ask false" \
+  -c "Set :allowClassroomScreenObservation-00000000-0000-0000-0000-000000000000\:0 false" \
+  -c "Set :allowClassroomOpenApp-00000000-0000-0000-0000-000000000000\:0-ask false" \
+  -c "Set :allowClassroomOpenURL-ask false" \
+  -c "Set :allowClassroomOpenURL false" \
+  -c "Set :allowClassroomLockDevice-00000000-0000-0000-0000-000000000000\:0-ask false" \
+  -c "Set :allowClassroomOpenApp-00000000-0000-0000-0000-000000000000\:0 false" \
+  -c "Set :allowClassroomOpenURL-00000000-0000-0000-0000-000000000000\:0-ask false" \
+  -c "Set :forceUnpromptedRemoteScreenObservation-00000000-0000-0000-0000-000000000000\:0-ask false" \
+  -c "Set :allowClassroomOpenURL-00000000-0000-0000-0000-000000000000\:0 false" \
+  -c "Set :forceUnpromptedRemoteScreenObservation-00000000-0000-0000-0000-000000000000\:0 false" \
+  -c "Set :allowClassroomOpenApp false" \
+  -c "Set :allowClassroomOpenApp-ask false" \
+  /Users/computer/Library/Preferences/com.apple.classroom.plist
+
+-------------------------------------------------------------------------------------------------------------------
+
