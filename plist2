@@ -90,3 +90,9 @@ defaults read com.apple.classroom
 
 -------------------------------------------------------------------------------------------------------------------
 
+/Users/computer/Library/Preferences/com.apple.Siri.plist 
+
+/usr/libexec/PlistBuddy -c "Set :GMSignedUp false" /Users/computer/Library/Preferences/com.apple.Siri.plist 
+
+
+-------------------------------------------------------------------------------------------------------------------
