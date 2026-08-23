@@ -2,6 +2,8 @@ https://github.com/ProfileManifests/ProfileManifests/tree/master/Manifests/Manag
 
 strings /System/Library/CoreServices/ManagedClient.app/Contents/MacOS/ManagedClient | grep -i "Bluetooth"
 
+otool
+
 strings /System/Library/PrivateFrameworks/ConfigurationProfiles.framework/ConfigurationProfiles | grep -i "Disable"
 
 ----------------------------------------------------------------------------------------------------------------
