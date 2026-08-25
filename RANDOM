@@ -495,7 +495,7 @@ sudo networksetup -setv6off "Wi-Fi"
 sudo ifconfig bridge0 down
 sudo ifconfig bridge0 destroy
 
-sudo ifconfig en0 inet6 fe80::1458:4d65:2b6f:c271%en0 delete
+sudo ifconfig en0 inet6 'ipv6address' delete
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 
