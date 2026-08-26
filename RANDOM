@@ -749,5 +749,6 @@ system_profiler -listDataTypes
 system_profiler SPPowerDataType
 system_profiler SPAirPortDataType "Card Type"
 
+sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder
 
 --------------------------------------------------------------------------------------------------------------------------------------------
