@@ -65,8 +65,6 @@
 			<false/>
 			<key>allowCloudNotes</key>
 			<false/>
-			<key>allowCloudPhotoLibrary</key>
-			<false/>
 			<key>allowCloudPrivateRelay</key>
 			<false/>
 			<key>allowCloudReminders</key>
