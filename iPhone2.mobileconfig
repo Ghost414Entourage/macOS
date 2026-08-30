@@ -137,8 +137,6 @@
 			<false/>
 			<key>allowPersonalizedHandwritingResults</key>
 			<false/>
-			<key>allowPhotoStream</key>
-			<false/>
 			<key>allowPodcasts</key>
 			<false/>
 			<key>allowPrinterSharingModification</key>
