@@ -131,8 +131,6 @@
 			<false/>
 			<key>allowNotesTranscriptionSummary</key>
 			<false/>
-			<key>allowOTAPKIUpdates</key>
-			<false/>
 			<key>allowPairedWatch</key>
 			<false/>
 			<key>allowPasswordProximityRequests</key>
