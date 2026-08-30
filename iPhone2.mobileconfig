@@ -35,8 +35,6 @@
 			<false/>
 			<key>allowAutoDim</key>
 			<false/>
-			<key>allowAutoUnlock</key>
-			<false/>
 			<key>allowBluetoothModification</key>
 			<false/>
 			<key>allowBluetoothSharingModification</key>
@@ -62,8 +60,6 @@
 			<key>allowCloudFMM</key>
 			<false/>
 			<key>allowCloudFreeform</key>
-			<false/>
-			<key>allowCloudKeychainSync</key>
 			<false/>
 			<key>allowCloudMail</key>
 			<false/>
@@ -199,8 +195,6 @@
 			<true/>
 			<key>ratingRegion</key>
 			<string>us</string>
-			<key>safariAcceptCookies</key>
-			<real>1</real>
 			<key>safariForceFraudWarning</key>
 			<true/>
 		</dict>
