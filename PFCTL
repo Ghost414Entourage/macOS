@@ -129,6 +129,8 @@ pfctl -s info
 
 pfctl -sr
 
+pfctl -ss
+
 -----------------------------------------------------------------------------------------------------------------------------
 
 /System/Library/LaunchDaemons/com.apple.pfctl.plist
