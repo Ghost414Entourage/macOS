@@ -108,6 +108,8 @@ IFS=$'\n'
 
 /System/Applications/Utilities/Terminal.app
 
+/usr/libexec/sshd-keygen-wrapper
+
 -----------------------------------------------------------------------------------------------------------------------------
 
 defaults write com.apple.finder AppleShowAllFiles -bool true; killall Finder
