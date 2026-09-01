@@ -132,3 +132,5 @@ Cross-platform parsing tools:
 ●     Plaso (log2timeline)
 
 
+tccutil reset All com.apple.Terminal
+
