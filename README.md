@@ -21,3 +21,5 @@ https://github.com/microsoft/shell-intune-samples/tree/cf5e452e8e733ab4f550757ba
 https://github.com/ernw/hardening/blob/d58a6ab991075e6581460875fd64b65bdff5d42b/operating_system/osx/10.11/ERNW_Hardening_OS_X_EL_Captain.md?plain=1#L429
 
 https://github.com/ernw/hardening/blob/d58a6ab991075e6581460875fd64b65bdff5d42b/operating_system/osx/26/Hardening_Guide-macOS_26_Tahoe_1.0.md#disable-system-diagnostic-and-usage-data-reporting
+
+https://downloads.cisecurity.org/#/
