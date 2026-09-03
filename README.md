@@ -15,3 +15,5 @@ https://ss64.com/mac/syntax-defaults.html
 https://appledevicepolicy.tools/policy-explorer/detail?type=com.apple.ManagedClient.preferences&branch=release
 
 https://imazing.com/open-source
+
+https://github.com/microsoft/shell-intune-samples/tree/cf5e452e8e733ab4f550757bac02105bf47e36a3/macOS/Config
