@@ -104,5 +104,7 @@ defaults write /Users/computer/Library/Preferences/com.apple.finder.plist AppleS
 
 defaults write /Users/computer/Library/Preferences/com.apple.finder.plist FXPreferredViewStyle -string "clmv" && killall Finder
 
+plutil -p /Users/computer/Library/Preferences/com.apple.finder.plist | grep -E "FXPreferredViewStyle|AppleShowAllFiles"
+
 -------------------------------------------------------------------------------------------------------------------
 
