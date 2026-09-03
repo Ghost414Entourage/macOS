@@ -1,0 +1,5 @@
+# Search Finder's binary for keys matching common preference patterns
+strings /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder | grep -E "^FX|^Apple|^Show"
+
+
+-----------------------------------------------------------------------------------------------------------------
