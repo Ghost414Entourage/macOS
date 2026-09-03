@@ -98,3 +98,11 @@ defaults read com.apple.classroom
 
 
 -------------------------------------------------------------------------------------------------------------------
+
+
+defaults write /Users/computer/Library/Preferences/com.apple.finder.plist AppleShowAllFiles -bool true && killall Finder
+
+defaults write /Users/computer/Library/Preferences/com.apple.finder.plist FXPreferredViewStyle -string "clmv" && killall Finder
+
+-------------------------------------------------------------------------------------------------------------------
+
