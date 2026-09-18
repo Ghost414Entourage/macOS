@@ -134,3 +134,8 @@ Cross-platform parsing tools:
 
 tccutil reset All com.apple.Terminal
 
+
+plutil -p <file>
+
+plutil -convert xml1 <file>
+
