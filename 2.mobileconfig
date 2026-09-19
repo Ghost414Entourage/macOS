@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- Top-Level Profile Metadata -->
+    <key>ConsentText</key>
+    <dict>
+        <key>default</key>
+        <string>THE SOFTWARE IS PROVIDED 'AS IS' WITHOUT ANY WARRANTY OF ANY KIND, EITHER EXPRESSED, IMPLIED, OR STATUTORY, INCLUDING, BUT NOT LIMITED TO, ANY WARRANTY THAT THE SOFTWARE WILL CONFORM TO SPECIFICATIONS, ANY IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND FREEDOM FROM INFRINGEMENT, AND ANY WARRANTY THAT THE DOCUMENTATION WILL CONFORM TO THE SOFTWARE, OR ANY WARRANTY THAT THE SOFTWARE WILL BE ERROR FREE. IN NO EVENT SHALL NIST BE LIABLE FOR ANY DAMAGES, INCLUDING, BUT NOT LIMITED TO, DIRECT, INDIRECT, SPECIAL OR CONSEQUENTIAL DAMAGES, ARISING OUT OF, RESULTING FROM, OR IN ANY WAY CONNECTED WITH THIS SOFTWARE, WHETHER OR NOT BASED UPON WARRANTY, CONTRACT, TORT, OR OTHERWISE, WHETHER OR NOT INJURY WAS SUSTAINED BY PERSONS OR PROPERTY OR OTHERWISE, AND WHETHER OR NOT LOSS WAS SUSTAINED FROM, OR AROSE OUT OF THE RESULTS OF, OR USE OF, THE SOFTWARE OR SERVICES PROVIDED HEREUNDER.</string>
+    </dict>
+    <key>PayloadDescription</key>
+    <string>Configures Finder preferences (Column View and Show Hidden Files) and disables Game Center across macOS devices.</string>
+    <key>PayloadDisplayName</key>
+    <string>Combined System Preferences - Finder Defaults and Game Center Control</string>
+    <key>PayloadIdentifier</key>
+    <string>com.custom.profile.systempreferences.v1</string>
+    <key>PayloadOrganization</key>
+    <string>IT Management</string>
+    <key>PayloadScope</key>
+    <string>System</string>
+    <key>PayloadType</key>
+    <string>Configuration</string>
+    <key>PayloadUUID</key>
+    <string>7C9E8D6F-5A4B-3C2D-1E0F-9A8B7C6D5E4F</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+
+    <!-- Payload Array -->
+    <key>PayloadContent</key>
+    <array>
+        <dict>
+            <key>PayloadDisplayName</key>
+            <string>Finder View and Display Settings</string>
+            <key>PayloadIdentifier</key>
+            <string>com.custom.finder.managed</string>
+            <key>PayloadType</key>
+            <string>com.apple.ManagedClient.preferences</string>
+            <key>PayloadUUID</key>
+            <string>F8E7D6C5-B4A3-2109-8765-43210FEDCBA9</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>PayloadContent</key>
+            <dict>
+                <key>com.apple.finder</key>
+                <dict>
+                    <key>Forced</key>
+                    <array>
+                        <dict>
+                            <key>mcx_preference_settings</key>
+                            <dict>
+                                <key>FXPreferredViewStyle</key>
+                                <string>clmv</string>
+                                <key>AppleShowAllFiles</key>
+                                <true/>
+                            </dict>
+                        </dict>
+                    </array>
+                </dict>
+            </dict>
+        </dict>
+        <dict>
+            <key>PayloadDisplayName</key>
+            <string>Game Center Restriction</string>
+            <key>PayloadIdentifier</key>
+            <string>com.custom.applicationaccess.gamecenter</string>
+            <key>PayloadType</key>
+            <string>com.apple.applicationaccess</string>
+            <key>PayloadUUID</key>
+            <string>B6C23D54-90E2-5F23-99A0-2B3C4D5E6F7A</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>allowGameCenter</key>
+            <false/>
+        </dict>
+    </array>
+</dict>
+</plist>
