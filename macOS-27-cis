@@ -1,0 +1,27 @@
+/usr/bin/sudo /usr/sbin/softwareupdate -i -a
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+/usr/bin/sudo /usr/bin/defaults write /Library/Preferences/com.apple.SoftwareUpdate AutomaticDownload -bool true  
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+/usr/bin/sudo /usr/bin/defaults write /Library/Preferences/com.apple.SoftwareUpdate AutomaticallyInstallMacOSUpdates -bool TRUE
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+/usr/bin/sudo /usr/bin/defaults write /Library/Preferences/com.apple.commerce AutoUpdate -bool TRUE
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+/usr/bin/sudo  /usr/bin/defaults write /Library/Preferences/com.apple.SoftwareUpdate ConfigDataInstall -bool true 
+
+/usr/bin/sudo  /usr/bin/defaults write /Library/Preferences/com.apple.SoftwareUpdate CriticalUpdateInstall -bool true
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
