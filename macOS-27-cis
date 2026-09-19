@@ -24,4 +24,69 @@
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+/usr/bin/sudo /usr/sbin/systemsetup -listtimezones
+
+/usr/bin/sudo /usr/sbin/systemsetup -settimezone America/Chicago
+
+Set TimeZone: America/Chicago
+
+/usr/sbin/systemsetup -gettimezone
+
+
+/usr/bin/sudo /usr/sbin/systemsetup -setnetworktimeserver <your.time.server>
+
+
+/usr/bin/sudo /usr/sbin/systemsetup -setusingnetworktime on
+
+
+/usr/bin/sudo /usr/sbin/systemsetup -getnetworktimeserver 
+
+
+example: Network Time Server: time.apple.com
+
+% /usr/bin/sudo /usr/bin/sntp <your.time.server>
+Ensure that the offset result(s) are between -270.x and 270.x seconds.
+
+And to set the time to the correct offset:
+
+% /usr/bin/sudo /usr/bin/sntp -sS <your.time.server>
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+/usr/bin/sudo /bin/launchctl disable system/com.apple.screensharing
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ /usr/bin/sudo /bin/launchctl disable system/com.apple.smbd
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+/usr/bin/sudo /usr/sbin/cupsctl --no-share-printers
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+/usr/bin/sudo /usr/sbin/systemsetup -setremotelogin off
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+/usr/bin/sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -deactivate -stop
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+/usr/bin/sudo /usr/sbin/systemsetup -setremoteappleevents off 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+usr/bin/sudo /usr/bin/defaults write /Library/Preferences/SystemConfiguration/com.apple.nat NAT -dict Enabled -int 0
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+/usr/bin/sudo /usr/bin/AssetCacheManagerUtil deactivate
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+/usr/bin/sudo -u computer /usr/bin/defaults -currentHost write com.apple.Bluetooth PrefKeyServicesEnabled -bool false
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
