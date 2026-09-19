@@ -89,4 +89,29 @@ usr/bin/sudo /usr/bin/defaults write /Library/Preferences/SystemConfiguration/co
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+/usr/bin/sudo /usr/bin/defaults write /var/db/locationd/Library/Preferences/ByHost/com.apple.locationd LocationServicesEnabled -bool false
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+/usr/bin/sudo /usr/bin/defaults write /Library/Preferences/com.apple.locationmenu.plist ShowSystemServices -bool true
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+/usr/bin/sudo /usr/bin/defaults read /var/db/locationd/clients.plist
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+/usr/bin/defaults read /Library/Preferences/com.apple.loginwindow lastUserName
+
+
+/usr/bin/sudo -u computer /usr/bin/defaults delete /Users/computer/Library/Preferences/com.apple.dock wvous-bl-corner 2>/dev/null
+
+/usr/bin/sudo -u computer /usr/bin/defaults delete /Users/computer/Library/Preferences/com.apple.dock wvous-tl-corner 2>/dev/null
+
+/usr/bin/sudo -u computer /usr/bin/defaults delete /Users/computer/Library/Preferences/com.apple.dock wvous-tr-corner 2>/dev/null
+
+/usr/bin/sudo -u computer /usr/bin/defaults delete /Users/computer/Library/Preferences/com.apple.dock wvous-br-corner 2>/dev/null
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
