@@ -139,3 +139,66 @@ usr/bin/sudo /usr/bin/defaults write /Library/Preferences/SystemConfiguration/co
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+/usr/bin/sudo /usr/bin/dscl . -list /Users hint . -delete /Users/computer hint
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+/usr/bin/sudo -u computer /usr/bin/bioutil -w -u 0
+
+/usr/bin/sudo -u computer /usr/bin/bioutil -w -a 0
+
+/usr/bin/sudo usr/bin/bioutil -w -s -o 86400
+
+
+
+/usr/bin/sudo -u firstuser /usr/bin/bioutil -r 
+
+/usr/bin/sudo usr/bin/bioutil -r -s | /usr/bin/awk '/timeout/'
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+/usr/bin/sudo /usr/bin/defaults write /Library/Preferences/com.apple.loginwindow GuestEnabled -bool false
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+/usr/bin/sudo /usr/sbin/sysadminctl -smbGuestAccess off
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+/usr/bin/sudo /usr/bin/defaults delete /Library/Preferences/com.apple.loginwindow autoLoginUser
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+/usr/bin/sudo /bin/launchctl load -w /System/Library/LaunchDaemons/com.apple.auditd.plist
+
+/usr/bin/sudo /bin/cp /etc/security/audit_control.example /etc/security/audit_control 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+/usr/bin/sudo /usr/sbin/chown -R root:wheel /etc/security/audit_control
+
+/usr/bin/sudo /bin/chmod -R 700 /etc/security/audit_control
+
+/usr/bin/sudo /usr/sbin/chown -R root:wheel $(/usr/bin/sudo /usr/bin/grep '^dir' /etc/security/audit_control | /usr/bin/awk -F: '{print $2}')
+
+/usr/bin/sudo /bin/chmod -R 700 $(/usr/bin/grep '^dir' /etc/security/audit_control | /usr/bin/awk -F: '{print $2}')
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+/usr/bin/sudo /usr/bin/defaults write /Library/Preferences/com.apple.mDNSResponder.plist NoMulticastAdvertisements -bool true
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+/usr/bin/sudo /usr/sbin/apachectl stop
+
+/usr/bin/sudo /bin/launchctl unload -w /System/Library/LaunchDaemons/org.apache.httpd.plist
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+/usr/bin/sudo /bin/launchctl disable system/com.apple.nfsd
+
+/usr/bin/sudo /bin/rm -rf /etc/exports 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
