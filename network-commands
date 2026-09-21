@@ -10,4 +10,8 @@ sudo networksetup -setdnsservers "Wi-Fi" 8.8.8.8 1.1.1.1
 sudo networksetup -setdhcp "Wi-Fi"
 
 
+for iface in $(ifconfig -l); do
+    ifconfig $iface inet6 | awk '/inet6 / {print $2}' | xargs -I {} sudo ifconfig $iface inet6 delete {};
+done
+
 
