@@ -1,0 +1,13 @@
+networksetup -listallnetworkservices
+
+sudo networksetup -setmanual "<Service Name>" <IP> <Subnet Mask> <Router/Gateway>
+sudo networksetup -setmanual "Wi-Fi" 192.168.1.50 255.255.255.0 192.168.1.1
+
+networksetup -getinfo "Wi-Fi"
+
+sudo networksetup -setdnsservers "Wi-Fi" 8.8.8.8 1.1.1.1
+
+sudo networksetup -setdhcp "Wi-Fi"
+
+
+
