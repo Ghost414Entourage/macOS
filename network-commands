@@ -14,4 +14,10 @@ for iface in $(ifconfig -l); do
     ifconfig $iface inet6 | awk '/inet6 / {print $2}' | xargs -I {} sudo ifconfig $iface inet6 delete {};
 done
 
+------------------------------------------------------------------------------------------------------------
+
+system_profiler SPAirPortDataType | grep -i channel
+
+sudo wdutil info | grep -E "SSID|Channel"
+
 
