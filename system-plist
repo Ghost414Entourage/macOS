@@ -1,0 +1,16 @@
+# Disable Game Controller Auto-Switch Mode
+sudo /usr/libexec/PlistBuddy -c "Set :enableGameControllerAutoSwitchMode 0" /Library/Preferences/com.apple.bluetooth.plist
+
+# Disable Game Controller USB Bluetooth Pairing
+sudo /usr/libexec/PlistBuddy -c "Set :enableGameControllerUSBBluetoothPairing 0" /Library/Preferences/com.apple.bluetooth.plist
+
+# Disable Spatial Sound Profile Allowed
+sudo /usr/libexec/PlistBuddy -c "Set :SpatialSoundProfileAllowed 0" /Library/Preferences/com.apple.bluetooth.plist
+
+# Disable 3rd Party BLE Legacy Mode Flags
+sudo /usr/libexec/PlistBuddy -c "Set :move3PPLEMSToLegacyMode 0" /Library/Preferences/com.apple.bluetooth.plist
+sudo /usr/libexec/PlistBuddy -c "Set :move3PPLEMSToLegacyModeSerial 0" /Library/Preferences/com.apple.bluetooth.plist
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
