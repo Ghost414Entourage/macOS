@@ -1,0 +1,7 @@
+/Users/computer/Library/Safari/TopSites.plist 
+
+/usr/libexec/PlistBuddy -c "Delete :TopSites" ~/Library/Safari/TopSites.plist
+/usr/libexec/PlistBuddy -c "Add :TopSites array" ~/Library/Safari/TopSites.plist
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------
