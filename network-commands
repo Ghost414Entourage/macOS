@@ -21,3 +21,5 @@ system_profiler SPAirPortDataType | grep -i channel
 sudo wdutil info | grep -E "SSID|Channel"
 
 
+sudo cat /private/var/db/dhcpclient/leases/en0.plist
+
