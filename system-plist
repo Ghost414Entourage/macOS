@@ -14,3 +14,9 @@ sudo /usr/libexec/PlistBuddy -c "Set :move3PPLEMSToLegacyModeSerial 0" /Library/
 
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------
+
+sudo /usr/libexec/PlistBuddy -c "Set :addedRemoteAppleEventsAccess false" /Library/Preferences/com.apple.updatesettings.plist
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+
