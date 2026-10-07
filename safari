@@ -63,54 +63,12 @@ com.apple.unilog.SafariSearchUploadWorker
 
 
 
-for d in com.apple.parsec.SafariBrowsingAssistantWorker \
-         com.apple.Safari \
-         com.apple.Safari.CacheDeleteExtension \
-         com.apple.Safari.DiagnosticExtension \
-         com.apple.Safari.SafariLinkExtension \
-         com.apple.Safari.SafariQuickLookPreview \
-         com.apple.safari.SafariUsageRetentionExtension \
-         com.apple.Safari.SafariWidgetExtension \
-         com.apple.Safari.WebApp \
-         com.apple.SafariFoundation.CredentialProviderExtensionHelper \
-         com.apple.share.System.add-to-safari-reading-list \
-         com.apple.unilog.SafariSearchUploadWorker; do
-  [ -d "$d" ] && rm -rf "$d"/* "$d"/.* 2>/dev/null
-done
+for d in "/Users/computer/Library/Safari" "/Users/computer/Library/Caches/com.apple.Safari" "/Users/computer/Library/Caches/com.apple.Safari.SafeBrowsing" "/Users/computer/Library/Containers/com.apple.parsec.SafariBrowsingAssistantWorker" "/Users/computer/Library/Containers/com.apple.Safari" "/Users/computer/Library/Containers/com.apple.Safari.CacheDeleteExtension" "/Users/computer/Library/Containers/com.apple.Safari.DiagnosticExtension" "/Users/computer/Library/Containers/com.apple.Safari.SafariLinkExtension" "/Users/computer/Library/Containers/com.apple.Safari.SafariQuickLookPreview" "/Users/computer/Library/Containers/com.apple.safari.SafariUsageRetentionExtension" "/Users/computer/Library/Containers/com.apple.Safari.SafariWidgetExtension" "/Users/computer/Library/Containers/com.apple.Safari.WebApp" "/Users/computer/Library/Containers/com.apple.SafariFoundation.CredentialProviderExtensionHelper" "/Users/computer/Library/Containers/com.apple.share.System.add-to-safari-reading-list" "/Users/computer/Library/Containers/com.apple.unilog.SafariSearchUploadWorker"; do [ -d "$d" ] && find "$d" -mindepth 1 -maxdepth 1 -exec osascript -e 'tell application "Finder" to move POSIX file "{}" to trash' \; 2>/dev/null; done
 
 
 
+tccutil reset AppleEvents com.apple.Terminal
 
-for d in com.apple.Safari com.apple.Safari.SafeBrowsing; do
-  [ -d "$d" ] && find "$d" -mindepth 1 -delete
-done
+tccutil reset SystemPolicyAllFiles com.apple.Terminal
 
-
-
-
-
-for d in \
-  "/Users/computer/Library/Safari" \
-  "/Users/computer/Library/Caches/com.apple.Safari" \
-  "/Users/computer/Library/Caches/com.apple.Safari.SafeBrowsing" \
-  "/Users/computer/Library/Containers/com.apple.parsec.SafariBrowsingAssistantWorker" \
-  "/Users/computer/Library/Containers/com.apple.Safari" \
-  "/Users/computer/Library/Containers/com.apple.Safari.CacheDeleteExtension" \
-  "/Users/computer/Library/Containers/com.apple.Safari.DiagnosticExtension" \
-  "/Users/computer/Library/Containers/com.apple.Safari.SafariLinkExtension" \
-  "/Users/computer/Library/Containers/com.apple.Safari.SafariQuickLookPreview" \
-  "/Users/computer/Library/Containers/com.apple.safari.SafariUsageRetentionExtension" \
-  "/Users/computer/Library/Containers/com.apple.Safari.SafariWidgetExtension" \
-  "/Users/computer/Library/Containers/com.apple.Safari.WebApp" \
-  "/Users/computer/Library/Containers/com.apple.SafariFoundation.CredentialProviderExtensionHelper" \
-  "/Users/computer/Library/Containers/com.apple.share.System.add-to-safari-reading-list" \
-  "/Users/computer/Library/Containers/com.apple.unilog.SafariSearchUploadWorker"; do
-  [ -d "$d" ] && find "$d" -mindepth 1 -delete
-done
-
-
-
-
-
-
-
+tccutil reset All com.apple.Terminal
