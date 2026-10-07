@@ -17,6 +17,28 @@ https://support.apple.com/en-us/103229
 
 -----------------------------------------------------------------------------------------------------------------------------
 
+# Default deny all in, allow all out with state
+block in all
+pass out all keep state
+
+# Loopback protection
+block in from 127.0.0.1
+block in from ::1
+
+# Allow essential ICMPv6 traffic (Neighbor Discovery, Router Advertisements, Ping, etc.)
+pass in inet6 proto ipv6-icmp all
+
+# Allow DHCP (IPv4 & IPv6)
+pass in inet proto udp from port 67 to port 68
+pass in inet6 proto udp from port 547 to port 546
+
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
 scrub in on en0 all fragment reassemble
 
 scrub in all fragment reassemble
