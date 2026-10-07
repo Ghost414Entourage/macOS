@@ -81,3 +81,36 @@ done
 
 
 
+for d in com.apple.Safari com.apple.Safari.SafeBrowsing; do
+  [ -d "$d" ] && find "$d" -mindepth 1 -delete
+done
+
+
+
+
+
+for d in \
+  "/Users/computer/Library/Caches/com.apple.Safari" \
+  "/Users/computer/Library/Caches/com.apple.Safari.SafeBrowsing" \
+  "/Users/computer/Library/Containers/com.apple.parsec.SafariBrowsingAssistantWorker" \
+  "/Users/computer/Library/Containers/com.apple.Safari" \
+  "/Users/computer/Library/Containers/com.apple.Safari.CacheDeleteExtension" \
+  "/Users/computer/Library/Containers/com.apple.Safari.DiagnosticExtension" \
+  "/Users/computer/Library/Containers/com.apple.Safari.SafariLinkExtension" \
+  "/Users/computer/Library/Containers/com.apple.Safari.SafariQuickLookPreview" \
+  "/Users/computer/Library/Containers/com.apple.safari.SafariUsageRetentionExtension" \
+  "/Users/computer/Library/Containers/com.apple.Safari.SafariWidgetExtension" \
+  "/Users/computer/Library/Containers/com.apple.Safari.WebApp" \
+  "/Users/computer/Library/Containers/com.apple.SafariFoundation.CredentialProviderExtensionHelper" \
+  "/Users/computer/Library/Containers/com.apple.share.System.add-to-safari-reading-list" \
+  "/Users/computer/Library/Containers/com.apple.unilog.SafariSearchUploadWorker"; do
+  [ -d "$d" ] && find "$d" -mindepth 1 -delete
+done
+
+
+
+
+
+
+
+
