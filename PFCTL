@@ -17,6 +17,18 @@ https://support.apple.com/en-us/103229
 
 -----------------------------------------------------------------------------------------------------------------------------
 
+
+
+scrub in on en0 all fragment reassemble
+
+scrub in all fragment reassemble
+
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+
+
+
 # Default deny all in, allow all out with state
 block in all
 pass out all keep state
@@ -29,28 +41,6 @@ pass in quick inet6 proto ipv6-icmp icmp6-type { 2, 134, 135, 136 }
 
 
 # Allow DHCP (IPv4 & IPv6)
-pass in inet proto udp from port 67 to port 68
-pass in inet6 proto udp from port 547 to port 546
-
-
------------------------------------------------------------------------------------------------------------------------------
-
-
-
-
-
-scrub in on en0 all fragment reassemble
-
-scrub in all fragment reassemble
-
-
-#default deny all in, allow all out and keep state
-block in all
-pass out all keep state
-
-block in from 127.0.0.1
-
-## Allow DHCP
 pass in inet proto udp from port 67 to port 68
 pass in inet6 proto udp from port 547 to port 546
 
