@@ -16,3 +16,31 @@ https://www.hexnode.com/mobile-device-management/help/script-to-clear-cache-on-m
 
 sudo /bin/rm -rf /Users/$USER/Library/Containers/com.apple.Safari/Data/Library/Caches/* > /dev/null 2>&1 & sudo /bin/rm -rf /private/var/folders/ry/*/*/com.apple.Safari/com.apple.Safari/com.apple.metal/*/libraries.data > /dev/null 2>&1 & sudo /bin/rm -rf /private/var/folders/ry/*/*/com.apple.Safari/com.apple.Safari/com.apple.metal/*/libraries.maps > /dev/null 2>&1 & sudo /bin/rm -rf /Users/$USER/Library/Containers/io.te0.WebView/Data/Library/Caches/WebKit > /dev/null 2>&1 & sudo /bin/rm -rf /Users/$USER/Library/Safari/History.db* > /dev/null 2>&1 & sudo /bin/rm -rf /Users/$USER/Library/Safari/RecentlyClosedTabs.plist > /dev/null 2>&1 & sudo /bin/rm -rf /Users/$USER/Library/Safari/CloudHistoryRemoteConfiguration.plist > /dev/null 2>&1
 
+sudo /bin/rm -rf /Users/computer/Library/Containers/com.apple.Safari/Data/Library/Caches/* > /dev/null 2>&1 & sudo /bin/rm -rf /private/var/folders/ry/*/*/com.apple.Safari/com.apple.Safari/com.apple.metal/*/libraries.data > /dev/null 2>&1 & sudo /bin/rm -rf /private/var/folders/ry/*/*/com.apple.Safari/com.apple.Safari/com.apple.metal/*/libraries.maps > /dev/null 2>&1 & sudo /bin/rm -rf /Users/computer/Library/Containers/io.te0.WebView/Data/Library/Caches/WebKit > /dev/null 2>&1 & sudo /bin/rm -rf /Users/computer/Library/Safari/History.db* > /dev/null 2>&1 & sudo /bin/rm -rf /Users/computer/Library/Safari/RecentlyClosedTabs.plist > /dev/null 2>&1 & sudo /bin/rm -rf /Users/computer/Library/Safari/CloudHistoryRemoteConfiguration.plist > /dev/null 2>&1
+
+
+# Web Inspector state, logs, and stored extension data
+rm -rf ~/Library/Containers/com.apple.Safari/Data/Library/WebKit/WebInspector
+rm -rf ~/Library/Safari/WebInspector/
+
+
+# Reading list cache and offline web archives
+rm -rf ~/Library/Safari/ReadingListArchives/
+rm -rf ~/Library/Containers/com.apple.Safari/Data/Library/Caches/com.apple.Safari/ReadingListArchives
+
+
+# Quick Website Search database and site search pre-fetches
+rm -rf ~/Library/Safari/SearchDescriptions.plist
+rm -rf ~/Library/Safari/PreprintedProviderRules.plist
+
+
+# Safari App Extensions state and WebKit extension data
+rm -rf ~/Library/Containers/com.apple.Safari.SandboxBroker/
+rm -rf ~/Library/Group\ Containers/group.com.apple.Safari/
+
+
+# Tab preview thumbnails and site icon databases
+rm -rf ~/Library/Safari/Touch\ Icons\ Cache/
+rm -rf ~/Library/Safari/Favicon\ Cache/
+rm -rf ~/Library/Safari/Template\ Icons/
+
