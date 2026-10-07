@@ -90,6 +90,7 @@ done
 
 
 for d in \
+  "/Users/computer/Library/Safari" \
   "/Users/computer/Library/Caches/com.apple.Safari" \
   "/Users/computer/Library/Caches/com.apple.Safari.SafeBrowsing" \
   "/Users/computer/Library/Containers/com.apple.parsec.SafariBrowsingAssistantWorker" \
@@ -106,7 +107,6 @@ for d in \
   "/Users/computer/Library/Containers/com.apple.unilog.SafariSearchUploadWorker"; do
   [ -d "$d" ] && find "$d" -mindepth 1 -delete
 done
-
 
 
 
