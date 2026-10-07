@@ -39,7 +39,8 @@ block in from ::1
 
 
 # RFC 4890 Local Configuration: Local Link NDP & SLAAC (Hop Limit 255 defense-in-depth)
-pass in quick inet6 proto ipv6-icmp icmp6-type { 134, 135, 136 } ttl 255
+pass in quick inet6 proto ipv6-icmp icmp6-type { 134, 135, 136 }
+
 
 # RFC 4890 Transit/Path Maintenance: Path MTU Discovery
 pass in quick inet6 proto ipv6-icmp icmp6-type 2
