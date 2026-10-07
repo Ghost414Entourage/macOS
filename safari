@@ -44,3 +44,40 @@ rm -rf ~/Library/Safari/Touch\ Icons\ Cache/
 rm -rf ~/Library/Safari/Favicon\ Cache/
 rm -rf ~/Library/Safari/Template\ Icons/
 
+
+ls /Users/computer/Library/Containers | grep -i "safari"
+
+
+com.apple.parsec.SafariBrowsingAssistantWorker
+com.apple.Safari
+com.apple.Safari.CacheDeleteExtension
+com.apple.Safari.DiagnosticExtension
+com.apple.Safari.SafariLinkExtension
+com.apple.Safari.SafariQuickLookPreview
+com.apple.safari.SafariUsageRetentionExtension
+com.apple.Safari.SafariWidgetExtension
+com.apple.Safari.WebApp
+com.apple.SafariFoundation.CredentialProviderExtensionHelper
+com.apple.share.System.add-to-safari-reading-list
+com.apple.unilog.SafariSearchUploadWorker
+
+
+
+for d in com.apple.parsec.SafariBrowsingAssistantWorker \
+         com.apple.Safari \
+         com.apple.Safari.CacheDeleteExtension \
+         com.apple.Safari.DiagnosticExtension \
+         com.apple.Safari.SafariLinkExtension \
+         com.apple.Safari.SafariQuickLookPreview \
+         com.apple.safari.SafariUsageRetentionExtension \
+         com.apple.Safari.SafariWidgetExtension \
+         com.apple.Safari.WebApp \
+         com.apple.SafariFoundation.CredentialProviderExtensionHelper \
+         com.apple.share.System.add-to-safari-reading-list \
+         com.apple.unilog.SafariSearchUploadWorker; do
+  [ -d "$d" ] && rm -rf "$d"/* "$d"/.* 2>/dev/null
+done
+
+
+
+
