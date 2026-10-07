@@ -25,8 +25,8 @@ pass out all keep state
 block in from 127.0.0.1
 block in from ::1
 
-# Allow essential ICMPv6 traffic (Neighbor Discovery, Router Advertisements, Ping, etc.)
-pass in inet6 proto ipv6-icmp all
+pass in quick inet6 proto ipv6-icmp icmp6-type { 2, 134, 135, 136 }
+
 
 # Allow DHCP (IPv4 & IPv6)
 pass in inet proto udp from port 67 to port 68
