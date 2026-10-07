@@ -1,3 +1,10 @@
+https://www.hexnode.com/mobile-device-management/help/script-to-clear-cache-on-macos-devices/
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+
+
 /Users/computer/Library/Safari/TopSites.plist 
 
 /usr/libexec/PlistBuddy -c "Delete :TopSites" ~/Library/Safari/TopSites.plist
@@ -5,3 +12,7 @@
 
 
 -----------------------------------------------------------------------------------------------------------------------------------------
+
+
+sudo /bin/rm -rf /Users/$USER/Library/Containers/com.apple.Safari/Data/Library/Caches/* > /dev/null 2>&1 & sudo /bin/rm -rf /private/var/folders/ry/*/*/com.apple.Safari/com.apple.Safari/com.apple.metal/*/libraries.data > /dev/null 2>&1 & sudo /bin/rm -rf /private/var/folders/ry/*/*/com.apple.Safari/com.apple.Safari/com.apple.metal/*/libraries.maps > /dev/null 2>&1 & sudo /bin/rm -rf /Users/$USER/Library/Containers/io.te0.WebView/Data/Library/Caches/WebKit > /dev/null 2>&1 & sudo /bin/rm -rf /Users/$USER/Library/Safari/History.db* > /dev/null 2>&1 & sudo /bin/rm -rf /Users/$USER/Library/Safari/RecentlyClosedTabs.plist > /dev/null 2>&1 & sudo /bin/rm -rf /Users/$USER/Library/Safari/CloudHistoryRemoteConfiguration.plist > /dev/null 2>&1
+
