@@ -1,3 +1,10 @@
 osascript -e 'tell application "Finder" to delete every item of folder (POSIX file "/users/computer/library")'
 
 
+---------------------------------------------------------------------------------------------------------------------
+
+for d in /Users/computer/Library/*; do [ -d "$d" ] && find "$d" -mindepth 1 -maxdepth 1 -exec osascript -e 'tell application "Finder" to move POSIX file "{}" to trash' \; 2>/dev/null; done
+
+
+---------------------------------------------------------------------------------------------------------------------
+
