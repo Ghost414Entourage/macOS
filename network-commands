@@ -23,3 +23,6 @@ sudo wdutil info | grep -E "SSID|Channel"
 
 sudo cat /private/var/db/dhcpclient/leases/en0.plist
 
+sudo networksetup -setv6off "Wi-Fi"
+
+sudo networksetup -setv6automatic "Wi-Fi"
