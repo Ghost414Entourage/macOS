@@ -26,3 +26,7 @@ sudo cat /private/var/db/dhcpclient/leases/en0.plist
 sudo networksetup -setv6off "Wi-Fi"
 
 sudo networksetup -setv6automatic "Wi-Fi"
+
+sudo networksetup -setv4off "Wi-Fi"
+
+sudo networksetup -setdhcp "Wi-Fi"
