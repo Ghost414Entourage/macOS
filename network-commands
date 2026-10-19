@@ -34,5 +34,6 @@ sudo networksetup -setdhcp "Wi-Fi"
 sudo networksetup -setmanual "USB 10/100/1000 LAN" ip 255.255.255.0 router ip
 
 sudo networksetup -setdhcp "USB 10/100/1000 LAN"
+
 sudo networksetup -setdnsservers "USB 10/100/1000 LAN" "Empty"
 
