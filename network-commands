@@ -37,3 +37,4 @@ sudo networksetup -setdhcp "USB 10/100/1000 LAN"
 
 sudo networksetup -setdnsservers "USB 10/100/1000 LAN" "Empty"
 
+sudo networksetup -setdnsservers "USB 10/100/1000 LAN" 192.168.1.254
