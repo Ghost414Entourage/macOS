@@ -46,3 +46,5 @@ sudo networksetup -setv6automatic "USB 10/100/1000 LAN"
 sudo networksetup -createnetworkservice "USB 10/100/1000 LAN" en5
 
 sudo networksetup -setsearchdomains "Wi-Fi" attlocal.net
+
+sudo networksetup -setsearchdomains "Wi-Fi" "Empty"
