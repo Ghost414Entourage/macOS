@@ -43,3 +43,4 @@ sudo networksetup -setv6off "USB 10/100/1000 LAN"
 
 sudo networksetup -setv6automatic "USB 10/100/1000 LAN"
 
+sudo networksetup -createnetworkservice "USB 10/100/1000 LAN" en5
