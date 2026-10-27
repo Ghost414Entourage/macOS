@@ -212,7 +212,7 @@
 	<key>PayloadDisplayName</key>
 	<string>Untitled</string>
 	<key>PayloadIdentifier</key>
-	<string>iMazing-Profile-Editor.04352115-66DD-469F-9778-887F549BA844</string>
+	<string>Profile.04352115-66DD-469F-9778-887F549BA844</string>
 	<key>PayloadType</key>
 	<string>Configuration</string>
 	<key>PayloadUUID</key>
