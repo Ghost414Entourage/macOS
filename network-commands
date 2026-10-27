@@ -54,3 +54,7 @@ sudo networksetup -setsearchdomains "Wi-Fi" attlocal.net
 sudo networksetup -setsearchdomains "Wi-Fi" "Empty"
 
 networksetup -listpreferredwirelessnetworks en0
+
+security find-generic-password -wa "YOUR_WIFI_NAME"
+
+sudo networksetup -removepreferredwirelessnetwork en0 "YOUR_WIFI_NAME"
