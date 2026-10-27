@@ -1,0 +1,16 @@
+https://developer.apple.com/documentation/devicemanagement/declarations
+
+https://developer.apple.com/documentation/devicemanagement/devicemanagement-declarations
+
+uuidgen
+
+date +%s | md5
+
+uuidgen | tr '[:upper:]' '[:lower:]' | pbcopy
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+nano restrictions.json
+
+
