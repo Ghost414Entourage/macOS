@@ -22,6 +22,8 @@ sudo diskutil eraseDisk JHFS+ MyVolume /dev/disk4
 
 ---------------------------------------------------------------------------------------------------------------------
 
+sudo diskutil apfs addVolume disk3 APFS "Macintosh HD 2"
+
 
 
 
