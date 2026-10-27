@@ -1,0 +1,12 @@
+https://support.apple.com/en-us/101578
+
+---------------------------------------------------------------------------------------------------------------------
+
+softwareupdate --list-full-installers
+
+softwareupdate --fetch-full-installer --full-installer-version 26.3 --force
+
+
+---------------------------------------------------------------------------------------------------------------------
+
+sudo /Applications/Install\ macOS\ 27\ Golden\ Gate.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume
