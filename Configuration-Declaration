@@ -8,9 +8,29 @@ date +%s | md5
 
 uuidgen | tr '[:upper:]' '[:lower:]' | pbcopy
 
+codesign -dv /System/Applications/FaceTime.app
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 
-nano restrictions.json
+nano disable_facetime.json
+
+{
+    "Type": "com.apple.configuration.app.settings",
+    "Identifier": "ECED7D1E-4B74-4208-A091-AC6A294FE807",
+    "ServerToken": "A5CA3371-559E-44B4-B9ED-A0A7DFEC1943",
+    "Payload": {
+        "DeniedBinaries": [
+            {
+                "SigningID": "com.apple.FaceTime"
+            }
+        ]
+    }
+}
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
 
 
