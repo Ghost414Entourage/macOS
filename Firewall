@@ -34,30 +34,54 @@ for app in /usr/local/libexec/remotepairingdeviced /usr/libexec/remoted /usr/bin
 
 sudo /usr/libexec/ApplicationFirewall/socketfilterfw --add /System/Library/CoreServices/WiFiAgent.app
 
+
 sudo /usr/libexec/ApplicationFirewall/socketfilterfw --listapps
+
 
 sudo /usr/libexec/ApplicationFirewall/socketfilterfw --unblockapp /System/Library/CoreServices/WiFiAgent.app
 
+
 sudo /usr/libexec/ApplicationFirewall/socketfilterfw --blockapp /System/Library/CoreServices/WiFiAgent.app
+
 
 sudo /usr/libexec/ApplicationFirewall/socketfilterfw --remove /System/Library/CoreServices/WiFiAgent.app
 
+
 sudo /usr/libexec/ApplicationFirewall/socketfilterfw --getappblocked /System/Library/CoreServices/WiFiAgent.app
+
 
 sudo /usr/libexec/ApplicationFirewall/socketfilterfw --getallowsigned
 
+
 sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setallowsigned off
+
 
 sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setallowsignedapp off
 
+
 sudo /usr/libexec/ApplicationFirewall/socketfilterfw --getglobalstate
+
 
 sudo /usr/libexec/ApplicationFirewall/socketfilterfw -h
 
+
 sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setblockall on
+
 
 sudo /usr/libexec/ApplicationFirewall/socketfilterfw --getblockall
 
 
-
+launchctl -h 
+sudo launchctl print system/com.apple.alf
 sudo launchctl kickstart -k system/com.apple.alf 
+
+
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --add /System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --blockapp /System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app
+
+
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --add /Applications/Safari.app
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --blockapp /Applications/Safari.app
+
+
+
