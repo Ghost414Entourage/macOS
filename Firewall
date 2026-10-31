@@ -1,0 +1,27 @@
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --listapps
+
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --getappblocked /Applications/AppName.app
+
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --add /Applications/YourApp.app
+
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --unblockapp /Applications/YourApp.app
+
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --blockapp /Applications/YourApp.app
+
+
+
+/usr/libexec/ApplicationFirewall/socketfilterfw \
+  --getglobalstate \
+  --getblockall \
+  --getallowsigned \
+  --getstealthmode
+
+
+
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --listapps | grep -E '^[0-9]+ :' | sed -E 's/^[0-9]+ : //' | xargs -I {} sudo /usr/libexec/ApplicationFirewall/socketfilterfw --blockapp "{}"
+
+for app in /usr/local/libexec/remotepairingdeviced /usr/libexec/remoted /usr/bin/python3 /usr/bin/ruby /usr/sbin/cupsd /usr/libexec/sharingd /usr/libexec/sshd-keygen-wrapper /usr/sbin/smbd; do sudo /usr/libexec/ApplicationFirewall/socketfilterfw --add "$app" && sudo /usr/libexec/ApplicationFirewall/socketfilterfw --blockapp "$app"; done
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
