@@ -500,21 +500,27 @@ sudo dnctl pipe 1 config plr 1.0
 
 
 
-cat << 'EOF' > /tmp/dummynet_block.conf
-dummynet out all pipe 1
-dummynet in all pipe 1
-EOF
+
 
 
 cat << 'EOF' > /tmp/dummynet_block.conf
-dummynet out all pipe 1
-dummynet in all pipe 1
+dummynet out inet all pipe 1
+dummynet in inet all pipe 1
+dummynet out inet6 all pipe 1
+dummynet in inet6 all pipe 1
 EOF
-sudo pfctl -E
-sudo pfctl -f /tmp/dummynet_block.conf
 
 
-sudo pfctl -E
+
+
+pfctl -d
+
+pfctl -F all 
+
+sudo pfctl -F states
+
+pfctl -E
+
 sudo pfctl -f /tmp/dummynet_block.conf
 
 
