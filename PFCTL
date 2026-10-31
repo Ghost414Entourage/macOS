@@ -471,5 +471,36 @@ block out log proto tcp from any port 62078
 block out log proto udp from any port 62078
 
 
+--------------------------------------------------------------------------------
+
+sudo dnctl pipe show
+
+sudo dnctl pipe 1 config bw 0
+
+sudo dnctl -f flush
+
+sudo dnctl pipe 1 delete
+
+printf "dummynet out all pipe 1\ndummynet in all pipe 1\n" | sudo pfctl -f -
+
+echo -e "dummynet out all pipe 1\ndummynet in all pipe 1" | sudo tee -a /etc/pf.conf
+
+sudo pfctl -F all -d
+sudo dnctl -f flush
+
+sudo sed -i '' '/dummynet out all pipe 1/d; /dummynet in all pipe 1/d' /etc/pf.conf
+
+cat -n /etc/pf.conf
+
+
+sudo pfctl -sr
+
+sudo pfctl -E
+
+
+
+
+
+
 
 
