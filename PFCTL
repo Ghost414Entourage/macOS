@@ -483,12 +483,8 @@ sudo dnctl pipe 1 delete
 
 printf "dummynet out all pipe 1\ndummynet in all pipe 1\n" | sudo pfctl -f -
 
-echo -e "dummynet out all pipe 1\ndummynet in all pipe 1" | sudo tee -a /etc/pf.conf
-
 sudo pfctl -F all -d
 sudo dnctl -f flush
-
-sudo sed -i '' '/dummynet out all pipe 1/d; /dummynet in all pipe 1/d' /etc/pf.conf
 
 cat -n /etc/pf.conf
 
@@ -496,6 +492,25 @@ cat -n /etc/pf.conf
 sudo pfctl -sr
 
 sudo pfctl -E
+
+
+sudo dnctl pipe 1 config bw 0
+
+cat << 'EOF' > /tmp/dummynet_block.conf
+dummynet out all pipe 1
+dummynet in all pipe 1
+EOF
+
+
+
+sudo pfctl -E
+sudo pfctl -f /tmp/dummynet_block.conf
+
+
+sudo pfctl -F all -d
+sudo dnctl -f flush
+rm -f /tmp/dummynet_block.conf
+
 
 
 
