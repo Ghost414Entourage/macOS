@@ -85,3 +85,6 @@ sudo /usr/libexec/ApplicationFirewall/socketfilterfw --blockapp /Applications/Sa
 
 
 
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --add /usr/sbin/netbiosd 
+
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --blockapp /usr/sbin/netbiosd 
