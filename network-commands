@@ -63,3 +63,25 @@ networksetup -listpreferredwirelessnetworks en0
 security find-generic-password -wa "YOUR_WIFI_NAME"
 
 sudo networksetup -removepreferredwirelessnetwork en0 "YOUR_WIFI_NAME"
+
+
+------------------------------------------------------------------------------------------------------------
+
+
+ipconfig getoption interface-name (option-name | option-code)
+
+ipconfig getoption en0 router
+
+arp -a | grep 'server ip'
+
+ipconfig getpacket en0
+
+ipconfig getsummary en0
+
+
+
+
+
+
+
+
