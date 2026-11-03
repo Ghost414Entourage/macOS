@@ -91,3 +91,17 @@ sudo /usr/libexec/ApplicationFirewall/socketfilterfw --add /usr/sbin/netbiosd
 sudo /usr/libexec/ApplicationFirewall/socketfilterfw --blockapp /usr/sbin/netbiosd 
 
 sudo /usr/libexec/ApplicationFirewall/socketfilterfw --getappblocked /usr/sbin/netbiosd
+
+
+
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --add /System/Volumes/Preboot/Cryptexes/Incoming/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.Networking.xpc/Contents/MacOS/com.apple.WebKit.Networking 
+
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --blockapp /System/Volumes/Preboot/Cryptexes/Incoming/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.Networking.xpc/Contents/MacOS/com.apple.WebKit.Networking 
+
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --getappblocked /System/Volumes/Preboot/Cryptexes/Incoming/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.Networking.xpc/Contents/MacOS/com.apple.WebKit.Networking 
+
+
+
+
+
+
