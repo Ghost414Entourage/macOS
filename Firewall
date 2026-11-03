@@ -168,4 +168,6 @@ sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setstealthmode on
 sudo /usr/libexec/ApplicationFirewall/socketfilterfw --getstealthmode
 
 
+log stream --predicate 'subsystem == "com.apple.alf"'
 
+log show --predicate 'subsystem == "com.apple.alf"' --last 2h
