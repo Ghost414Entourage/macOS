@@ -201,6 +201,8 @@ sudo /usr/libexec/ApplicationFirewall/socketfilterfw --remove /System/Applicatio
 
 sudo /usr/libexec/ApplicationFirewall/socketfilterfw --add /System/Applications/Safari.app
 
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --add /Applications/Safari.app
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 find /System/Applications -name "*.app" -type d -exec sudo /usr/libexec/ApplicationFirewall/socketfilterfw --add "{}" \;
