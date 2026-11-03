@@ -248,7 +248,7 @@
             <key>PayloadType</key>
             <string>com.apple.applicationaccess</string>
             <key>PayloadUUID</key>
-            <string>11111111-2222-3333-4444-555555555555</string>
+            <string>0D3728B1-7BE4-44B2-B9D3-A198B19D7582</string>
             <key>PayloadVersion</key>
             <integer>1</integer>
             <key>allowLiveVoicemail</key>
@@ -406,7 +406,7 @@
             <key>EnableFirewall</key>
             <true/>
             <key>BlockAllIncoming</key>
-            <true/>
+            <false/>
             <key>EnableStealthMode</key>
             <true/>
             <key>AllowSigned</key>
