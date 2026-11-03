@@ -199,3 +199,4 @@ sudo /usr/libexec/ApplicationFirewall/socketfilterfw --unblockapp /Applications/
 
 sudo /usr/libexec/ApplicationFirewall/socketfilterfw --remove /Applications/Safari.app
 
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --add /System/Applications/Safari.app
