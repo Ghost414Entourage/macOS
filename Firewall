@@ -100,6 +100,11 @@ sudo /usr/libexec/ApplicationFirewall/socketfilterfw --blockapp /System/Volumes/
 
 sudo /usr/libexec/ApplicationFirewall/socketfilterfw --getappblocked /System/Volumes/Preboot/Cryptexes/Incoming/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.Networking.xpc/Contents/MacOS/com.apple.WebKit.Networking 
 
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --unblockapp "/System/Volumes/Preboot/Cryptexes/Incoming/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.Networking.xpc/Contents/MacOS/com.apple.WebKit.Networking"
+
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --remove "/System/Volumes/Preboot/Cryptexes/Incoming/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.Networking.xpc/Contents/MacOS/com.apple.WebKit.Networking"
+
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --getappblocked "/System/Volumes/Preboot/Cryptexes/Incoming/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.Networking.xpc/Contents/MacOS/com.apple.WebKit.Networking"
 
 
 
