@@ -8,7 +8,7 @@ sudo /usr/libexec/ApplicationFirewall/socketfilterfw --unblockapp /Applications/
 
 sudo /usr/libexec/ApplicationFirewall/socketfilterfw --blockapp /Applications/YourApp.app
 
-
+/System/Library/CoreService
 
 /usr/libexec/ApplicationFirewall/socketfilterfw \
   --getglobalstate \
