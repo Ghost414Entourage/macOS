@@ -19,4 +19,6 @@ sudo /usr/libexec/PlistBuddy -c "Set :addedRemoteAppleEventsAccess false" /Libra
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------
 
+sudo /usr/libexec/PlistBuddy -c "Set :RunAtLoad false" /System/Library/LaunchDaemons/com.apple.smb.preferences.plist
+
 
