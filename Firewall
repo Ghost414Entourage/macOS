@@ -187,9 +187,9 @@ done
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-for item in /usr/libexec/*; do
-    if [ -f "$item" ]; then
-        sudo /usr/libexec/ApplicationFirewall/socketfilterfw --blockapp "$item"
+for item in /System/Applications/*; do
+    if [ -d "$item" ]; then
+        sudo /usr/libexec/ApplicationFirewall/socketfilterfw --add "$item"
     fi
 done
 
