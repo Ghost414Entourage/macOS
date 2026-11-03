@@ -189,7 +189,7 @@ done
 
 for item in /System/Applications/*; do
     if [ -d "$item" ]; then
-        sudo /usr/libexec/ApplicationFirewall/socketfilterfw --add "$item"
+        sudo /usr/libexec/ApplicationFirewall/socketfilterfw --blockapp "$item"
     fi
 done
 
