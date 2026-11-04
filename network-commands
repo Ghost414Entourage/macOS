@@ -20,7 +20,13 @@ scutil --dns
 
 sudo networksetup -setdhcp "Wi-Fi" && sudo networksetup -setdnsservers "Wi-Fi" "Empty"
 
-sudo networksetup -removepreferredwirelessnetwork en0 "*"
+sudo networksetup -listallhardwareports
+
+sudo networksetup -listpreferredwirelessnetworks en0
+
+sudo networksetup -removepreferredwirelessnetwork en0 "Router"
+
+
 
 ------------------------------------------------------------------------------------------------------------
 
