@@ -8,6 +8,10 @@ pluginkit -e ignore -i com.apple.share.AirDrop.send
 
 defaults write com.apple.NetworkBrowser DisableAirDrop -bool true
 
+sudo /usr/libexec/PlistBuddy -c "Print" /Library/Preferences/SystemConfiguration/preferences.plist
+
+
+
 ------------------------------------------------------------------------------------------------------------------------------
 
 
