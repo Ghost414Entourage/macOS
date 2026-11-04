@@ -20,6 +20,8 @@ scutil --dns
 
 sudo networksetup -setdhcp "Wi-Fi" && sudo networksetup -setdnsservers "Wi-Fi" "Empty"
 
+sudo networksetup -removepreferredwirelessnetwork en0 "*"
+
 ------------------------------------------------------------------------------------------------------------
 
 system_profiler SPAirPortDataType | grep -i channel
