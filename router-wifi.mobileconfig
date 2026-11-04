@@ -28,7 +28,7 @@
             <key>EncryptionType</key>
             <string>Any</string>
             <key>Password</key>
-            <string>Medved53066</string>
+            <string>PassWord</string>
             
             <!-- Manual IP Configuration Settings -->
             <key>IPv4AddressMethod</key>
