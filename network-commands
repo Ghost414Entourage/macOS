@@ -18,6 +18,7 @@ done
 
 scutil --dns
 
+sudo networksetup -setdhcp "Wi-Fi" && sudo networksetup -setdnsservers "Wi-Fi" "Empty"
 
 ------------------------------------------------------------------------------------------------------------
 
