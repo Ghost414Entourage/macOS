@@ -6,6 +6,9 @@ https://developer.apple.com/documentation/devicemanagement/wifi
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
+sudo wdutil info
+
+
 sudo networksetup -setairportnetwork en0 "SSID" "PASSWORD"
 
 
