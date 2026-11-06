@@ -8,3 +8,9 @@ for d in /Users/computer/Library/*; do [ -d "$d" ] && find "$d" -mindepth 1 -max
 
 ---------------------------------------------------------------------------------------------------------------------
 
+
+/private/var/folders/zn/0wvkx_gs1xv_ffwbr_xjnchh0000gn/T
+
+/private/var/folders/zn/0wvkx_gs1xv_ffwbr_xjnchh0000gn/C 
+
+
