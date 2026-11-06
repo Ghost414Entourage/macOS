@@ -6,6 +6,9 @@ https://developer.apple.com/documentation/devicemanagement/wifi
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
+sudo networksetup -setairportnetwork en0 "SSID" "PASSWORD"
+
+
 networksetup -listallnetworkservices
 
 sudo networksetup -setmanual "<Service Name>" <IP> <Subnet Mask> <Router/Gateway>
