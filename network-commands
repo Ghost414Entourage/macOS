@@ -43,6 +43,7 @@ sudo networksetup -addpreferredwirelessnetworkatindex en0 "Router" 2 WPA2
 
 sudo networksetup -addpreferredwirelessnetworkatindex en0 "Router" 0 WPA2/WPA3 "password"
 
+sudo networksetup -listallnetworkservices 
 
 
 
