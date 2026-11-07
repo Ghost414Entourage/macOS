@@ -89,28 +89,32 @@ sudo /usr/libexec/PlistBuddy -c "Print :NetBIOSName" /Library/Preferences/System
 
 ------------------------------------------------------------------------------------------------------------------------------
 
-# Ensure the parent dictionaries exist (these will return an error if they already exist, which is safe to ignore)
+/usr/libexec/PlistBuddy -c "Add :System:System dict" preferences.plist 2>/dev/null
 /usr/libexec/PlistBuddy -c "Add :System:Network dict" preferences.plist 2>/dev/null
 /usr/libexec/PlistBuddy -c "Add :System:Network:HostNames dict" preferences.plist 2>/dev/null
 
-# Add the LocalHostName string key
-/usr/libexec/PlistBuddy -c "Add :System:Network:HostNames:LocalHostName string computer" preferences.plist
 
 ------------------------------------------------------------------------------------------------------------------------------
 
-# Ensure the System sub-dictionary exists
-/usr/libexec/PlistBuddy -c "Add :System:System dict" preferences.plist 2>/dev/null
+/usr/libexec/PlistBuddy -c "Set :System:System:ComputerName computer" preferences.plist 2>/dev/null || /usr/libexec/PlistBuddy -c "Add :System:System:ComputerName string computer" preferences.plist
 
-# Add the name and encoding keys
-/usr/libexec/PlistBuddy -c "Add :System:System:ComputerName string computer" preferences.plist
-/usr/libexec/PlistBuddy -c "Add :System:System:HostName string computer" preferences.plist
-/usr/libexec/PlistBuddy -c "Add :System:System:ComputerNameEncoding integer 134217984" preferences.plist
+/usr/libexec/PlistBuddy -c "Set :System:System:HostName computer" preferences.plist 2>/dev/null || /usr/libexec/PlistBuddy -c "Add :System:System:HostName string computer" preferences.plist
 
-------------------------------------------------------------------------------------------------------------------------------
+/usr/libexec/PlistBuddy -c "Set :System:System:LocalHostName computer" preferences.plist 2>/dev/null || /usr/libexec/PlistBuddy -c "Add :System:System:LocalHostName string computer" preferences.plist
 
-sudo /usr/libexec/PlistBuddy -c "Add :System:Network dict" /Library/Preferences/SystemConfiguration/preferences.plist 2>/dev/null
-sudo /usr/libexec/PlistBuddy -c "Add :System:System dict" /Library/Preferences/SystemConfiguration/preferences.plist 2>/dev/null
+/usr/libexec/PlistBuddy -c "Set :System:System:ComputerNameEncoding 134217984" preferences.plist 2>/dev/null || /usr/libexec/PlistBuddy -c "Add :System:System:ComputerNameEncoding integer 134217984" preferences.plist
 
 ------------------------------------------------------------------------------------------------------------------------------
+
+/usr/libexec/PlistBuddy -c "Set :System:Network:HostNames:ComputerName computer" preferences.plist 2>/dev/null || /usr/libexec/PlistBuddy -c "Add :System:Network:HostNames:ComputerName string computer" preferences.plist
+
+/usr/libexec/PlistBuddy -c "Set :System:Network:HostNames:HostName computer" preferences.plist 2>/dev/null || /usr/libexec/PlistBuddy -c "Add :System:Network:HostNames:HostName string computer" preferences.plist
+
+/usr/libexec/PlistBuddy -c "Set :System:Network:HostNames:LocalHostName computer" preferences.plist 2>/dev/null || /usr/libexec/PlistBuddy -c "Add :System:Network:HostNames:LocalHostName string computer" preferences.plist
+
+/usr/libexec/PlistBuddy -c "Set :System:Network:HostNames:ComputerNameEncoding 134217984" preferences.plist 2>/dev/null || /usr/libexec/PlistBuddy -c "Add :System:Network:HostNames:ComputerNameEncoding integer 134217984" preferences.plist
+
+
+
 
 
