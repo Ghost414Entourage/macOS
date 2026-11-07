@@ -1,3 +1,6 @@
+sudo defaults read /library/Preferences/com.apple.alf
+
+
 sudo /usr/libexec/ApplicationFirewall/socketfilterfw --listapps
 
 sudo /usr/libexec/ApplicationFirewall/socketfilterfw --getappblocked /Applications/AppName.app
