@@ -14,6 +14,16 @@ sudo /usr/libexec/PlistBuddy -c "Print" /Library/Preferences/SystemConfiguration
 
 ------------------------------------------------------------------------------------------------------------------------------
 
+# Set the main Computer Name
+/usr/libexec/PlistBuddy -c "Set :System:System:ComputerName computer" preferences.plist
+
+# Set the system HostName
+/usr/libexec/PlistBuddy -c "Set :System:System:HostName computer" preferences.plist
+
+# Set the local mDNS HostName
+/usr/libexec/PlistBuddy -c "Set :System:Network:HostNames:LocalHostName computer" preferences.plist
+
+------------------------------------------------------------------------------------------------------------------------------
 
 preferences.plist – all network services
 NetworkInterfaces.plist – interface mapping 
