@@ -2,6 +2,9 @@ https://github.com/redcanaryco/atomic-red-team/blob/a0e3f9bc69fed2fd711bd1f1aa87
 
 https://support.apple.com/en-us/102050
 
+https://manjusri.ucsc.edu/2015/03/10/PF-on-Mac-OS-X/
+
+
 -------------------------------------------------
 
 
@@ -28,6 +31,7 @@ sudo launchctl unload /System/Library/LaunchDaemons/com.apple.alf.agent.plist
 sudo launchctl load /System/Library/LaunchDaemons/com.apple.alf.agent.plist
 sudo launchctl load /System/Library/LaunchAgents/com.apple.alf.useragent.plist
 
+/private/var/db/launchd.db/com.apple.launchd/overrides.plist
 
 -------------------------------------------------
 
