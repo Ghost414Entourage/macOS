@@ -143,4 +143,6 @@ sudo /usr/libexec/PlistBuddy -c "Add :ServerDescription string computer" /Librar
 sudo /usr/libexec/PlistBuddy -c "Set :NetBIOSName computer" /Library/Preferences/SystemConfiguration/com.apple.smb.server.plist 2>/dev/null || \
 sudo /usr/libexec/PlistBuddy -c "Add :NetBIOSName string computer" /Library/Preferences/SystemConfiguration/com.apple.smb.server.plist
 
+sudo /usr/libexec/PlistBuddy -c "Delete :LocalKerberosRealm" /Library/Preferences/SystemConfiguration/com.apple.smb.server.plist 2>/dev/null || true
+
 
