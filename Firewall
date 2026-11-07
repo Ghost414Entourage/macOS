@@ -18,6 +18,8 @@ echo "[default]" | sudo tee -a /etc/nsmb.conf echo "protocol_vers_map=6" | sudo 
 
 sudo defaults read /library/Preferences/com.apple.alf
 
+/usr/libexec/ApplicationFirewall/com.apple.alf.plis
+
 
 sudo /usr/libexec/ApplicationFirewall/socketfilterfw --listapps
 
