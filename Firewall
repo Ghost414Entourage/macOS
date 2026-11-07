@@ -20,6 +20,7 @@ echo "[default]" | sudo tee -a /etc/nsmb.conf echo "protocol_vers_map=6" | sudo 
 
 -------------------------------------------------
 
+/Library/Preferences/com.apple.airport.opproad.plist
 
 sudo defaults read /library/Preferences/com.apple.alf.plist
 
