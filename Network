@@ -10,6 +10,8 @@ defaults write com.apple.NetworkBrowser DisableAirDrop -bool true
 
 sudo /usr/libexec/PlistBuddy -c "Print" /Library/Preferences/SystemConfiguration/preferences.plist
 
+sudo defaults read /Library/Preferences/SystemConfiguration/preferences.plist
+
 /Library/Preferences/com.apple.wifi.known-networks.plist
 
 ------------------------------------------------------------------------------------------------------------------------------
