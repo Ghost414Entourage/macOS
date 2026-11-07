@@ -114,7 +114,14 @@ sudo /usr/libexec/PlistBuddy -c "Print :NetBIOSName" /Library/Preferences/System
 
 /usr/libexec/PlistBuddy -c "Set :System:Network:HostNames:ComputerNameEncoding 134217984" preferences.plist 2>/dev/null || /usr/libexec/PlistBuddy -c "Add :System:Network:HostNames:ComputerNameEncoding integer 134217984" preferences.plist
 
+------------------------------------------------------------------------------------------------------------------------------
 
+# Ensure the 'Network' dictionary exists inside 'System'
+/usr/libexec/PlistBuddy -c "Add :System:Network dict" preferences.plist 2>/dev/null
 
+# Ensure the 'HostNames' dictionary exists inside 'System:Network'
+/usr/libexec/PlistBuddy -c "Add :System:Network:HostNames dict" preferences.plist 2>/dev/null
 
+/usr/libexec/PlistBuddy -c "Set :System:Network:HostNames:LocalHostName computer" preferences.plist 2>/dev/null || \
+/usr/libexec/PlistBuddy -c "Add :System:Network:HostNames:LocalHostName string computer" preferences.plist
 
