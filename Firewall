@@ -1,3 +1,19 @@
+https://support.apple.com/en-us/102050
+
+
+nano /etc/nsmb.conf 
+
+protocol_vers_map=6
+
+port445=no_netbios
+
+echo "[default]" | sudo tee -a /etc/nsmb.conf echo "protocol_vers_map=6" | sudo tee -a /etc/nsmb.conf echo "port445=no_netbios" | sudo tee -a /etc/nsmb.conf
+
+
+
+-------------------------------------------------
+
+
 sudo defaults read /library/Preferences/com.apple.alf
 
 
