@@ -2,6 +2,8 @@ https://github.com/redcanaryco/atomic-red-team/blob/a0e3f9bc69fed2fd711bd1f1aa87
 
 https://support.apple.com/en-us/102050
 
+-------------------------------------------------
+
 
 nano /etc/nsmb.conf 
 
@@ -20,6 +22,14 @@ sudo defaults read /library/Preferences/com.apple.alf
 
 /usr/libexec/ApplicationFirewall/com.apple.alf.plist
 
+sudo launchctl unload /System/Library/LaunchAgents/com.apple.alf.useragent.plist
+sudo launchctl unload /System/Library/LaunchDaemons/com.apple.alf.agent.plist
+
+sudo launchctl load /System/Library/LaunchDaemons/com.apple.alf.agent.plist
+sudo launchctl load /System/Library/LaunchAgents/com.apple.alf.useragent.plist
+
+
+-------------------------------------------------
 
 sudo /usr/libexec/ApplicationFirewall/socketfilterfw --listapps
 
