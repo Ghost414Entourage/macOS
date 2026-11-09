@@ -15,3 +15,9 @@ for d in /Users/computer/Library/*; do [ -d "$d" ] && find "$d" -mindepth 1 -max
 
 /private/var/db
 
+---------------------------------------------------------------------------------------------------------------------
+
+top -l 1 -o threads -stats pid,threads,command | awk 'NR>1 {pid=$1; threads=$2; $1=""; $2=""; sub(/^[ \t]+/, ""); print pid, threads, $0}' | while read -r pid threads command; do [[ "$pid" =~ ^[0-9]+$ ]] || continue; if [ "$pid" -eq 0 ]; then echo -e "\n----------------------------------------\n[PROTECTED] Process: [PID: 0] [Threads: $threads] [Command: $command] - Skipping kernel_task."; continue; fi; echo -e "\n----------------------------------------\nProcess: [PID: $pid] [Threads: $threads] [Command: $command]"; read -r -p "Do you want to run kill -9 on PID $pid? (y/n): " reply < /dev/tty; if [[ "$reply" == "y" || "$reply" == "Y" ]]; then echo "Executing: sudo kill -9 $pid"; sudo kill -9 "$pid" && echo "Result: Successfully terminated PID $pid" || echo "Result: Failed to terminate PID $pid"; else echo "Skipped."; fi; done
+
+
+
