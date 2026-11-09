@@ -133,3 +133,9 @@ sudo scutil --get ComputerName && scutil --get LocalHostName && scutil --get Hos
 sudo softwareupdate --install --all --include-config-data
 
 sudo xprotect update
+
+dsconfigad -show
+
+odutil
+
+
