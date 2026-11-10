@@ -152,3 +152,14 @@ sudo chflags nouchg /Library/Preferences/SystemConfiguration/com.apple.smb.serve
 sudo chown root:wheel /Library/Preferences/SystemConfiguration/com.apple.smb.server.plist
 sudo chmod 644 /Library/Preferences/SystemConfiguration/com.apple.smb.server.plist
 
+
+------------------------------------------------------------------------------------------------------------------------------
+
+
+/usr/libexec/PlistBuddy -c "Print :NetworkServices" preferences.plist
+
+
+for uuid in $(/usr/libexec/PlistBuddy -c "Print :NetworkServices" preferences.plist | awk '/^[0-9A-F-]{36} =/ {print $1}'); do
+    /usr/libexec/PlistBuddy -c "Set :NetworkServices:$uuid:Proxies:FTPPassive 0" preferences.plist 2>/dev/null || \
+    /usr/libexec/PlistBuddy -c "Add :NetworkServices:$uuid:Proxies:FTPPassive integer 0" preferences.plist
+done
