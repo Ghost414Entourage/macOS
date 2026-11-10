@@ -159,7 +159,8 @@ sudo chmod 644 /Library/Preferences/SystemConfiguration/com.apple.smb.server.pli
 /usr/libexec/PlistBuddy -c "Print :NetworkServices" preferences.plist
 
 
-for uuid in $(/usr/libexec/PlistBuddy -c "Print :NetworkServices" preferences.plist | awk '/^[0-9A-F-]{36} =/ {print $1}'); do
-    /usr/libexec/PlistBuddy -c "Set :NetworkServices:$uuid:Proxies:FTPPassive 0" preferences.plist 2>/dev/null || \
-    /usr/libexec/PlistBuddy -c "Add :NetworkServices:$uuid:Proxies:FTPPassive integer 0" preferences.plist
-done
+sudo /usr/libexec/PlistBuddy -c "Set :NetworkServices:$(/usr/libexec/PlistBuddy -c "Print :NetworkServices" preferences.plist | grep -B 2 -A 8 "DeviceName = en0" | grep -E '^[0-9A-F-]{36} =' | awk '{print $1}'):Proxies:FTPPassive 0" preferences.plist 2>/dev/null || \
+sudo /usr/libexec/PlistBuddy -c "Add :NetworkServices:$(/usr/libexec/PlistBuddy -c "Print :NetworkServices" preferences.plist | grep -B 2 -A 8 "DeviceName = en0" | grep -E '^[0-9A-F-]{36} =' | awk '{print $1}'):Proxies:FTPPassive integer 0" preferences.plist
+
+
+
