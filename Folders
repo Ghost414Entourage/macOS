@@ -17,4 +17,7 @@ ditto /Library/ /Library/two/
 
 -------------------------------------------------------------------------------------------------------------------------
 
+osascript -e 'do shell script "ditto /Library/ /Library/two/" with administrator privileges'
+
+
 
