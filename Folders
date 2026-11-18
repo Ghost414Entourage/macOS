@@ -1,0 +1,12 @@
+mkdir -p /Users/computer/Library2
+
+find /Users/computer/Library -mindepth 1 -maxdepth 1 -type d -print0 |
+while IFS= read -r -d '' folder; do
+    ditto "$folder" "/Users/computer/Library2/$(basename "$folder")"
+done
+
+
+
+-------------------------------------------------------------------------------------------------------------------------
+
+
