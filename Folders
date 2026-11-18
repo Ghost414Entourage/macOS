@@ -17,7 +17,23 @@ ditto /Library/ /Library/two/
 
 -------------------------------------------------------------------------------------------------------------------------
 
+
 osascript -e 'do shell script "ditto /Library/ /Library/two/" with administrator privileges'
 
+
+---------------------------------------------------------------------------------------------------------------------------
+
+
+chflags -R uchg /path/to/directory
+
+chflags -R nouchg /path/to/directory
+
+
+chmod -R a-w /path/to/directory
+
+chmod -R u+w /path/to/directory
+
+
+sudo chflags -R schg /path/to/directory
 
 
