@@ -36,4 +36,4 @@ chmod -R u+w /path/to/directory
 
 sudo chflags -R schg /path/to/directory
 
-
+sudo chflags -R uchg .[^.]**
